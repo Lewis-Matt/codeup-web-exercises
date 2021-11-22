@@ -6,14 +6,20 @@ console.log(wholeNum.toFixed(4));
 
 let sample = "Hello Codeup";
 
+// Use length to find length of string
 console.log(sample.length);
+
+// Convert to uppercase
 console.log(sample.toUpperCase());
 
+// Concatenate
 sample = sample + " Students";
 console.log(sample);
 
+// Find the index of a character
 console.log(sample.indexOf('C'));
 
+// Retrieve substring with 'Codeup' using .indexOf and .substring
 let firstLetterCodeup = sample.indexOf('C');
 let subSample = sample.substring(firstLetterCodeup, 12);
 console.log(subSample);
