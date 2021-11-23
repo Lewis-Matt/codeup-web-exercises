@@ -42,3 +42,35 @@ function letUsFly(clouds, planes) {
 }
 
 letUsFly(cloudsPresent, numberPlanes);
+
+// Shortcut: "option cmd /" comments out multiple lines, or "cmd /" single comments
+
+// write 4 functions which each take in two parameters and return a number.  They will, respectively:
+// Return the sum of two numbers
+function add(x, y) {
+    return x + y;
+}
+console.log(add(7, 3));
+
+// Return the difference of two numbers
+function subtract(x, y) {
+    return x - y;
+}
+console.log(subtract(7, 3));
+// Return the product of two numbers
+function multiply(x ,y) {
+    return x * y;
+}
+console.log(multiply(7, 3));
+
+// Return the dividend of two numbers
+function divide(x, y) {
+    return x / y;
+}
+console.log(divide(7, 3));
+
+// Return the remainder
+function remainder(x, y) {
+    return x % y;
+}
+console.log(remainder(7, 3));
