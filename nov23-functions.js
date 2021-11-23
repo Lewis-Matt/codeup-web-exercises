@@ -27,3 +27,18 @@ if (canHaveADrink && isAtBar) { // true or false
     console.log("Sorry buddy, no brew for u");
 }
 
+// Write a function with 2 arguments - determine if today is a good day to fly
+// if it is not cloudy, and there are less than 10 planes scheduled, it is a good day to fly
+
+let cloudsPresent = true;
+let numberPlanes = 11;
+
+function letUsFly(clouds, planes) {
+    if (clouds === true && planes < 10) {
+        console.log('It is a good day to fly');
+    } else {
+        console.log('No flying today');
+    }
+}
+
+letUsFly(cloudsPresent, numberPlanes);
