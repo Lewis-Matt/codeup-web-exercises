@@ -111,4 +111,4 @@ alert('You should tip ' + calculateTip(tipPercent, yourBill).toFixed(2));
 function applyDiscount(price, discount) {
     return price - (price * discount);
 }
-console.log(applyDiscount(137, 0.12));
+console.log("Your price after discount is: " + applyDiscount(137, 0.12));
