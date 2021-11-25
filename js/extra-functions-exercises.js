@@ -170,21 +170,72 @@ let multiply = (a, b) => a * b;
 console.log(`multiply: ${multiply(7, 3)}`);
 
 // Write a function named divide(a, b) that returns a divided by ~b~
+let divide = (a, b) => a / b;
+console.log(`divide: ${(divide(7,3)).toFixed(2)}`);
 
 // Write a function named remainder(a, b) that returns the remainder after dividing a by b
+let remainder = (a, b) => a % b;
+console.log(`remainder: ${remainder(7, 3)}`);
+
 // Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
+// ISN'T THIS THE SAME AS THE LAST QUESTION?
+let modulo = (a, b) => a % b;
+console.log(`modulo: ${modulo(7, 3)}`);
+
 // Write a function named cube(n) that returns n * n * n
+let cube = n => n ** 3;
+console.log(`cube: ${cube(3)}`);
+
 // Write a function named squareRoot(n) that returns the square root of the input
+let squareRoot = n => Math.sqrt(n); // or n ** (1/2)
+console.log(`squareRoot: ${squareRoot(100)}`);
+
 // Write a function named cubeRoot(n) that returns the cube root of the input
+let cubeRoot = n => Math.pow(n, 1/3);
+console.log(`cubeRoot: ${cubeRoot(27)}`);
+
 // Write a function named invertSign(number) that returns a negative version of a positive number, a positive version of negative, and false for all else.
+function invertSign(number) {
+    return number * -1;
+}
+console.log(`invertSign: ${invertSign(-3)}`);
+
 // Write a function named degreesToRadians(number)
+// (π/180) * degrees
+let degreesToRadians = degrees => degrees * (Math.PI / 180);
+console.log(`degreesToRadians: ${(degreesToRadians(360)).toFixed(4)}`);
+
 // Write a function named radiansToDegrees(number)
+// (180/π) * radians
+let radiansToDegrees = radians => radians * (180 / Math.PI);
+console.log(`radiansToDegrees: ${radiansToDegrees((Math.PI)/4)}`);
+
 // Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
+function isBlank(input) {
+    if (input === '/t' || input === '/s' || input === '/n') {
+        return true;
+    }
+}
+console.log(`isBlank: ${isBlank('/n')}`);
+
 // Make a function named trim(string) that removes empty spaces before and after the input.
+let trim = str => str.trim();
+console.log(`trim: ${trim('   No more spaces before and after.   ')}`);
+
 // Make a function named areEqual(input1, input2) that returns if both inputs have the same value
+let areEqual = (input1, input2) => input1 == input2;
+console.log(`areEqual: ${areEqual(30, '30')}`);
+
 // Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
+let areIdentical = (input1, input2) => input1 === input2;
+console.log(`areIdentical: ${areIdentical(30, '30')}`);
+
 // Make a function named not(input) returns the input with a flipped boolean
+let not = input => !input;
+console.log(`not: ${not(true)}`);
+
 // Make a function named notNot(input) that the negation of the negation of the input.
+
 // Make a function named and(predicate1, predicate2) that returns the logical operation of AND
 // Make a function named or(predicate1, predicate2) that returns the logical operation of OR
 // Write a function called reverseString(string) that reverses a string
