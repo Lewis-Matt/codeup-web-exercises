@@ -3,119 +3,174 @@
 function isOdd(number) {
     return !(number % 2 == 0);
 }
-console.log(isOdd(2));
+
+console.log('isOdd: ' + isOdd(2));
 
 // Make a function named isEven(number)
 function isEven(number) {
     return (number % 2 == 0);
 }
-console.log(isEven(2));
+
+console.log('isEven: ' + isEven(2));
 
 // Make a function named identity(input) that returns the input exactly as provided.
 function identity(input) {
     return input;
 }
-console.log(identity("Matt"));
+
+console.log('identity: ' + identity("Matt"));
 
 // Make a function named isFive(input)
 function isFive(input) {
     return (input == 5);
 }
-console.log(isFive('five'));
+
+console.log('isFive: ' + isFive('five'));
 
 // Make a function named addFive(input) that adds five to some input.
 let addFive = input => input + 5;
-console.log(addFive(5));
+console.log('addFive: ' + addFive(5));
 
 // Make a function named isMultipleOfFive(input)
 let isMultipleOfFive = input => input % 5 == 0;
-console.log(isMultipleOfFive(13));
+console.log('isMultipleOfFive: ' + isMultipleOfFive(13));
 
 // Make a function named isThree(input)
 let isThree = input => input == 3;
-console.log(isThree(3));
+console.log('isThree: ' + isThree(3));
 
 // Make a function named isMultipleOfThree(input)
 let isMultipleOfThree = input => input % 3 == 0;
-console.log(isMultipleOfThree(9));
+console.log('isMultipleOfThree: ' + isMultipleOfThree(9));
 
 // Make a function named isMultipleOfThreeAndFive(input)
 let isMultipleOfThreeAndFive = input => (input % 3 == 0) && (input % 5 == 0);
-console.log(isMultipleOfThreeAndFive(10));
+console.log('isMultipleOfThreeAndFive: ' + isMultipleOfThreeAndFive(10));
 
 // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
 let isMultipleOfTarget = (target, n) => (target % n) == 0;
-console.log(isMultipleOfTarget(10, 3));
+console.log('isMultipleOfTarget: ' + isMultipleOfTarget(10, 3));
 
 // Make a function named isTrue(boolean)
 let isTrue = boolean => boolean === true;
-console.log(isTrue(true));
+console.log('isTrue: ' + isTrue(true));
 
 // Make a function named isFalse(boolean)
-let isFalse= boolean => boolean === false;
-console.log(isFalse(true));
+let isFalse = boolean => boolean === false;
+console.log('isFalse: ' + isFalse(true));
 
 // Make a function named isTruthy(input), remember that values other than true will behave like true
-    /* Truthy values
-        if (true)
-        if ({})
-        if ([])
-        if (42)
-        if ("0")
-        if ("false")
-        if (new Date())
-        if (-42)
-        if (12n)
-        if (3.14)
-        if (-3.14)
-        if (Infinity)
-        if (-Infinity)
-    */
-let isTruthy = (input) => {
-    if(input){
-        console.log('Truthy');
-    } else {
-        console.log('Falsy');
-    }
-}
-console.log(isTruthy(false));
+/* Truthy values
+    if (true)
+    if ({})
+    if ([])
+    if (42)
+    if ("0")
+    if ("false")
+    if (new Date())
+    if (-42)
+    if (12n)
+    if (3.14)
+    if (-3.14)
+    if (Infinity)
+    if (-Infinity)
+*/
+let isTruthy = (input) => true;
+console.log('isTruthy: ' + isTruthy(1));
 
 // Make a function named isFalsy(input), remember that values other than false behave like false
-    /* Falsy values
-        if (false)
-        if (null)
-        if (undefined)
-        if (0)
-        if (-0)
-        if (0n)
-        if (NaN)
-        if ("")
-    */
+/* Falsy values
+    if (false)
+    if (null)
+    if (undefined)
+    if (0)
+    if (-0)
+    if (0n)
+    if (NaN)
+    if ("")
+*/
 function isFalsy(input) {
-    if(!input) {
-        console.log('Falsy');
-    } else {
-        console.log('Truthy');
-    }
+    return !input;
 }
-console.log(isFalsy(false));
+
+console.log('isFalsy: ' + isFalsy(''));
 
 // Make a function named isVowel(letter)
+function isVowel(letter) {
+    // Convert case so we don't have to write more conditions
+    letter.toLowerCase();
+    return letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u' || letter === 'y';
+}
+
+console.log('isVowel: ' + isVowel('p'));
+
 // Make a function named isConsonant(letter)
+function isConsonant(letter) {
+    // Convert case so we don't have to write more conditions. Same as isVowel only with a bang(!)
+    letter.toLowerCase();
+    return !(letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u' || letter === 'y');
+}
+
+console.log('isConsonant: ' + isConsonant('e'));
+
 // Make a function named isCapital(letter)
+let isCapital = letter => letter === letter.toUpperCase();
+console.log('isCapital: ' + isCapital('a'));
+
 // Make a function named isLowerCase(letter)
+let isLowerCase = letter => letter === letter.toLowerCase();
+console.log('isLowerCase: ' + isLowerCase('A'));
+
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
+// Apparently, even though it is not reserved, we cannot use 'string' as the input/parameter. There is a String object...
+let hasLowerCase = str => str === str.toLowerCase();
+console.log('hasLowerCase: ' + hasLowerCase('UPpER'));
+
 // Make a function named isSpace(letter) that returns if a character is a space character
+let isSpace = letter => letter === ' ';
+console.log('isSpace: ' + isSpace(' '));
+
 // Make a function named isZero(number)
+function isZero(number) {
+    return (number === 0);
+}
+// IDEA "string concatenation is used instead of template literals" and automatically changed it to a template literal:
+console.log(`isZero: ${isZero(0)}`);
+
 // Make a function named notZero(input) that returns true if the input is not zero
+let notZero = input => !(input === 0);
+console.log(`notZero: ${notZero(1)}`);
+
 // Write a function named lowerCase(string)
+let lowerCase = str => str.toLowerCase();
+console.log(`lowerCase: ${lowerCase('UPPERCASE')}`);
+
 // Write a function named double(n) that returns a number times two
+let double = n => n * 2;
+console.log(`double: ${double(7)}`);
+
 // Write a function named triple(n) that returns a number times 3
+let triple = n => n * 3;
+console.log(`triple: ${triple(7)}`);
+
 // Write a function named quadruple(n) that returns a number times 4
+let quadruple = n => n * 4;
+console.log(`quadruple: ${quadruple(7)}`);
+
 // Write a function named half(n) that returns 1/2 of the provided input
+let half = n => n / 2;
+console.log(`half: ${half(7)}`);
+
 // Write a function named subtract(a, b) that returns a minus b
+let subtract = (a, b) => a - b;
+console.log(`subtract: ${subtract(7, 3)}`);
+
 // Write a function named multiply(a, b) that returns the product of a times b
+let multiply = (a, b) => a * b;
+console.log(`multiply: ${multiply(7, 3)}`);
+
 // Write a function named divide(a, b) that returns a divided by ~b~
+
 // Write a function named remainder(a, b) that returns the remainder after dividing a by b
 // Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
 // Write a function named cube(n) that returns n * n * n
