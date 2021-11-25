@@ -235,12 +235,46 @@ let not = input => !input;
 console.log(`not: ${not(true)}`);
 
 // Make a function named notNot(input) that the negation of the negation of the input.
+// I decided to use the previous function rather than !!
+let notNot = input => !not(input);
+console.log(`notNot: ${notNot(true)}`)
 
 // Make a function named and(predicate1, predicate2) that returns the logical operation of AND
+// Predicate: A function that, when called, returns either true or false.
+function and(predicate1, predicate2) {
+    return predicate1 && predicate2;
+}
+console.log(`and: ${and(true, false)}`);
+
 // Make a function named or(predicate1, predicate2) that returns the logical operation of OR
+function or(predicate1, predicate2) {
+    return predicate1 || predicate2;
+}
+console.log(`or: ${or(true, false)}`);
+
 // Write a function called reverseString(string) that reverses a string
+// .split() splits a string into an array of strings separated by (' ')
+// .reverse() reverses the strings (by index) in the array
+// .join() joins the elements of an array into a string, separated by(' ')
+let reverseString = str => str.split(' ').reverse().join(' ');
+console.log(`reverseString: ${reverseString('am I out, this Figuring')}`);
+
 // Make a function named absoluteValue(number) that returns the absolute value of a number.
-// Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
+// W/o Math.abs: if (number < 0) { return number * -1}
+let absoluteValue = number => Math.abs(number);
+console.log(`absoluteValue: ${absoluteValue(-5)}`);
+
+// Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have.
+// Generate a random number between 1 up to and including the number of sides.
+// Math.random generates a number between 0 and 1, that isn’t a whole number, and also isn’t 1. If I wanted a number between
+// 0 - 10, I would multiply random() * 10. To get an integer, I apply Math.floor(Math.random() * 10)
+// To get a number between 1 - 10, I add 1 (the min) to it. To make the 10 (max) inclusive; I subtract the min and add 1:
+// sides - min + 1 -> (6 - 1 + 1) = 6
+function rollDice(sides) {
+    const min = 1;
+    return Math.floor(Math.random() * (sides - min + 1) + min);
+}
+console.log(`rollDice: ${rollDice(6)}`);
 
 
 // SIMPLE FUNCTION DRILLS
