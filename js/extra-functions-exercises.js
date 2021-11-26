@@ -414,7 +414,7 @@ console.log(`whitespaceCounter: ${whitespaceCounter(' There is 11 whitespace   i
 // If the second string input is present in the first, return the first input string with the second input string removed from it.
 // If the second string input is present multiple times in the first, the second string will only be removed where it first occurs in the first string.
 // If the second string input is not present in the first, return the first string as entered in the function.
-// There HAS GOT to be a shorter method of doing this, perhaps with string.includes() (there is also an array.includes() method)..........
+// There HAS GOT to be a shorter method of doing this, perhaps with string.includes() (there is also an array.includes() method).........."
 function messingWithStrings(str1, str2) {
     // Split str1 into an array of words
     let str1Split = str1.split(' ');
@@ -447,7 +447,7 @@ function messingWithStrings(str1, str2) {
     // If str2 occurs only once, or not at all, return str1
     return str1;
 }
-console.log(`messingWithStrings: ${messingWithStrings('Hello Matt Matt Matt you sly fox.', 'Matt')}`);
+console.log(`messingWithStrings: ${messingWithStrings('Hello Matt Matt you sly fox.', 'Matt')}`);
 
 // Create a function that takes in a string and returns true if the last letter is an "a" (otherwise, return false).
 
