@@ -123,8 +123,10 @@ console.log('isLowerCase: ' + isLowerCase('A'));
 
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
 // Apparently, even though it is not reserved, we cannot use 'string' as the input/parameter. There is a String object...
-let hasLowerCase = str => str === str.toLowerCase();
-console.log('hasLowerCase: ' + hasLowerCase('UPpER'));
+// EDIT: changed from string === string.toLowerCase(). This checks if the string is modifiable by .toUpperCase(), and if
+// it is modifiable, it means that a lowercase letter was in the string.
+let hasLowerCase = string => string.toUpperCase() !== string;
+console.log('hasLowerCase: ' + hasLowerCase('UPPER'));
 
 // Make a function named isSpace(letter) that returns if a character is a space character
 let isSpace = letter => letter === ' ';
@@ -279,39 +281,59 @@ console.log(`rollDice: ${rollDice(6)}`);
 
 // SIMPLE FUNCTION DRILLS
 // Make a function called returnTwo() that returns the number 2 when called
-
+let returnTwo = () => 2;
 // Test this function with console.log(returnTwo())
+console.log(`returnTwo: ${returnTwo()}`);
 
 // Make a function called sayHowdy() which console.logs the string “Howdy!”
-
-// Test this function by directly calling sayHowdy()
-
 // Remember this function does not need a defined return value
+let sayHowdy = () => console.log('Howdy');
+// Test this function by directly calling sayHowdy()
+sayHowdy();
 
 // Make a function called returnName() that returns the string of your name
-
+let returnName = () => 'Matt Lewis';
 // Test this function with console.log(returnName())
+console.log(returnName());
 
 // Make a function called addThree() which takes in a number input and returns the number plus 3.
-
+let addThree = number => number + 3;
 // Test this function with console.log(addThree(5))
+console.log(`addThree: ${addThree(7)}`);
 
 // Make a function called sayString() which returns the string input passed in.
-
+let sayString = string => string;
 // Test this function with console.log(sayString('codeup'))
+console.log(`sayString: ${sayString('codeup')}`);
 
 // CHALLENGE FUNCTION DRILLS
 // Write a function called identity(input) that takes in an argument called input and returns that input.
+/******* SEE LINE 16 **********/
 
 // Write a function called getRandomNumber(min, max) that returns a random number between min and max values sent to that function call.
+// Max is not inclusive
+let getRandomNumber = (min, max) => Math.floor(Math.random() * max + min);
+console.log(`getRandomNumber: ${getRandomNumber(0, 7)}`);
 
 // Write a function called first(input) that returns the first character in the provided string.
+function first(input) {
+    return input.charAt(0);
+}
+console.log(`first: ${first('Buttler')}`);
 
 // Write a function called last(input) that returns the last character of a string
+let last = input => input.charAt(input.length - 1);
+console.log(`last: ${last('Buttler')}`);
 
 // Write a function called rest(input) that returns everything but the first character of a string.
+// Can use .substring(start, stop) or .slice(start, stop). See https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring
+let rest = input => input.substring(1);
+console.log(`rest: ${rest('Blog')}`);
 
 // Write a function called reverse(input) that takes a string and returns it reversed.
+// Split string into array of chars, reverse the order of the array, join the elements as a single string
+let reverse = input => input.split('').reverse().join('');
+console.log(`reverse: ${reverse('wehttaM')}`);
 
 // Write a function called isNumeric(input) that takes an input and returns a boolean if the input is numeric.
 
