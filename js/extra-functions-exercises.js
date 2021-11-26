@@ -136,6 +136,7 @@ console.log('isSpace: ' + isSpace(' '));
 function isZero(number) {
     return (number === 0);
 }
+
 // IDEA "string concatenation is used instead of template literals" and automatically changed it to a template literal:
 console.log(`isZero: ${isZero(0)}`);
 
@@ -173,7 +174,7 @@ console.log(`multiply: ${multiply(7, 3)}`);
 
 // Write a function named divide(a, b) that returns a divided by ~b~
 let divide = (a, b) => a / b;
-console.log(`divide: ${(divide(7,3)).toFixed(2)}`);
+console.log(`divide: ${(divide(7, 3)).toFixed(2)}`);
 
 // Write a function named remainder(a, b) that returns the remainder after dividing a by b
 let remainder = (a, b) => a % b;
@@ -193,13 +194,14 @@ let squareRoot = n => Math.sqrt(n); // or n ** (1/2)
 console.log(`squareRoot: ${squareRoot(100)}`);
 
 // Write a function named cubeRoot(n) that returns the cube root of the input
-let cubeRoot = n => Math.pow(n, 1/3);
+let cubeRoot = n => Math.pow(n, 1 / 3);
 console.log(`cubeRoot: ${cubeRoot(27)}`);
 
 // Write a function named invertSign(number) that returns a negative version of a positive number, a positive version of negative, and false for all else.
 function invertSign(number) {
     return number * -1;
 }
+
 console.log(`invertSign: ${invertSign(-3)}`);
 
 // Write a function named degreesToRadians(number)
@@ -210,7 +212,7 @@ console.log(`degreesToRadians: ${(degreesToRadians(360)).toFixed(4)}`);
 // Write a function named radiansToDegrees(number)
 // (180/π) * radians
 let radiansToDegrees = radians => radians * (180 / Math.PI);
-console.log(`radiansToDegrees: ${radiansToDegrees((Math.PI)/4)}`);
+console.log(`radiansToDegrees: ${radiansToDegrees((Math.PI) / 4)}`);
 
 // Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
 function isBlank(input) {
@@ -218,6 +220,7 @@ function isBlank(input) {
         return true;
     }
 }
+
 console.log(`isBlank: ${isBlank('/n')}`);
 
 // Make a function named trim(string) that removes empty spaces before and after the input.
@@ -246,12 +249,14 @@ console.log(`notNot: ${notNot(true)}`)
 function and(predicate1, predicate2) {
     return predicate1 && predicate2;
 }
+
 console.log(`and: ${and(true, false)}`);
 
 // Make a function named or(predicate1, predicate2) that returns the logical operation of OR
 function or(predicate1, predicate2) {
     return predicate1 || predicate2;
 }
+
 console.log(`or: ${or(true, false)}`);
 
 // Write a function called reverseString(string) that reverses a string
@@ -276,6 +281,7 @@ function rollDice(sides) {
     const min = 1;
     return Math.floor(Math.random() * (sides - min + 1) + min);
 }
+
 console.log(`rollDice: ${rollDice(6)}`);
 
 
@@ -319,11 +325,12 @@ console.log(`getRandomNumber: ${getRandomNumber(0, 7)}`);
 function first(input) {
     return input.charAt(0);
 }
-console.log(`first: ${first('Buttler')}`);
+
+console.log(`first: ${first('Butler')}`);
 
 // Write a function called last(input) that returns the last character of a string
 let last = input => input.charAt(input.length - 1);
-console.log(`last: ${last('Buttler')}`);
+console.log(`last: ${last('Butler')}`);
 
 // Write a function called rest(input) that returns everything but the first character of a string.
 // Can use .substring(start, stop) or .slice(start, stop). See https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring
@@ -336,33 +343,112 @@ let reverse = input => input.split('').reverse().join('');
 console.log(`reverse: ${reverse('wehttaM')}`);
 
 // Write a function called isNumeric(input) that takes an input and returns a boolean if the input is numeric.
+let isNumeric = input => typeof input === 'number';
+console.log(`isNumeric: ${isNumeric(9)}`);
 
 // Write a function called count(input) that takes in a string and returns the number of characters.
+let count = input => console.log('count: ' + input.length);
+count('How many characters?');
 
 // Write a function called add(a, b) that returns the sum of a and b
+let add = (a, b) => a + b;
+console.log(`add: ${add(3, 7)}`);
 
-// Write a function called subtract(a, b) that return the difference between the two inputs.
-
-// Write multiply(a, b) function that returns the product
-
-// Write a divide(numerator, denominator) function that returns a divided by b
-
-// Write a remainder(number, divisor) function that returns the remainder left over when dividing number by the divisor
+/******* The below exercises are duplicates from above
+ Write a function called subtract(a, b) that return the difference between the two inputs.
+ Write multiply(a, b) function that returns the product
+ Write a divide(numerator, denominator) function that returns a divided by b
+ Write a remainder(number, divisor) function that returns the remainder left over when dividing number by the divisor
+ *******/
 
 // Write the function square(a) that takes in a number and returns the number multiplied by itself.
+let square = a => a * a;
+console.log(`square: ${square(7)}`);
 
 // Write a function called sumOfSquares(a, b) that uses only your add() function and your square function and not + or * operators
+let sumOfSquares = (a, b) => add(square(a), square(b));
+console.log(`sumOfSquares: ${sumOfSquares(7, 3)}`);
 
-// Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
+// Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply.
+// a and b are the two numbers to run that function on.
+function doMath(operator, a, b) {
+    switch (operator) {
+        case '+':
+            return a + b;
+            break;
+        case '-':
+            return a - b;
+            break;
+        case '*':
+            return a * b;
+            break;
+        case '/':
+            return a / b;
+            break;
+        default:
+            console.log("Error: you must enter '+', '-', '*', '/'");
+    }
+}
+
+console.log(`doMath ${doMath('*', 7, 3)}`)
+
 
 // EVEN MORE FUNCTION BONUSES
 // Create a function that will return how many whitespace characters are at the beginning and end of a string.
+// I would normally user a for loop, but I haven't used a while loop in a while, so here we go:
+function whitespaceCounter(str) {
+    let counter = 0;
+    let i = 0;
+    while (i <= str.length) {
+        if (str.charAt(i) === ' ') {
+            counter = counter + 1;
+        }
+        i = i + 1;
+    }
+    return counter;
+}
+
+console.log(`whitespaceCounter: ${whitespaceCounter(' There is 11 whitespace   in this sentence . ')}`);
 
 // Create a function that takes in two string inputs.
-
 // If the second string input is present in the first, return the first input string with the second input string removed from it.
 // If the second string input is present multiple times in the first, the second string will only be removed where it first occurs in the first string.
 // If the second string input is not present in the first, return the first string as entered in the function.
+// There HAS GOT to be a shorter method of doing this, perhaps with string.includes() (there is also an array.includes() method)..........
+function messingWithStrings(str1, str2) {
+    // Split str1 into an array of words
+    let str1Split = str1.split(' ');
+    // TESTING LOG
+    console.log(str1Split);
+    // Counter for counting how many times str2 occurs
+    let str2Count = 0;
+    // Loop though each word in the str1Split array
+    for (let i = 0; i < str1Split.length; i++) {
+        // Test each element of str1Split array for a match with str2
+        if (str2 === str1Split[i]) {
+            // Increase the counter for str2 occurrence
+            str2Count++;
+            // TESTING LOG
+            console.log('str2Count: ' + str2Count);
+            }
+    }
+    // If str2 occurs more than once in str1, remove the first occurrence
+    if (str2Count > 1) {
+        // Find the index of the first occurrence of str2
+        const index = str1Split.indexOf(str2);
+        // TESTING LOG
+        console.log('First index of str2: ' + index);
+        // Remove the first occurrence from the str1Split array
+        // Note that splice() modifies the original array in-place. If I were to return str1Split.splice(index, 1) it would
+        // just return the removed element
+        str1Split.splice(index, 1);
+        return str1Split.join(' ');
+    }
+    // If str2 occurs only once, or not at all, return str1
+    return str1;
+}
+console.log(`messingWithStrings: ${messingWithStrings('Hello Matt Matt Matt you sly fox.', 'Matt')}`);
+
 // Create a function that takes in a string and returns true if the last letter is an "a" (otherwise, return false).
 
 // EXTRA CHALLENGE: create a function that will return how many whitespace characters are at the beginning of a string (hint: use regex).
