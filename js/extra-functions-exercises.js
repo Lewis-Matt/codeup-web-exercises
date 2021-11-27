@@ -471,14 +471,35 @@ function whitespaceCheck(str) {
 whitespaceCheck('   hi there, Matt');
 
 // Create a function returnTrueMessage() that returns the string "Hey, it's true!"
+let returnTrueMessage = () => "Hey, it's true!";
+console.log(`returnTrueMessage: ${returnTrueMessage()}`);
 
 // Create a function returnFalseMessage() that returns the string "Hey, it's false!"
+let returnFalseMessage = () => "Hey, it's false!";
+console.log(`returnFalseMessage: ${returnFalseMessage()}`);
 
 // Create a function returnMessage() that takes in a function and returns the call to the function
-
 // Experiment passing in different functions.
+function returnMessage() {
+    return function (str) {
+        console.log(str);
+    }
+}
+
+// What's happening here is that it is returning the reference of the inner function, so we need to put () again so the function reference is executed.
+returnMessage()('Is this what I am supposed to do?');
 
 // Create a function, willLoginUser() that takes in a username string, password string, user age, a boolean indicating if they are an admin.
-
 // The function will return true if the username is not the same as the password and the user is at least 18 years old.
 // If the user is an admin, they do not have to be a certain age but the password must still not match the username.
+function willLoginUser(username, password, age, admin) {
+    if (admin === true && password != username) {
+        console.log('You are logged in as ADMIN');
+    } else if (admin === false && password != username && age >= 18) {
+        console.log('You are logged in as USER');
+    } else {
+        console.log('Login not valid');
+    }
+}
+
+willLoginUser('Matt', 'funkyfresh', 15, true);
