@@ -503,3 +503,5 @@ function willLoginUser(username, password, age, admin) {
 }
 
 willLoginUser('Matt', 'funkyfresh', 15, true);
+
+// I AM DONE (and everything works!)!
