@@ -430,7 +430,7 @@ function messingWithStrings(str1, str2) {
             str2Count++;
             // TESTING LOG
             console.log('str2Count: ' + str2Count);
-            }
+        }
     }
     // If str2 occurs more than once in str1, remove the first occurrence
     if (str2Count > 1) {
@@ -447,17 +447,38 @@ function messingWithStrings(str1, str2) {
     // If str2 occurs only once, or not at all, return str1
     return str1;
 }
+
 console.log(`messingWithStrings: ${messingWithStrings('Hello Matt Matt you sly fox.', 'Matt')}`);
 
 // Create a function that takes in a string and returns true if the last letter is an "a" (otherwise, return false).
+function endsWithA(str) {
+    if (str.charAt(str.length - 1) === 'a') {
+        return true;
+    }
+    return false;
+}
+
+console.log(`endsWithA: ${endsWithA('Funky')}`);
 
 // EXTRA CHALLENGE: create a function that will return how many whitespace characters are at the beginning of a string (hint: use regex).
+function whitespaceCheck(str) {
+    // match(REGEX) will return all the occurrences of a string (that matches the regex) into an array
+    // By counting the array size (.length) we know how many times the regex occurred.
+    // ^ means starts with, the * means to return 0 or more occurrences, g means to search the entire str
+    console.log((str.match(/^\s*/g)[0]).length);
+}
+
+whitespaceCheck('   hi there, Matt');
 
 // Create a function returnTrueMessage() that returns the string "Hey, it's true!"
 
 // Create a function returnFalseMessage() that returns the string "Hey, it's false!"
+
 // Create a function returnMessage() that takes in a function and returns the call to the function
+
 // Experiment passing in different functions.
+
 // Create a function, willLoginUser() that takes in a username string, password string, user age, a boolean indicating if they are an admin.
 
-// The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.
+// The function will return true if the username is not the same as the password and the user is at least 18 years old.
+// If the user is an admin, they do not have to be a certain age but the password must still not match the username.
