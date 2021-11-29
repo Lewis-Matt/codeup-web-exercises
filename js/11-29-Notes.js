@@ -56,3 +56,26 @@ console.log(`Fred's grade: ${gradeTernary(fredsGrade)}`);
 console.log(`Dave's Grade: ${gradeTernary(davesGrade)}`);
 console.log(`Erin's grade: ${gradeTernary(erinsGrade)}`);
 console.log(`Jeff's grade: ${gradeTernary(jeffsGrade)}`);
+
+// Switch statement's will not accept conditions (as the switch(condition) is already a condition)
+// so this falls through and each grade will show up as an 'F'. So use if() statements or
+function gradeSwitch(studentGrades) {
+    switch (studentGrades) {
+        case (studentGrades >= 90):
+            return 'A';
+        case (studentGrades >= 80):
+            return 'B';
+        case (studentGrades >= 70):
+            return 'C';
+        case (studentGrades >= 60):
+            return 'D';
+        default:
+            return 'F';
+    }
+}
+
+console.log(`Matt's grade: ${gradeSwitch(mattsGrade)}`);
+console.log(`Fred's grade: ${gradeSwitch(fredsGrade)}`);
+console.log(`Dave's Grade: ${gradeSwitch(davesGrade)}`);
+console.log(`Erin's grade: ${gradeSwitch(erinsGrade)}`);
+console.log(`Jeff's grade: ${gradeSwitch(jeffsGrade)}`);
