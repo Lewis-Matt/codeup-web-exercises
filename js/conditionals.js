@@ -41,8 +41,8 @@
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
@@ -58,15 +58,13 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 function analyzeColor(primaryColorName) {
     primaryColorName = primaryColorName.toLowerCase();
     switch (primaryColorName) {
+        // Note that since each case has a return, a break is not needed (it will be unreachable)
         case 'red':
             return `${primaryColorName} is the color of blood.`;
-            break;
         case 'yellow':
             return `${primaryColorName} is the color of bananas.`;
-            break;
         case 'blue':
             return `${primaryColorName} is the color of the ocean.`;
-            break;
         default:
             return `I don't know anything about ${primaryColorName}`;
     }
@@ -110,19 +108,14 @@ function calculateTotal(luckyNumber, totalAmount) {
     switch (luckyNumber) {
         case 0:
             return (totalAmount).toFixed(2);
-            break;
         case 1:
             return (0.90 * totalAmount).toFixed(2);
-            break;
         case 2:
             return (0.75 * totalAmount).toFixed(2);
-            break;
         case 3:
             return (0.65 * totalAmount).toFixed(2);
-            break;
         case 4:
             return (0.50 * totalAmount).toFixed(2);
-            break;
         case 5:
             return (0.00).toFixed(2);
     }

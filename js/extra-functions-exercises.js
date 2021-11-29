@@ -1,14 +1,14 @@
 // FUNCTIONS USING CONDITIONALS BUT NOT LOOPS OR ARRAYS:
 // Make a function named isOdd(number)
 function isOdd(number) {
-    return !(number % 2 == 0);
+    return !(number % 2 === 0);
 }
 
 console.log('isOdd: ' + isOdd(2));
 
 // Make a function named isEven(number)
 function isEven(number) {
-    return (number % 2 == 0);
+    return (number % 2 === 0);
 }
 
 console.log('isEven: ' + isEven(2));
@@ -22,7 +22,7 @@ console.log('identity: ' + identity("Matt"));
 
 // Make a function named isFive(input)
 function isFive(input) {
-    return (input == 5);
+    return (input === 5);
 }
 
 console.log('isFive: ' + isFive('five'));
@@ -32,23 +32,23 @@ let addFive = input => input + 5;
 console.log('addFive: ' + addFive(5));
 
 // Make a function named isMultipleOfFive(input)
-let isMultipleOfFive = input => input % 5 == 0;
+let isMultipleOfFive = input => input % 5 === 0;
 console.log('isMultipleOfFive: ' + isMultipleOfFive(13));
 
 // Make a function named isThree(input)
-let isThree = input => input == 3;
+let isThree = input => input === 3;
 console.log('isThree: ' + isThree(3));
 
 // Make a function named isMultipleOfThree(input)
-let isMultipleOfThree = input => input % 3 == 0;
+let isMultipleOfThree = input => input % 3 === 0;
 console.log('isMultipleOfThree: ' + isMultipleOfThree(9));
 
 // Make a function named isMultipleOfThreeAndFive(input)
-let isMultipleOfThreeAndFive = input => (input % 3 == 0) && (input % 5 == 0);
+let isMultipleOfThreeAndFive = input => (input % 3 === 0) && (input % 5 === 0);
 console.log('isMultipleOfThreeAndFive: ' + isMultipleOfThreeAndFive(10));
 
 // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
-let isMultipleOfTarget = (target, n) => (target % n) == 0;
+let isMultipleOfTarget = (target, n) => (target % n) === 0;
 console.log('isMultipleOfTarget: ' + isMultipleOfTarget(10, 3));
 
 // Make a function named isTrue(boolean)
@@ -375,16 +375,12 @@ function doMath(operator, a, b) {
     switch (operator) {
         case '+':
             return a + b;
-            break;
         case '-':
             return a - b;
-            break;
         case '*':
             return a * b;
-            break;
         case '/':
             return a / b;
-            break;
         default:
             console.log("Error: you must enter '+', '-', '*', '/'");
     }
@@ -420,7 +416,7 @@ function messingWithStrings(str1, str2) {
     let str1Split = str1.split(' ');
     // TESTING LOG
     console.log(str1Split);
-    // Counter for counting how many times str2 occurs
+    // Initialize counter for counting how many times str2 occurs
     let str2Count = 0;
     // Loop though each word in the str1Split array
     for (let i = 0; i < str1Split.length; i++) {
@@ -493,9 +489,9 @@ returnMessage()('Is this what I am supposed to do?');
 // The function will return true if the username is not the same as the password and the user is at least 18 years old.
 // If the user is an admin, they do not have to be a certain age but the password must still not match the username.
 function willLoginUser(username, password, age, admin) {
-    if (admin === true && password != username) {
+    if (admin === true && password !== username) {
         console.log('You are logged in as ADMIN');
-    } else if (admin === false && password != username && age >= 18) {
+    } else if (admin === false && password !== username && age >= 18) {
         console.log('You are logged in as USER');
     } else {
         console.log('Login not valid');
