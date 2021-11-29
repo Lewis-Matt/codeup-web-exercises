@@ -21,6 +21,20 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+// function analyzeColor(primaryColorName) {
+//     primaryColorName = primaryColorName.toLowerCase();
+//     if (primaryColorName == 'red') {
+//         return `${primaryColorName} is the color of blood.`;
+//     } else if (primaryColorName == 'yellow') {
+//         return `${primaryColorName} is the color of bananas.`;
+//     } else if (primaryColorName === 'blue') {
+//         return `${primaryColorName} is the color of the ocean.`;
+//     } else {
+//         return `I don't know anything about ${primaryColorName}`;
+//     }
+// }
+//
+// console.log(analyzeColor('red'));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -35,11 +49,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+// console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+function analyzeColor(primaryColorName) {
+    primaryColorName = primaryColorName.toLowerCase();
+    switch (primaryColorName) {
+        case 'red':
+            return `${primaryColorName} is the color of blood.`;
+            break;
+        case 'yellow':
+            return `${primaryColorName} is the color of bananas.`;
+            break;
+        case 'blue':
+            return `${primaryColorName} is the color of the ocean.`;
+            break;
+        default:
+            return `I don't know anything about ${primaryColorName}`;
+    }
+}
 
+console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -48,6 +81,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 /* ########################################################################## */
+function getUserColor() {
+    return prompt('Enter a color.');
+}
+
+alert(analyzeColor(getUserColor()));
 
 /**
  * TODO:
@@ -68,6 +106,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckyNumber, totalAmount) {
+    switch (luckyNumber) {
+        case 0:
+            return (totalAmount).toFixed(2);
+            break;
+        case 1:
+            return (0.90 * totalAmount).toFixed(2);
+            break;
+        case 2:
+            return (0.75 * totalAmount).toFixed(2);
+            break;
+        case 3:
+            return (0.65 * totalAmount).toFixed(2);
+            break;
+        case 4:
+            return (0.50 * totalAmount).toFixed(2);
+            break;
+        case 5:
+            return (0.00).toFixed(2);
+    }
+}
+
+console.log(calculateTotal(3, 50.5));
 
 /**
  * TODO:
@@ -78,9 +139,14 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+let luckyNumber = Math.floor(Math.random() * 6);
+let userBill = prompt('What is your total bill?');
+alert(`Your lucky number is ${luckyNumber}. \n 
+Your bill before discount is $${userBill}. \n 
+Your bill after discount is $${calculateTotal(luckyNumber, userBill)}`);
 
 /**
+ *
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
  * would like to enter a number. If they click 'Ok', prompt the user for a
