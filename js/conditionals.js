@@ -164,3 +164,25 @@ Your bill after discount is $${calculateTotal(luckyNumber, userBill)}`);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+let userConfirm = confirm('Would you like to enter a number?');
+if (userConfirm === true) {
+    let userNumber = parseInt(prompt('Enter a number.'), 0);
+    // TESTING LOG
+    console.log(typeof userNumber);
+
+    if (isNaN(userNumber)) {
+        alert('You did not enter a number');
+    } else {
+        if (userNumber % 2 === 0) {
+            alert('Your number is even.')
+        } else {
+            alert('Your number is odd.')
+        }
+        alert(`Your number + 100 is ${(userNumber + 100)}`);
+        if (userNumber >= 0) {
+            alert('Your number is positive.');
+        } else {
+            alert('Your number is negative.');
+        }
+    }
+}
