@@ -9,6 +9,7 @@ function showMultiplicationTable(num) {
 
 showMultiplicationTable(10);
 
+console.log('---------------------------------------')
 // Use a for loop and the code from the previous lessons to generate 10 random numbers between 20 and 200 and output to
 // the console whether each number is odd or even.
 
@@ -36,6 +37,7 @@ function evenOrOdd() {
 
 evenOrOdd();
 
+console.log('---------------------------------------')
 // Create a for loop that uses console.log to create the output shown below.
 //
 // 1
@@ -49,16 +51,21 @@ evenOrOdd();
 // 999999999
 
 function pyramid() {
+    let print = '';
+    // Outer loop is columns
     for (let i = 1; i <= 9; i++) {
+        // Inner loop is rows
         for (let j = 0; j < i; j++) {
-            console.log(i);
+            print += i;
         }
-        console.log('?')
+        print += '\n';
     }
+    console.log(print);
 }
 
 pyramid();
 
+console.log('---------------------------------------')
 // Create a for loop that uses console.log to create the output shown below.
 //
 // 100

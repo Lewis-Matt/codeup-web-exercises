@@ -159,19 +159,24 @@ Your bill after discount is $${calculateTotal(luckyNumber, userBill)}`);
  */
 let userConfirm = confirm('Would you like to enter a number?');
 if (userConfirm === true) {
+    // If user typed a string(e.g. '7'), convert it to a number
     let userNumber = parseInt(prompt('Enter a number.'), 0);
     // TESTING LOG
     console.log(typeof userNumber);
-
+    // If userNumber is not typeOf Number, alert the user
     if (isNaN(userNumber)) {
         alert('You did not enter a number');
+        // If userNumber is a valid number
     } else {
+        // Check for even or odd and alert user
         if (userNumber % 2 === 0) {
             alert('Your number is even.')
         } else {
             alert('Your number is odd.')
         }
+        // Add 100 and alert user of the value
         alert(`Your number + 100 is ${(userNumber + 100)}`);
+        // Check if userNumber is even or odd and alert the user.
         if (userNumber >= 0) {
             alert('Your number is positive.');
         } else {
