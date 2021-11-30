@@ -18,12 +18,13 @@ console.log('------------------------------------');
 // Use a do-while loop to log to the console the amount of cones sold to each person. This is a way get the random numbers for this exercise.
 
 // Generates random number between 50 - 100
-let coneInventory = Math.floor(Math.random() * 50) + 50;
+// Math.floor(Math.random() * (max - min) ) + min;
+let coneInventory = Math.floor(Math.random() * (100 - 50)) + 50;
 // TESTING LOG
 console.log(coneInventory);
 let conesSold = 0;
 do {
-    conesSold = Math.floor(Math.random() * 5) + 1;
+    conesSold = Math.floor(Math.random() * (5)) + 1;
     if (conesSold < coneInventory) {
         console.log(`${conesSold} cones sold.`);
     } else if (conesSold > coneInventory) {
