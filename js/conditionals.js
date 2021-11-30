@@ -159,11 +159,11 @@ Your bill after discount is $${calculateTotal(luckyNumber, userBill)}`);
  */
 let userConfirm = confirm('Would you like to enter a number?');
 if (userConfirm === true) {
-    // If user typed a string(e.g. '7'), convert it to a number
+    // prompt returns a string: parseInt in case the user enters a number as a string '54'
     let userNumber = parseInt(prompt('Enter a number.'), 0);
     // TESTING LOG
     console.log(typeof userNumber);
-    // If userNumber is not typeOf Number, alert the user
+    // If userNumber is not typeOf Number (wasn't able to be parseInt to a number), alert the user
     if (isNaN(userNumber)) {
         alert('You did not enter a number');
         // If userNumber is a valid number
