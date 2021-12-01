@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     /**
@@ -11,7 +11,11 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+    let person = {
+        firstName: 'Matt',
+        lastName: 'Lewis'
+    }
+    console.log(`${person.firstName} ${person.lastName}`);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,7 +25,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+    person.sayHello = function () {
+        return `Hello from ${person.firstName} ${person.lastName}!`;
+    }
+    console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -36,11 +43,15 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    // Callback function argument can be named anything - don't use a property name
+    shoppers.forEach(function (person) {
+        console.log(`${person.name}'s Total: $${person.amount}`);
+    })
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +65,46 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+        // MY NOTE: An object property name can be any valid JavaScript string, or anything that can be converted to a string,
+        // including the empty string. However, any property name that is not a valid JavaScript identifier (for example,
+        // a property name that has a space or a hyphen, or that starts with a number) can only be accessed using the square bracket notation.
+    let books = [
+            {
+                title: 'How to Not Suck at JavaScript',
+                author: {
+                    firstName: 'Casey',
+                    lastName: 'Edwards'
+                }
+            },
+            {
+                title: 'Nested Objects',
+                author: {
+                    firstName: 'Larry',
+                    lastName: 'Bird'
+                }
+            },
+            {
+                title: 'San Antonio Traffic',
+                author: {
+                    firstName: 'Fender',
+                    lastName: 'Bender'
+                }
+            },
+            {
+                title: 'How Hot is Texas?',
+                author: {
+                    firstName: 'Scorching',
+                    lastName: 'Hot'
+                }
+            },
+            {
+                title: 'Xmas Decor',
+                author: {
+                    firstName: 'Santa',
+                    lastName: 'Klaus'
+                }
+            }
+        ];
 
     /**
      * TODO:
@@ -79,7 +130,12 @@
      *      ---
      *      ...
      */
-
+    books.forEach(function(book){
+        console.log(`Book #${books.indexOf(book)}`);
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+        console.log('---');
+    })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -90,5 +146,8 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(title, author) {
+
+    }
 
 })();
