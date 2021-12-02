@@ -15,4 +15,5 @@ alert(`${favoriteColor} is my favorite color too!`);
 // Complete exercise 3 from the previous lesson, but write your code in the external.js file instead of in the console.
 // When the exercise asks you to use a number, instead use a prompt to ask the user for that number.
 // Use an alert to show the results of each problem.
-Which exercise is this refering to? The previous lesson, ex 3, never asks for an number input
+
+// Which exercise is this referring to? The previous lesson, ex 3, never asks for an number input

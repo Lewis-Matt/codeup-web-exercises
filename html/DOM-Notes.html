@@ -20,3 +20,199 @@ by their id, class, or tag name. -->
 <!-- In this case, class refers to the CSS classes assigned to an element within the class attribute.-->
 <!-- Tag name refers to the actual name of the HTML tag.-->
 
+<!--To access HTML elements by class, use the document.getElementsByClassName() method. Note Elements in the method name. Unlike document.getElementById(), -->
+<!--which returns a single HTML element, document.getElementsByClassName() returns an HTML element collection (NodeList).-->
+<h1>List One</h1>
+<ul>
+    <li class="odd list-one-item">List 1, Item 1</li>
+    <li class="even list-one-item">List 1, Item 2</li>
+</ul>
+<h1>List Two</h1>
+<ul>
+    <li class="odd list-two-item">List 2, Item 1</li>
+    <li class="even list-two-item">List 2, Item 2</li>
+</ul>
+
+<script>
+    "use strict";
+    (function() {
+        // Get all elements with class 'even'
+        var evenElements = document.getElementsByClassName('even');
+
+        // Print the first element
+        console.log(evenElements[0]); // Prints li.even.list-one-item
+
+        // Print all elements
+        for (var i = 0; i < evenElements.length; i++) {
+            console.log(evenElements[i]);
+        }
+
+        // Prints:
+        // li.even.list-one-item
+        // li.even.list-two-item
+
+        var listItems = document.getElementsByTagName('li');
+
+        // Print the first list item
+        console.log(listItems[0]); // Prints li.odd.list-one-item
+
+        // Print all the list items
+        for (var i = 0; i < listItems.length; i++) {
+            console.log(listItems[i]);
+        }
+
+        // Prints
+        // li.odd.list-one-item
+        // li.even.list-one-item
+        // li.odd.list-two-item
+        // li.even.list-two-item
+    })();
+</script>
+<!--As you can see, elements returned by document.getElementsByClassName() or document.getElementsByTagName() must be accessed by as an array.-->
+
+<!--Some elements, like form inputs, can be accessed directly by name through special properties on the document object.-->
+<form name="login">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+<script>
+    "use strict";
+    (function() {
+        // get the "username" input
+        var usernameInput = document.forms.login.username;
+        // you can get a value for a form input by using the value property.
+        // log the value of the "username" input
+        console.log(usernameInput.value);
+    })();
+</script>
+<!--There are other collections available within the document object, like anchors and images-->
+
+<!--Inner HTML is the content within the open and close tag of an HTML element. This can be retrieved or updated via
+the innerHTML property on the element you are working with.-->
+<h1 id="main-heading">Hello World!</h1>
+<div id="main-section">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+</div>
+<script>
+    "use strict";
+    (function() {
+        // Get the main heading h1 by id
+        var mainHeading = document.getElementById('main-heading');
+
+        console.log(mainHeading.innerHTML); // Prints Hello World!
+
+        // Assign a new value to the inner HTML of the main heading
+        mainHeading.innerHTML = "Hello Codeup!";
+
+        console.log(mainHeading.innerHTML); // Prints Hello Codeup!
+
+        // Get the main section div by id
+        var mainSection = document.getElementById('main-section');
+
+        console.log(mainSection.innerHTML);
+        // Prints
+        // <p>Paragraph 1</p>
+        // <p>Paragraph 2</p>
+    })();
+</script>
+<!--The property innerText behaves in a similar manner, but it ignores any HTML tags. This can be useful if are just concerned -->
+<!--with the text a user sees, or if we do not want to allow them to inject HTML tags in our page.-->
+
+<!--In addition to retrieving or updating an element's inner HTML, the element's attributes can also be accessed and updated.-->
+<a href="http://www.yahoo.com" id="search-link">Web Search</a>
+<script>
+    "use strict";
+    (function() {
+        // Get the search link anchor by id
+        var searchLink = document.getElementById("search-link");
+
+        // Does an element have an attribute?
+        console.log(searchLink.hasAttribute("href")); // Prints true
+        console.log(searchLink.hasAttribute("class")); // Prints false
+
+        // Get an attribute value
+        console.log(searchLink.getAttribute("href")); // Prints "http://www.yahoo.com"
+
+        // Add or modify an attribute
+        searchLink.setAttribute("class", "btn btn-default");
+        // Adds the attribute class and sets it to "btn btn-default"
+
+        searchLink.setAttribute("href", "http://google.com");
+        // Changes the href attribute to "http://google.com"
+
+        // Remove an attribute
+        searchLink.removeAttribute("class"); // Remove the class attribute
+    })();
+</script>
+<!--
+It should be noted that in HTML 5, data-* attributes can be added to HTML elements to provide metadata for an element.
+The * portion of the name must be at least one character long and should be all lower case. Using custom data attributes
+coupled with access via JavaScript can be very useful. Let's see an example:-->
+<ul>
+    <li data-dbid="123">Item one</li>
+    <li data-dbid="234">Item two</li>
+</ul>
+<script>
+    "use strict";
+    (function() {
+        // Get the main heading h1 by id
+        var listItems = document.getElementsByTagName('li');
+
+        for (var i = 0; i < listItems.length; i++) {
+            var dbId = listItems[i].getAttribute("data-dbid");
+            console.log(dbId);
+        }
+        // Prints
+        // 123
+        // 234
+        // Adding and accessing custom data attributes can help provide organized access to element metadata via JavaScript.
+    })();
+</script>
+
+<!--Very similar to accessing and updating attributes on an element, the styles of an element can be changed via the style property on an element.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Page</title>
+</head>
+<body>
+<script>
+    "use strict";
+    (function() {
+        // Get the body element (notice we need to use index 0 of the array!)
+        var bodyElement = document.getElementsByTagName('body')[0];
+
+        // Change the body font color
+        bodyElement.style.color = '#444'; // Dark grey
+
+        bodyElement.style['background-color'] = "#fefefe"; // Very light grey
+        // We had to use [] syntax since the property name has a dash
+
+        bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
+        // Replace dashes with camelCase to use standard . syntax
+    })();
+</script>
+</body>
+</html>
+<!--
+Elements can also be added and removed to/from the DOM via JavaScript:
+createElement()
+removeChild()
+appendChild()
+replaceChild()
+-->
+
+<!-- OTHER MISC NOTES
+The Document method querySelector() returns the first Element within the document that matches the specified selector,
+or group of selectors. If no matches are found, null is returned.
+-->
