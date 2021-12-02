@@ -1,0 +1,22 @@
+<!--There are a variety of ways to query the DOM for elements. We will cover methods for retrieving elements
+by their id, class, or tag name. -->
+
+<button id="btnToClick">Click Me</button>
+<script>
+    "use strict";
+    (function() {
+        var btnToClick = document.getElementById('btnToClick');
+
+        console.log(btnToClick); // prints <button id="btnToClick">Click Me</button>
+    })();
+</script>
+
+
+<!-- In the example above, the id btnToClick is on a button element.-->
+<!-- When we call document.getElementById() with that id, we get back the button element.-->
+
+
+<!-- Besides locating elements by id, elements are also often located by class or tag name.-->
+<!-- In this case, class refers to the CSS classes assigned to an element within the class attribute.-->
+<!-- Tag name refers to the actual name of the HTML tag.-->
+
