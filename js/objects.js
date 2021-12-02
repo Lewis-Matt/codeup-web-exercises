@@ -131,10 +131,12 @@
      *      ...
      */
     books.forEach(function(book){
-        console.log(`Book #${books.indexOf(book)}`);
-        console.log(`Title: ${book.title}`);
-        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
-        console.log('---');
+        // Refactored using showBookInfo()
+        showBookInfo(book);
+        // console.log(`Book #${books.indexOf(book)}`);
+        // console.log(`Title: ${book.title}`);
+        // console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+        // console.log('---');
     })
     /**
      * Bonus:
@@ -142,12 +144,39 @@
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
-     * - Create a function named `showBookInfo` that accepts a book object and
-     *   outputs the information described above. Refactor your loop to use your
-     *   `showBookInfo` function.
      */
-    function createBook(title, author) {
+    function createBook(bookTitle, bookAuthor) {
+        // Split author into a firstName and LastName
+        let nameArray = bookAuthor.split(' ');
+        // Store first and last name in separate variables
+        let authorFirstName = nameArray[0];
+        let authorLastName = nameArray[1];
+        // Create a newBook object containing the passed in values
+        let newBook = {
+            title: bookTitle,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
+        }
+        // Add newBook to our books array
+        books.push(newBook);
+    }
+    // Create a book
+    createBook('My Autobiography', 'Matt Lewis');
+    // Check that the newBook is in the array
+    console.log(books);
 
+    //  *   Create a function named `showBookInfo` that accepts a book object and
+    //  *   outputs the information described above. Refactor your loop to use your
+    //  *   `showBookInfo` function.
+
+    // This is called above (hoisted) in line 135
+    function showBookInfo (bookObj) {
+        console.log(`Book #${books.indexOf(bookObj)}`);
+        console.log(`Title: ${bookObj.title}`);
+        console.log(`Author: ${bookObj.author.firstName} ${bookObj.author.lastName}`);
+        console.log('---');
     }
 
 })();
