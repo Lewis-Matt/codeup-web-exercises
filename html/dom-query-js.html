@@ -24,37 +24,92 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<!--Add 4 buttons to the page. Attach click event listeners to each of the buttons and have the handlers perform the modifications
+that were automatically taking place. For example, the first button should set inner html of mainHeader to "JavaScript is Cool".-->
+<button id="btn1">Change text of main header</button>
+<button id="btn2">Change color of sub header</button>
+<button id="btn3">Change color of every other li</button>
+<button id="btn4">Change color of li w/ dbID = 1</button>
+<button id="btn5">Mission Accomplished</button>
 
 <script>
-    (function() {
-        "use strict";
-        // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById("main-header");
+    /******** Event listeners for buttons (comment out the IIFE as it does the same as each btn) *******/
+        // btn1 Changes the text of the main header
+    let btn1Listener = function () {
+            let mainHeader = document.getElementById("main-header");
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
+    let btn1 = document.getElementById('btn1');
+    btn1.addEventListener('click', btn1Listener)
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
-        // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById("sub-header");
-        // TODO: Set the text color of subHeader to blue
+    // btn2 Changes the text color of the sub header
+    let btn2Listener = function () {
+        let subHeader = document.getElementById("sub-header");
         subHeader.style.color = '#00F';
-        // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName('li');
-        // TODO: Set text color on every other list item to grey
-        for(let i = 0; i < listItems.length; i+=2) {
+    }
+    let btn2 = document.getElementById('btn2');
+    btn2.addEventListener('click', btn2Listener)
+
+    // btn3 Changes the color of every other li
+    // listItems is outside btn3Listener because it is also used in btn4Listener
+    let listItems = document.getElementsByTagName('li');
+    let btn3Listener = function () {
+        for (let i = 0; i < listItems.length; i += 2) {
             listItems[i].style.color = '#888'
         }
-        // TODO: Set text color of li with dbid = 1 to blue
-        for(let i = 0; i < listItems.length; i++) {
+    }
+    let btn3 = document.getElementById('btn3');
+    btn3.addEventListener('click', btn3Listener)
+
+    // btn4 Changes the color of the li with dbid = 1
+    let btn4Listener = function () {
+        for (let i = 0; i < listItems.length; i++) {
             let dbID = listItems[i].getAttribute(("data-dbid"));
             if (dbID === '1') {
                 listItems[i].style.color = '#00F';
             }
         }
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName("sub-paragraph");
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+    }
+    let btn4 = document.getElementById('btn4');
+    btn4.addEventListener('click', btn4Listener)
+
+    // btn5 Changes text in first sub-paragraph
+    let btn5Listener = function(){
+        let subParagraphs = document.getElementsByClassName("sub-paragraph");
         subParagraphs[0].innerHTML = "Mission Accomplished!";
-    })();
+    }
+    let btn5 = document.getElementById('btn5');
+    btn5.addEventListener('click', btn5Listener)
+
+    // The below IIFE does the same as the button events above.
+    // (function () {
+    //     "use strict";
+    //     // TODO: Uncomment next line and get the main header element by id
+    //     let mainHeader = document.getElementById("main-header");
+    //     // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+    //     mainHeader.innerHTML = "JavaScript is Cool";
+    //     // TODO: Uncomment the next line and get the sub header element by id
+    //     let subHeader = document.getElementById("sub-header");
+    //     // TODO: Set the text color of subHeader to blue
+    //     subHeader.style.color = '#00F';
+    //     // TODO: Uncomment the next line and get all list items
+    //     let listItems = document.getElementsByTagName('li');
+    //     // TODO: Set text color on every other list item to grey
+    //     for (let i = 0; i < listItems.length; i += 2) {
+    //         listItems[i].style.color = '#888'
+    //     }
+    //     // TODO: Set text color of li with dbid = 1 to blue
+    //     for (let i = 0; i < listItems.length; i++) {
+    //         let dbID = listItems[i].getAttribute(("data-dbid"));
+    //         if (dbID === '1') {
+    //             listItems[i].style.color = '#00F';
+    //         }
+    //     }
+    //     // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+    //     let subParagraphs = document.getElementsByClassName("sub-paragraph");
+    //     // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+    //     subParagraphs[0].innerHTML = "Mission Accomplished!";
+    // })();
 </script>
 </body>
 </html>
