@@ -66,6 +66,11 @@ function pyramid() {
 pyramid();
 
 console.log('---------------------------------------')
+
+// Way easier method
+for (let i = 1; i <= 9; i++) {
+    console.log(i.toString().repeat(i));
+}
 // Create a for loop that uses console.log to create the output shown below.
 //
 // 100
@@ -82,5 +87,9 @@ function minusFive() {
         console.log(num);
     }
 }
-
 minusFive();
+
+// Easier method
+for (let i = 100; i >= 5; i -= 5) {
+    console.log(i)
+}

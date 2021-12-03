@@ -16,7 +16,7 @@ for (let i = 0; i < Infinity; i++) {
 // Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
 console.log('Number to skip: ' + userNum)
 for (let j = 0; j < 50; j++) {
-    // Using == since prompt(line 5) returns a string. Could convert to number but I am lazy.
+    // Using == since prompt(line 5) returns a string. Could convert to number(prompt...), but this will allow the user to input '5'
     if (j == userNum) {
         console.log('Skipping: ' + userNum);
         continue;
