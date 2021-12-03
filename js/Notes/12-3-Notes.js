@@ -67,3 +67,14 @@ console.log(favFoods.reverse());
 let nums = [108, -5, 72];
 console.log(nums.sort())
 
+// Spread operator for joining two arrays
+console.log([...students, ...favFoods]);
+
+// Spread operator to add to front of array (doesn't modify existing array)
+console.log([9.2, ...ages]);
+// To back of array
+console.log([...ages, 7.5]);
+// Modify original array
+ages = [...ages, 187];
+console.log(ages);
+
