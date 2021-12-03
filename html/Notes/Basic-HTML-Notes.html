@@ -10,6 +10,7 @@
 </header>
 <nav>
     Usually an unordered list with links to the main pages of the site or application
+    Can also go in the header, or wherever your navigation elements will be
 </nav>
 <main>
     <section class="pricing-plans">
@@ -30,3 +31,90 @@
 </html>
 <!-- For images, if you are sizing in HTML, The width, height, and style attributes are all valid in HTML.
 However, we suggest using the style attribute. It prevents styles sheets from changing the size of images. -->
+
+<!--                  FORMS                 -->
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <br>
+
+    <input type="submit">
+</form>
+<!--The method attribute of a form element refers to the HTTP method that should be used to transmit the form data.
+If no method is specified, by default, the GET method will be used. While other HTTP methods exist, the html
+specification limits us to using GET and POST in forms.
+
+HTTP GETs are used to request information, without making any changes to data on the server. When a form's method is set to GET,
+any of the data that the form sends will be appended to the url in the form of a query string.
+
+HTTP POSTs are used to make a change to existing data on the server. When a form's method is set to POST, any of the data
+that the form sends will not be added to the url, but will instead be embedded in the body of the HTTP request as key-value pairs.
+If you have ever been asked a question like, "Are you sure you want to re-submit this form?", then you were probably refreshing a page after submitting an HTTP POST.
+
+The action attribute of an HTML form refers to the location that the form data should be sent. If no action is specified,
+by default, the action will be set to send data back to the current url.
+A query string is composed of key-value pairs. It begins with a question mark (?). Following the question mark, is the first key-value pair.
+Key-value pairs are structured as key=value. Key-value pairs after the first will be separated by ampersands (&).
+EX:
+?key1=value1&key2=value2&key3=value3
+Whenever you use the GET method in an HTML form, the form inputs will be appended to the url in the format shown above.
+If you are using a POST method in an HTML form, the inputs will be sent as a query string (this time without the preceding question mark) in the body of the HTTP request-->
+
+<form action="https://request-inspector.glitch.me" method="GET">
+    <label for="zipcode">Zipcode</label>
+    <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode">
+    <button type="submit">Search</button>
+</form>
+<a href="https://request-inspector.glitch.me?zipcode=78205">Search in ZIP Code 78205</a>
+KEY:VALUE
+zipcode:78205
+<!--In order for an input to be submitted, it must have a name attribute, which is the KEY-->
+
+<!--You can have a default 'placeholder' value-->
+<input type="text" name="email" placeholder="Enter your email address">
+<input type="password" name="password">
+<!--By using type="password" it will hide whatever the user types in-->
+
+<input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+
+A <input type="radio" name="quiz_question_1" value="a"><br>
+B <input type="radio" name="quiz_question_1" value="b"><br>
+C <input type="radio" name="quiz_question_1" value="c"><br>
+D <input type="radio" name="quiz_question_1" value="d"><br>
+<!--
+Multiple elements relating to the same question should share a name attribute.
+Commonly placed inside label elements.
+Checkboxes are pre-selected by adding a checked attribute.
+Radio buttons are pre-selected by adding a checked attribute.
+-->
+
+<select name="coffee_preference">
+    <option value="light">Light Roast</option>
+    <option value="dark">Dark Roast</option>
+    <option value="espresso">Espresso Blend</option>
+</select>
+<!--
+select elements create a drop-down of choices.
+Consists of option elements for each choice.
+The contents of an option element are what the user sees, and the value attribute is the data is submitted as part of the form.
+The parent select element has a name attribute, and child option elements have value attributes.
+-->
+
+<input type="hidden" name="user_id" value="432">
+<!--
+Not shown to the user.
+Used to submit data along with the form that the user does not specify, and does not modify.
+Useful for the backend of our web applications.
+-->
+<!--A disabled attribute can be added to any of the above elements to make the element non-interactive.-->
+
+<label for="username">Username</label>
+<input id="username" name="username" type="text">
+<!--The label element is used to label form inputs. Label elements should have a for attribute that matches up with the id attribute of the
+element that is being labeled. When a form input is properly labeled, clicking on the label will focus that input element.
+This is particularly useful for checkboxes and radio buttons, and it is a common practice to wrap checkbox and radio inputs with a label-->
