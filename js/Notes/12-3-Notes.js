@@ -33,3 +33,19 @@ console.log(students.lastIndexOf("Justin"));
 // Arrays in arrays (2nd order, 3rd order, etc.)
 let matt = ['Matt', 37, 'San Antonio', ["Boiled Goose", "Sweet Baby Rays", "Chicken Nugs", "Potatoes", "Borsch"], 2021];
 console.log(matt[3][2]);
+
+// With intelliJ, hover over random, hold CMD and click. It opens up the documentation for the method
+Math.random()
+
+// Function with default value
+function sayHello(name = 'World') {
+    console.log(`Hello, ${name}!`);
+}
+sayHello('Matt');
+sayHello();
+
+// Looping though array
+let ages = [14 , 23, 89, 5, 25, 36];
+for (let i = 0; i < ages.length; i++) {
+    console.log(ages[i] *= 2);
+}
