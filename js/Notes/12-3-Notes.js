@@ -49,3 +49,21 @@ let ages = [14 , 23, 89, 5, 25, 36];
 for (let i = 0; i < ages.length; i++) {
     console.log(ages[i] *= 2);
 }
+
+// IIFE's makes it so, in the web browser, the user won't have access (e.g. via the console) to the variables. The variables
+// cannot be referenced since they are local to the IIFE, and not global (i.e. the 'window').
+console.log('-----------------------')
+
+// Use filter to return a NEW array of students containing the letter J
+console.log(
+    students.filter(function (student) {
+        return (student.includes('J'));
+    }));
+
+// Reverse array - modifies original array
+console.log(favFoods.reverse());
+
+// Sort array of numbers. Can pass in a comparator function as a callback
+let nums = [108, -5, 72];
+console.log(nums.sort())
+

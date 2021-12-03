@@ -53,10 +53,10 @@
     function second(arr) {
         return arr[1];
     }
-    function third(arr) {
-        return arr[2];
+    function last(arr) {
+        return arr[arr.length-1];
     }
     console.log(first([8,6,7,5,3,0,9]));
     console.log(second([8,6,7,5,3,0,9]));
-    console.log(third([8,6,7,5,3,0,9]));
+    console.log(last([8,6,7,5,3,0,9]));
 })();
