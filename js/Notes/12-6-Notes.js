@@ -32,3 +32,48 @@ let person2 = {
 }
 
 console.log(person2.getDetails());
+
+// Dog object
+let dog = {
+    breed: 'Husky',
+    name: 'Beau',
+    colors: ['brown', 'black', 'white'],
+    sex: 'f',
+    isFloofy: true,
+    // bark takes a boolean when called
+    bark: function (loud) {
+        if (loud) {
+            console.log('Bowwy-wowwy, woof, woof!')
+        } else {
+            console.log('arf.')
+        }
+    },
+    getDetails: function () {
+        return this.colors[0] + ' ' + this.breed + ' named ' + this.name;
+    }
+}
+dog.bark(true);
+console.log(dog.getDetails());
+
+function createDog(name, colors, breed) {
+    return {
+        breed: breed,
+        name: name,
+        colors: colors,
+        sex: 'f',
+        isFloofy: true,
+        // bark takes a boolean when called
+        bark: function (loud) {
+            if (loud) {
+                console.log('Bowwy-wowwy, woof, woof!')
+            } else {
+                console.log('arf.')
+            }
+        },
+        getDetails: function () {
+            return this.colors[0] + ' ' + this.breed + ' named ' + this.name;
+        }
+    }
+}
+
+console.log(createDog('Rex', ['brown', 'black'], 'German Shepherd'));

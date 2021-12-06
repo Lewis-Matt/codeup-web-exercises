@@ -11,22 +11,60 @@
 <body>
 
 <form method="POST" action="https://request-inspector.glitch.me/">
-    <input type="email" name="email" placeholder="Enter your email address">
-    <input type="password" name="password" placeholder="Enter your password">
-    <textarea name="bio" placeholder="Enter your bio"></textarea>
-    <h2>How did you hear about us?</h2>
+    <label>Email:
+        <input type="email" name="email" placeholder="Enter your email address">
+    </label>
+    <label>Password:
+        <input type="password" name="password" placeholder="Enter your password">
+    </label>
+    <br>
+    <label>Bio:<br>
+        <textarea name="bio" placeholder="Enter your bio"></textarea>
+    </label>
+    <br>
 
-        <input type="radio" name="question_1" value="billboard"><br>
-        <input type="radio" name="question_1" value="radio advertisement"><br>
-        <input type="radio" name="question_1" value="">internet advertisement<br>
-        <input type="radio" name="question_1" value=""><br>
+    <h2>How did you hear about us?</h2>
+    <input type="radio" name="question_1a" value="billboard" id="q1_a">
+    <label for="q1_a">billboard</label>
+    <br>
+    <input type="radio" name="question_1b" value="radio advertisement" id="q1_b">
+    <label for="q1_b">radio advertisement</label>
+    <br>
+    <input type="radio" name="question_1c" value="internet advertisement" id="q1_c">
+    <label for="q1_c">internet advertisement</label>
+    <br>
+    <input type="radio" name="question_1d" value="other" id="q1_d">
+    <label for="q1_d">other</label>
+    <br>
+    <!-- Dropdown list -->
+    <label for="browser">What is your favorite browser?</label>
+    <select name="browser" id="browser">
+        <option value="Edge">Edge</option>
+        <option value="Safari">Safari</option>
+        <option value="Firefox">Firefox</option>
+        <option value="Chrome">Chrome</option>
+    </select>
+    <br>
+    <!-- Always associate a label with an input element (via its ID)
+    This means that a screen reader will read out the label when the user focuses on a form input,
+    when a user clicks/taps a label, the browser passes the focus to its associated input. -->
+
+    <!-- You can also nest the input directly inside the label, in which case the 'for' and 'id' attributes
+    are not needed -->
+    <!--    <label>What is your favorite browser?
+            <select name="browser">
+                <option value="Edge">Edge</option>
+                <option value="Safari">Safari</option>
+                <option value="Firefox">Firefox</option>
+                <option value="Chrome">Chrome</option>
+            </select>
+        </label>    -->
 
 
 </form>
 
 </body>
 </html>
-
 
 <!--
 A radio group is defined by giving each of radio buttons in the group the same name. Once a radio group is
