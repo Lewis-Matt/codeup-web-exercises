@@ -11,9 +11,23 @@ h2 {
     text-decoration: underline;
 }
 
-/* 3. Add a style to change the background color of the page.*/
+/* 4. Add a style to change the background color of the page.*/
 body {
-    background-image: url("/img/guy typing.jpg");
+    /* The background image covers the color, but the color is a placeholder in case the img doesn't load */
+    background-color: #444;
+    /* 5. Add a style to add a background image to your background. */
+    /* WHY, FOR THE LOVE OF GOD, do certain images (still in /img) require me to add the local host... when
+    every other image works fine with "/img/imageName.jpg" */
+    /* This has SOMETHING to do with https://intellij-support.jetbrains.com/hc/en-us/community/posts/206342659-Built-in-Webserver-returns-404-for-all-images*/
+    background-image: url("http://localhost:63342/codeup-web-exercises/img/whiteHex.jpg");
     background-repeat: no-repeat;
-    background-size: 300px 100px;
+    background-size: cover;
+    background-position: center;
 }
+
+/* 6. Add a style to change the list-style to something other than the default bullet.*/
+/* 7. Add a style to change the font for the entire page. Use google fonts if you would like.*/
+/* 8. Add a style to change the table, table cells td and rows tr padding and font sizes.*/
+/* 9. Add a style to alter the anchor tags and its different states. (e.g. link, visited, hover and active).*/
+/* 10. Continue experimenting with styles to increase the visual appeal of the page.*/
+
