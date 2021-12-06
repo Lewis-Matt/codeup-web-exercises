@@ -1,4 +1,19 @@
 .fancy-header {
     color: purple; /* single line comment */
     text-decoration: underline;
+    /* 2. Center the main heading */
+    text-align: center;
+}
+
+/* 3. Add a style to change the color of the headers on your page and make them underlined. */
+h2 {
+    color: #444;
+    text-decoration: underline;
+}
+
+/* 3. Add a style to change the background color of the page.*/
+body {
+    background-image: url("/img/guy typing.jpg");
+    background-repeat: no-repeat;
+    background-size: 300px 100px;
 }
