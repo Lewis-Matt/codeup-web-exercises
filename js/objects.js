@@ -25,10 +25,15 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    console.log('-----------------------------------------------------------------');
+
     person.sayHello = function () {
         return `Hello from ${person.firstName} ${person.lastName}!`;
     }
     console.log(person.sayHello());
+
+    console.log('-----------------------------------------------------------------');
+
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -52,6 +57,8 @@
     shoppers.forEach(function (person) {
         console.log(`${person.name}'s Total: $${person.amount}`);
     })
+
+    console.log('-----------------------------------------------------------------');
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -106,6 +113,7 @@
             }
         ];
 
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -130,7 +138,7 @@
      *      ---
      *      ...
      */
-    books.forEach(function(book){
+    books.forEach(function (book) {
         // Refactored using showBookInfo()
         showBookInfo(book);
         // console.log(`Book #${books.indexOf(book)}`);
@@ -138,6 +146,9 @@
         // console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
         // console.log('---');
     })
+
+    console.log('-----------------------------------------------------------------');
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -162,6 +173,7 @@
         // Add newBook to our books array
         books.push(newBook);
     }
+
     // Create a book
     createBook('My Autobiography', 'Matt Lewis');
     // Check that the newBook is in the array
@@ -172,7 +184,7 @@
     //  *   `showBookInfo` function.
 
     // This is called above (hoisted) in line 135
-    function showBookInfo (bookObj) {
+    function showBookInfo(bookObj) {
         console.log(`Book #${books.indexOf(bookObj)}`);
         console.log(`Title: ${bookObj.title}`);
         console.log(`Author: ${bookObj.author.firstName} ${bookObj.author.lastName}`);

@@ -22,7 +22,7 @@
         <textarea name="bio" placeholder="Enter your bio"></textarea>
     </label>
     <br>
-
+    <!--Note, to uncheck a radio button, after it has been checked by the user, need jQuery or JS-->
     <h2>How did you hear about us?</h2>
     <input type="radio" name="question_1a" value="billboard" id="q1_a">
     <label for="q1_a">billboard</label>
@@ -59,8 +59,7 @@
                 <option value="Chrome">Chrome</option>
             </select>
         </label>    -->
-
-
+    <input type="submit" value="Submit Form">
 </form>
 
 </body>
@@ -70,4 +69,8 @@
 A radio group is defined by giving each of radio buttons in the group the same name. Once a radio group is
 established, selecting any radio button in that group automatically deselects any currently-selected
 radio button in the same group.
+
+The name attribute is used to reference elements in a JavaScript,
+or to reference form data after a form is submitted.
+Note: Only form elements with a name attribute will have their values passed when submitting a form
 -->
