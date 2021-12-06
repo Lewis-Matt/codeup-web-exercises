@@ -1,0 +1,55 @@
+/*Descendent Selector
+Often times, it is useful to apply style to an element or group of elements based on their descendant relationship to
+some parent element in the page.*/
+#container h1 {
+    color: blue;
+}
+
+/* Direct-Child Selector
+The direct child selector is similar to the descendent selector except that only direct children of the parent
+selector will receive the specified style.*/
+#container>h1 {
+    color: blue;
+}
+
+/*Combining Selectors
+Sometimes it is useful to combine selectors to be more specific. For example, if the fancy-header class is
+only applicable to h1 elements, then it can be written as follows:*/
+h1.fancy-header {
+    color: blue;
+}
+/*In the example above, h1 elements with class="fancy-header" will receive the specified style, but other element types with class="fancy-header" will not. Combination selectors also allow for customization of properties based on element type. For example:*/
+h1.fancy-header {
+    color: blue;
+}
+h2.fancy-header {
+    color: green;
+}
+
+/*Pseudo Classes
+Pseudo classes can be added to a selector to specify that a particular style should be applied only to a particular state of an element. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
+
+    /* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+
+/*Don't use pixels for font size, use em or rem*/
+
+/*The inherit CSS-value causes the element for which it is specified to take the computed value of the property
+from its parent element. It is allowed on every CSS property.*/
