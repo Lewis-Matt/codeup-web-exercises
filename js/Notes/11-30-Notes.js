@@ -10,7 +10,7 @@ console.log(bowlingAvg(255, 100, 190).toFixed(0));
 
 console.log('--------------------------------------');
 
-// Write a function that accepts the best score and returns true if its divisible by 3 or 5 and false if it’s not
+// Write a function that accepts the best score and returns true if it's divisible by 3 or 5 and false if it’s not
 let bestScore = score => score % 3 === 0 || score % 5 === 0;
 console.log(bestScore(21));
 
