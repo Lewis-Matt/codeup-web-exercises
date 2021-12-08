@@ -22,9 +22,9 @@ body {
     /* The background image covers the color, but the color is a placeholder in case the img doesn't load */
     background-color: #444;
     /* 5. Add a style to add a background image to your background. */
-    /* WHY, FOR THE LOVE OF GOD, do certain images (still in /img) require me to add the local host... when
-    every other image works fine with "/img/imageName.jpg" */
-    /* This has SOMETHING to do with https://intellij-support.jetbrains.com/hc/en-us/community/posts/206342659-Built-in-Webserver-returns-404-for-all-images*/
+    /* If the image is not linked previously in the html, it requires me to add the local host... when
+    linked images work fine with "/img/imageName.jpg" */
+    /* https://intellij-support.jetbrains.com/hc/en-us/community/posts/206342659-Built-in-Webserver-returns-404-for-all-images*/
     background-image: url("http://localhost:63342/codeup-web-exercises/img/whiteHex.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -112,6 +112,8 @@ img {
 
 #ourProduct {
     text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 #images {
@@ -121,6 +123,12 @@ img {
     align-content: center;
 }
 
+img {
+    background-size: cover;
+    height: auto;
+    width: 256px;
+}
+
 .lists {
     display: flex;
     flex-wrap: nowrap;
@@ -128,6 +136,8 @@ img {
     align-content: center;
     margin: 5px auto;
 }
+
 aside {
     color: #000;
+    text-align: center;
 }
