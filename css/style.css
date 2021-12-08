@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@300&display=swap');
+
 .fancy-header {
-    color: purple; /* single line comment */
+    color: #00205e; /* single line comment */
     text-decoration: underline;
     /* 2. Center the main heading */
     text-align: center;
+    font-size: 2.5em;
 }
 
 /* 3. Add a style to change the color of the headers on your page and make them underlined. */
 h2 {
-    color: #444;
+    color: #00205e;
     text-decoration: underline;
+    font-size: 1.75em;
+    text-align: center;
+    margin: 5px;
 }
 
 /* 4. Add a style to change the background color of the page.*/
@@ -23,11 +29,105 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    /* 7. Add a style to change the font for the entire page. Use google fonts if you would like.*/
+    font-family: 'Murecho', sans-serif;
+    /* Set the base font size, all em's in will be base off of this*/
+    font-size: 16px;
+    max-width: 75%;
+    margin: auto;
+    /*margin-left: 25px;*/
+    /*margin-right: 25px;*/
 }
 
 /* 6. Add a style to change the list-style to something other than the default bullet.*/
-/* 7. Add a style to change the font for the entire page. Use google fonts if you would like.*/
-/* 8. Add a style to change the table, table cells td and rows tr padding and font sizes.*/
-/* 9. Add a style to alter the anchor tags and its different states. (e.g. link, visited, hover and active).*/
-/* 10. Continue experimenting with styles to increase the visual appeal of the page.*/
+ul li {
+    list-style: circle;
+}
 
+ol li {
+    list-style: upper-roman;
+}
+
+
+/* 8. Add a style to change the table, table cells td and rows tr padding and font sizes.*/
+table {
+    padding: 10px;
+    margin: auto;
+    /* border-collapse defines whether cells have a shared/separate borders, but disables border-radius */
+    /*border-collapse: collapse;*/
+    border-radius: 5px;
+    /*border-spacing: 2px;*/
+
+}
+
+tr, td, th {
+    border: solid 2px #444;
+    border-radius: 4px;
+    padding: 10px 25px;
+    text-align: center;
+    background-color: #a9b6c5;
+}
+
+th {
+    font-size: 1.3em;
+    background-color: #758193;
+}
+
+/* 9. Add a style to alter the anchor tags and its different states. (e.g. link, visited, hover and active).*/
+a {
+    transition: font-size 500ms;
+    text-decoration: none;
+    padding: 10px;
+}
+
+a:hover {
+    font-size: 1.15em;
+}
+
+a:visited {
+    color: #444;
+}
+
+/* 10. Continue experimenting with styles to increase the visual appeal of the page.*/
+footer {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #444, rgba(0, 0, 0, 0));
+}
+
+img {
+    border: black solid 2px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#moto {
+    text-align: center;
+}
+
+#ourProduct {
+    text-align: center;
+}
+
+#images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.lists {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    margin: 5px auto;
+}
+aside {
+    color: #000;
+}
