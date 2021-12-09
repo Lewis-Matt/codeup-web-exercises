@@ -27,15 +27,30 @@
             /* flex-start, center, space-between, space-around, etc. */
             justify-content: center;
         /*    Notice that in all cases, the individual items stretch along the cross axis. This behavior can be
-        controlled with align-items. Notice that in all cases, the individual items stretch along the cross axis.
-        This behavior can be controlled with align-items.*/
-            align-items: center;
+        controlled with align-items. For this property to have an effect, the parent container height must be greater
+        than the items and (or) the items have different heights.*/
+            /* flex-end, stretch(default), center, etc. */
+            align-items: flex-start;
+            height: 5em;
+        /* When more items are present than can fit within a flex container of a certain width,
+        the flex-wrap property helps control how these extra items behave (this example there isn't enough items)*/
+
+        /* When multiple rows or columns of flex items are present, the spacing of these lines of items may be controlled
+        along the cross axis by targeting the align-content property (will have no effect unless the items wrap into
+        multiple rows or columns. align-items may still be used to align items within each individual row/column) */
         }
 
+        /*In addition to setting the properties a parent / flex container, several properties can be set on individual
+        flex items to control their positioning within a row or column.*/
         .flex-item {
             background: #BFD45D;
             border: 2px solid #F9EFD6;
             padding: 1em;
+            /*The order of flex items can be specified using the order property (each item needs its own ID) */
+            /* The cross axis alignment of an individual flex item can be controlled using align-self. Like the order property,
+            this can be applied to multiple items*/
+            /* n cases where flex items do not take up their entire flex parent container, the flex-grow property can be
+            used to allow certain items to "grow" to a width needed for the combination of all items to take up the parent width */
         }
     </style>
 </head>
@@ -60,3 +75,28 @@ easily render rows and columns simultaneously.-->
 <!--flexbox is optimized to control alignment of items in a row or column layout. In a flex-direction: row; layout
 (the default), the horizontal axis is referred to as the "main axis" and the vertical axis is referred to as the
 "cross axis," When the flex container is set to a column layout, the main and cross axes are inverted. -->
+
+<!--Another interesting value for align-items is baseline. This one is useful when the flex items have different heights
+and we want to center them using their text-->
+<!--
+.flex-container {
+display: flex;
+align-items: baseline;
+border: 5px solid goldenrod;
+height: 100vh;
+}
+.box1 {
+font-size: 15px;
+}
+.box2 {
+font-size: 30px;
+}
+.box3 {
+font-size: 45px;
+}
+.box4 {
+font-size: 60px;
+}
+.box5 {
+font-size: 75px;
+}-->
