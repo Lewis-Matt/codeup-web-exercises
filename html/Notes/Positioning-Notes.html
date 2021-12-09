@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relative Positioning</title>
+    <style>
+        #container {
+            margin: 50px auto;
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            /* Set to relative, then the absolutely positioned .box will be positioned relative to this #container. */
+            position: relative;
+        }
+
+        .box {
+            background-color: #1969B2;
+            height: 100px;
+            width: 100px;
+            /* See notes below, mess around with abs, rel, fixed positioning. */
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="box"></div>
+</div>
+</body>
+</html>
+<!--The default positioning for elements is referred to as static. This just means that the element will
+be rendered in order with the normal flow of the document. When elements that have a position property
+set to something other than static, there are a few other properties that become applicable. These
+properties are top, left, bottom, and right.-->
+
+<!--
+A relatively positioned element is positioned relative to the normal flow of the document (relative to itself). The offset
+does not affect the position of any other elements; thus, the space given for the element in the page layout is the same
+as if position were static.
+This value creates a new stacking context when the value of z-index is not auto.
+
+If absolutely (removed from normal document flow) positioned element is in a relatively positioned container, the top, left, bottom, right property values
+will be relative to the relatively positioned container. If the absolutely positioned element is not in a relatively
+positioned container, the top, left, bottom, right property values will have no effect.
+
+Fixed elements are positioned relative to the browser window, and stay in place.
+
+Sticky: The element is positioned according to the normal flow of the document, and then offset relative to its nearest
+scrolling ancestor (i.e. you scroll, and then at a certain point the element becomes fixed).
+-->
