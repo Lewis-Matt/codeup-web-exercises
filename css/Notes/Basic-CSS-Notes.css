@@ -8,7 +8,7 @@ some parent element in the page.*/
 /* Direct-Child Selector
 The direct child selector is similar to the descendent selector except that only direct children of the parent
 selector will receive the specified style.*/
-#container>h1 {
+#container > h1 {
     color: blue;
 }
 
@@ -18,38 +18,74 @@ only applicable to h1 elements, then it can be written as follows:*/
 h1.fancy-header {
     color: blue;
 }
-/*In the example above, h1 elements with class="fancy-header" will receive the specified style, but other element types with class="fancy-header" will not. Combination selectors also allow for customization of properties based on element type. For example:*/
+
+/*In the example above, h1 elements with class="fancy-header" will receive the specified
+style, but other element types with class="fancy-header" will not. Combination selectors also
+ allow for customization of properties based on element type. For example:*/
 h1.fancy-header {
     color: blue;
 }
+
 h2.fancy-header {
     color: green;
 }
 
 /*Pseudo Classes
-Pseudo classes can be added to a selector to specify that a particular style should be applied only to a particular state of an element. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
+Pseudo classes can be added to a selector to specify that a particular style should be applied
+only to a particular state of an element.
+https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
 
-    /* unvisited link (:link) */
+/* unvisited link (:link) */
 a:link {
-    color:red;
+    color: red;
 }
 
 /* visited link (:visited) */
 a:visited {
-    color:black;
+    color: black;
 }
 
 /* mouse hover over link (:hover) */
 a:hover {
-    color:blue;
+    color: blue;
 }
 
 /* active/selected link (:active) */
 a:active {
-    color:green;
+    color: green;
 }
 
 /*Don't use pixels for font size, use em or rem*/
 
-/*The inherit CSS-value causes the element for which it is specified to take the computed value of the property
-from its parent element. It is allowed on every CSS property.*/
+/*The inherit CSS-value causes the element for which it is specified to take the computed
+ value of the property from its parent element. It is allowed on every CSS property.*/
+
+/*display is CSS's most important property for controlling layout. Every element has a default
+display value depending on what type of element it is. The default for most elements is
+usually block or inline.
+
+Another common display value is none. Some specialized elements such as script use this as
+their default. It is commonly used with JavaScript to hide and show elements without really
+deleting and recreating them.
+
+This is different from visibility. Setting display to none will render the page as though the
+element does not exist. visibility: hidden; will hide the element, but the element will still
+take up the space it would if it was fully visible.
+
+Setting the width of a block-level element will prevent it from stretching out to the edges of
+ its container to the left and right. Then, you can set the left and right margins to auto to
+ horizontally center that element within its container.
+
+The only problem occurs when the browser window is narrower than the width of your element.
+The browser resolves this by creating a horizontal scrollbar on the page.
+Using max-width instead of width in this situation will improve the browser's handling of
+small windows.
+
+When you set box-sizing: border-box; on an element, the padding and border of that element no
+longer increase its width. Since this is so much better, some authors want all elements on all
+ their pages to always work this way. Such authors put the following CSS on their pages:*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
