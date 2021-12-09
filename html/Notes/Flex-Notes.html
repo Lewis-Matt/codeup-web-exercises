@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Basics Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Helvetica;
+            font-weight: bold;
+        }
+
+        /* The container element contains three block-level child elements. To start using flexbox to position these
+        items, we can make the parent element a flexbox flex container. This is done by including the CSS declaration
+        display: flex; in the parent.
+        Any direct children of this flex container (e.g. .flex-item) are now flex items of their flex parent. */
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            border: 3px solid goldenrod;
+            /* Control the horizontal positioning of elements */
+            /* flex-start, center, space-between, space-around, etc. */
+            justify-content: center;
+        /*    Notice that in all cases, the individual items stretch along the cross axis. This behavior can be
+        controlled with align-items. Notice that in all cases, the individual items stretch along the cross axis.
+        This behavior can be controlled with align-items.*/
+            align-items: center;
+        }
+
+        .flex-item {
+            background: #BFD45D;
+            border: 2px solid #F9EFD6;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+</div>
+
+</body>
+</html>
+<!--Flexbox provides a convenient way to arrange the layout of elements (flex items) inside a parent container (the
+"flexible box" or flex container). While a full page layout can be created using multiple flexbox containers and
+items, flexbox is optimized for a one dimensional layout.-->
+
+<!--Dimensions define the primary demarcation between Flexbox and CSS Grid. Flexbox was designed specifically for
+one-dimensional layouts, while CSS Grid is engineered to enable two-dimensional layouts. Therefore, CSS Grid can
+easily render rows and columns simultaneously.-->
+
+<!--flexbox is optimized to control alignment of items in a row or column layout. In a flex-direction: row; layout
+(the default), the horizontal axis is referred to as the "main axis" and the vertical axis is referred to as the
+"cross axis," When the flex container is set to a column layout, the main and cross axes are inverted. -->

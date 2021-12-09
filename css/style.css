@@ -21,9 +21,11 @@ h2 {
 body {
     /* The background image covers the color, but the color is a placeholder in case the img doesn't load */
     background-color: #444;
+
     /* 5. Add a style to add a background image to your background. */
     /* If the image is not linked previously in the html, it requires me to add the local host... when
     linked images work fine with "/img/imageName.jpg" */
+    /*"http://localhost:63342/codeup-web-exercises/img/whiteHex.jpg"*/
     /* https://intellij-support.jetbrains.com/hc/en-us/community/posts/206342659-Built-in-Webserver-returns-404-for-all-images*/
     background-image: url("http://localhost:63342/codeup-web-exercises/img/whiteHex.jpg");
     background-repeat: no-repeat;
