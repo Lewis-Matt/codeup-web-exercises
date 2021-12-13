@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*Basic Styling for Navbar*/
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        nav {
+            background: #333333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* made unordered list a flex container */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-family: Verdana, sans-serif;
+            display: inline-block; /* inline-block to increase clickable area beyond the text */
+            padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+        }
+
+        nav a:hover {
+            background: black;
+        }
+
+        nav ul li:nth-child(4) {
+            /*
+                this allows the last flex item to be right justified
+                by filling remaining space to the left of the flex item with margin
+            */
+            margin-left: auto;
+        }
+
+
+        /*CARD Styling*/
+        body {
+            /*margin: 0;*/
+            font-family: Roboto;
+            background: orange;
+        }
+
+        h1, h2, h3 {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        h3 {
+            color: grey;
+        }
+
+        hr {
+            border-top: 1px solid whitesmoke;
+            width: 90px;
+        }
+
+        .card {
+            margin: .5em;
+            border-radius: 2px;
+            background: white;
+            width: 250px;
+            height: 350px;
+            /* the following declarations make the card a flex container and justify and align its flex items */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        img {
+            border-radius: 120px;
+            width: 120px;
+        }
+
+        i {
+            color: grey;
+        }
+
+        .icons {
+            /* the following declarations control the spacing between the social media icons */
+            width: 160px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .text-section {
+            position: relative;
+            bottom: 1.5em;
+        }
+
+        .icons i {
+            font-size: 2.2em;
+        }
+
+        /*FOOTER*/
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Nunito Sans", SansSerif;
+            min-height: 100vh;
+        }
+
+        footer {
+            background: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            min-width: 768px;
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        footer h1 {
+            margin: 0;
+            font-weight: bolder;
+        }
+
+        h5 {
+            color: white;
+            font-weight: 200;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .icon-wrapper:hover,
+        footer .top-footer a:hover {
+            color: black;
+            background: white;
+        }
+
+        footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer .container {
+            /* here we make the footer a flex container in a column layout to evenly space the sections of the footer */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4em 0;
+            height: 30em;
+        }
+
+        .top-footer {
+            /* here we make the top footer section a flex container to space out the multiple lists of links */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .icon-wrapper {
+            border: 2px solid grey;
+            border-radius: 2.4em;
+            height: 2.4em;
+            width: 2.4em;
+            /* here we make the icon wrappers into flex containers to center the icons */
+            display: flex;
+        }
+
+        .icon-wrapper i {
+            /* here we center the icons inside their flex container wrappers */
+            margin: auto;
+        }
+
+        .logo-div {
+            /* here we set a larger size along the main axis and push the div a bit up for aesthetics */
+            flex-basis: 25%;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .social-media-links {
+            /* here we make the div containing the social media links into a flex container to orient them in a row */
+            display: flex;
+        }
+
+        footer .bottom-footer {
+            /* here we ensure the social media link container is horizontally centered by setting its parent to be a flex container */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer .top-footer a {
+            text-transform: uppercase;
+            font-weight: 200;
+        }
+
+        footer .bottom-footer a {
+            margin: .3em;
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background: grey;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--NAVBARS-->
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+Centering block-level elements horizontally can be done with margin: 0 auto. This can also be achieved with flexbox
+by adding the following declarations to parent element:
+<br>
+.some-parent {
+/* other declarations */
+display: flex;
+justify-content: center;
+}
+<br>
+Vertical centering of elements is more challenging, with many solutions seeming to be closer to a hack than a
+straight-forward solution (i.e. setting line height to the height of the container). With flexbox, simply adding
+align-items: center to the above declaration block vertically centers a flex item.
+<br>
+When extra space is needed between multiple flex items, margin-{left/right}: auto can be used to automatically
+create spacing between elements until the spacing fills out the remaining flex container space.
+<!--CARDS-->
+<article class="card">
+    <section>
+        <img src="images/profile.png" alt="profile-image">
+    </section>
+    <section class="text-section">
+        <h2>Ron Swanson</h2>
+        <h3>Director</h3>
+        <hr>
+    </section>
+    <section class="icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </section>
+</article>
+
+</body>
+<footer>
+    <div class="container">
+        <section class="top-footer">
+            <div class="logo-div">
+                <h1><a href="#">Logo</a></h1>
+                <a href="#">Sologan Company</a>
+            </div>
+            <ul>
+                <li><a href="#">Weebly Themes</a></li>
+                <li><a href="#">Pre-Sale FAQS</a></li>
+                <li><a href="#">Submit a Ticket</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Theme Tweak</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Showcase</a></li>
+                <li><a href="#">Widgetkit</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Affiliates</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+        </section>
+        <div class="line"></div>
+        <section class="bottom-footer">
+            <div class="social-media-links">
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-facebook-f"></i>
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fas fa-rss"></i>
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-google-plus-g"></i>
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-linkedin-in"></i>
+                    </span>
+                </a>
+            </div>
+            <h5>@Copyright. All rights reserved.</h5>
+        </section>
+    </div>
+</footer>
+
+</html>
