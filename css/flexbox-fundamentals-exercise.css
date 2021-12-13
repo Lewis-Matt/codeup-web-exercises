@@ -1,4 +1,6 @@
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -7,7 +9,9 @@ body {
     font-family: Chalkboard, sans-serif;
 }
 
-h1 {text-align: center;}
+h1 {
+    text-align: center;
+}
 
 h2, h3 {
     padding: 0;
@@ -17,7 +21,6 @@ h2, h3 {
 .container {
     margin: 0 auto;
     width: 80%;
-
 }
 
 .green-box {
@@ -26,7 +29,9 @@ h2, h3 {
     width: 2em;
 }
 
-.border {border: 2px solid black;}
+.border {
+    border: 2px solid black;
+}
 
 .card {
     width: 400px;
@@ -37,49 +42,66 @@ h2, h3 {
     /* enter needed declarations here */
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
+/* Each large colored box */
 section {
     /* enter needed declarations here */
     display: flex;
 }
 
+/* All the dark green boxes inside the light green box */
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
     /* enter needed declarations here */
-}
-section:nth-of-type(1) div:last-child {
-    /* enter needed declarations here */
+    align-items: center;
+    justify-content: space-between;
 }
 
+/* Last light green box */
+section:nth-of-type(1) div:last-child {
+    /* enter needed declarations here */
+    align-self: normal;
+}
+
+/* All of the purple boxes */
 .purple-box {
     background: fuchsia;
     width: 3em;
     height: 1em;
 }
 
+/* First purple box */
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    flex-grow: 2;
 }
 
+/* Second purple box */
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+    flex-grow: 1;
 }
 
+/* Large blue box*/
 .blue-box {
     width: 100%;
     background: blue;
     height: 10em;
 }
 
+/* White box (contains smaller heading) */
 section:nth-of-type(3) {
     /* enter needed declarations here */
+    align-items: center;
+
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
-
+    flex-grow: 1;
 }
 
 .orange-circle {
@@ -90,19 +112,24 @@ section:nth-of-type(3) h3 {
     margin: .5em;
 }
 
+/* All brown boxes */
 .large-brown-box {
     height: 5em;
     width: 5em;
     background: brown;
     /* enter needed declarations here */
+    flex-grow: 1;
 }
 
+/* 2nd brown box*/
 .large-brown-box:nth-of-type(2) {
     margin: 0 1em;
 }
 
+/* Section containing yellow boxes */
 section:nth-of-type(5) {
     /* enter needed declarations here */
+    justify-content: space-evenly;
 }
 
 .yellow-box {
@@ -111,10 +138,15 @@ section:nth-of-type(5) {
     height: 2em;
 }
 
+/* Last section with gray boxes*/
 section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    align-items: center;
 }
 
 .grey-box {
