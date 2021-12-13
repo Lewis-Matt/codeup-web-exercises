@@ -24,7 +24,7 @@ body {
     background-color: #FFF;
     /* 5. Add a style to add a background image to your background. */
     /*"http://localhost:63342/codeup-web-exercises/img/whiteHex.jpg"*/
-    background-image: url("../img/whiteHex.jpg");
+    background-image: url("../assets/img/whiteHex.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

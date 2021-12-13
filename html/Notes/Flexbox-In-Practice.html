@@ -256,6 +256,29 @@ align-items: center to the above declaration block vertically centers a flex ite
 <br>
 When extra space is needed between multiple flex items, margin-{left/right}: auto can be used to automatically
 create spacing between elements until the spacing fills out the remaining flex container space.
+
+<!--Flex Basis-->
+When setting explicit sizes for items along the main axis, it is a best practice to use the flexbox way of doing so through
+the flex-basis property. Setting the flex-basis is a way to specify the dimensions of an item along the main axis before the
+flex item is incorporated in the flex container. Other flexbox properties may change the final computed dimensions of a flex-item.
+
+We can, for instance, specify flex-basis to be 200px. 200px will be the width of each item if there's enough space.
+The items won't grow bigger than that, but they can shrink if needed.
+
+An interesting value is 100% which will distribute the space evenly between elements.
+Nested Flex Containers
+
+On a given web page, many flex containers may be used for various components of the UI. Additionally, the flex containers
+may be nested where an element is both a flex item and a flex container.
+
+Flex Shrink
+
+A slightly more complicated property, flex-shrink, is used to also control the size of an element along the main axis.
+When the total length of flex items along the main axis exceeds the length of their flex container and the items are not
+allowed to wrap, the flex items may shrink accordingly to fit the main axis length of the flex container. Flex shrink is by
+default set to 1, allowing flex items to shrink. This behavior is removed and items may spill out of their container if
+flex shrink is set to 0 on the flex items. We can also see how adding flex shrink to certain items allows the items to
+collapse as needed to fit within the flex container.
 <!--CARDS-->
 <article class="card">
     <section>
@@ -272,7 +295,6 @@ create spacing between elements until the spacing fills out the remaining flex c
         <a href="#"><i class="fab fa-linkedin"></i></a>
     </section>
 </article>
-
 </body>
 <footer>
     <div class="container">
