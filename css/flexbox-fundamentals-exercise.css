@@ -17,6 +17,7 @@ h2, h3 {
 .container {
     margin: 0 auto;
     width: 80%;
+
 }
 
 .green-box {
@@ -34,10 +35,13 @@ h2, h3 {
     padding: 1em;
     margin: 0 auto;
     /* enter needed declarations here */
+    display: flex;
+    flex-direction: column;
 }
 
 section {
     /* enter needed declarations here */
+    display: flex;
 }
 
 section:nth-of-type(1) {

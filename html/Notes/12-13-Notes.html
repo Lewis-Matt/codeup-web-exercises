@@ -72,7 +72,10 @@
 </body>
 </html>-->
 
-<!doctype html>
+
+<!--FLOATS-->
+
+<!--<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -196,6 +199,91 @@
                 mollitia nobis, obcaecati odio perspiciatis.
             </p>
         </article>
+    </div>
+</main>
+</body>
+</html>-->
+
+
+<!-- RELATIVE POSITIONING -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parentContainer {
+            border: solid #000 4px;
+            border-radius: 25px;
+            height: 300px;
+            width: auto;
+            margin: 25px;
+            padding: 10px;
+            position: relative;
+            background-color: #cbd6ec;
+        }
+
+        .box {
+            height: 50px;
+            width: 50px;
+            border: dashed #000 4px;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px;
+            font-family: Helvetica, sans-serif;
+            font-size: 1em;
+            background-color: #9eb2d9;
+            transition: 500ms ease-in-out;
+        }
+
+        .box:hover {
+            border-radius: 50px;
+            background-color: #396fd0;
+            color: #FFF;
+            border: solid #FFF 4px;
+        }
+
+        #box2 {
+            position: absolute;
+            right: 20px;
+        }
+
+        #box4 {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        #box1 {
+            position: absolute;
+            left: 20px;
+        }
+
+        #box3 {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<main class="parentContainer">
+    <div class="box" id="box1">
+        Box 1
+    </div>
+    <div class="box" id="box2">
+        Box 2
+    </div>
+    <div class="box" id="box3">
+        Box 3
+    </div>
+    <div class="box" id="box4">
+        Box 4
     </div>
 </main>
 </body>
