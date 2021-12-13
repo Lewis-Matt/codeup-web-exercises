@@ -1,0 +1,202 @@
+<!--
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dec 13 Notes</title>
+    <style>
+
+        .container {
+            height: 400px;
+            width: 400px;
+            border: solid #000 4px;
+            margin: 1em;
+            padding: 15px;
+            border-radius: 20px;
+            background: rgb(238, 174, 202);
+            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            border: dashed #000 4px;
+            margin: 1em;
+            padding: 5px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 20px;
+            background: rgb(148, 187, 233);
+            background: radial-gradient(circle, rgba(148, 187, 233, 1) 0%, rgba(238, 174, 202, 1) 100%);
+            font-family: Helvetica, sans-serif;
+            font-size: 1.5em;
+            transition: 500ms ease-in-out;
+            transform: scale(1);
+        }
+
+        .box:hover {
+            background: rgb(238, 174, 202);
+            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+            transform: scale(1.35);
+            border: solid #0863dc 4px;
+            color: #0863dc;
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="box">
+            Box 1
+        </div>
+        <div class="box">
+            Box 2
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            Box 1
+        </div>
+        <div class="box">
+            Box 2
+        </div>
+    </div>
+</main>
+</body>
+</html>-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parentContainer {
+            width: 90%;
+            border: solid #000 4px;
+            border-radius: 25px;
+            background-color: #cbd6ec;
+        }
+
+        .container {
+            border: solid #000 2px;
+            padding: 10px;
+            margin: 25px 15px;
+            border-radius: 25px;
+            background-color: #8d9bb2;
+        }
+
+        .box {
+            height: 50px;
+            width: 50px;
+            border: dashed #000 4px;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px;
+            font-family: Helvetica, sans-serif;
+            font-size: 1em;
+            background-color: #9eb2d9;
+            transition: 500ms ease-in-out;
+        }
+
+        .box:hover {
+            border-radius: 50px;
+            background-color: #396fd0;
+            color: #FFF;
+            border: solid #FFF 4px;
+        }
+
+        p {
+            font-family: Helvetica, sans-serif;
+            font-size: .8em;
+            padding: 0 5px;
+        }
+
+        #box1 {
+            float: left;
+        }
+
+        #box2 {
+            float: right;
+        }
+
+        #box3 {
+            float: left;
+
+        }
+
+        #box4 {
+            float: right;
+
+        }
+
+        em {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <div class="parentContainer">
+        <article class="container">
+            <div class="box" id="box1">
+                Box 1
+            </div>
+            <p>
+                <em>Lorem</em> ipsum dolor sit amet, consectetur adipisicing elit. Aperiam autem corporis cumque
+                dignissimos
+                dolor doloribus eos exercitationem fuga laborum molestiae necessitatibus nemo, obcaecati quae quos sequi
+                voluptas voluptatem? Inventore, recusandae!
+            </p>
+        </article>
+        <article class="container">
+            <div class="box" id="box2">
+                Box 2
+            </div>
+            <p>
+                <em>Lorem</em> ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis deserunt doloremque
+                esse
+                maiores mollitia nemo pariatur quaerat repudiandae saepe? Ex placeat similique soluta, tempore tenetur
+                vel veniam voluptatibus voluptatum!
+            </p>
+        </article>
+        <article class="container">
+            <div class="box" id="box3">
+                Box 3
+            </div>
+            <p>
+                <em>Lorem</em> ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus architecto beatae
+                dolorem
+                dolorum, ea earum eum, labore minima minus mollitia nemo nostrum quae rem repellat sapiente sequi sunt
+                veritatis?
+            </p>
+        </article>
+        <article class="container">
+            <div class="box" id="box4">
+                Box 4
+            </div>
+            <p>
+                <em>Lorem</em> ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dicta expedita, iusto
+                magnam
+                mollitia, numquam obcaecati odio, qui quod reprehenderit sapiente temporibus. Assumenda eum iusto
+                mollitia nobis, obcaecati odio perspiciatis.
+            </p>
+        </article>
+    </div>
+</main>
+</body>
+</html>
