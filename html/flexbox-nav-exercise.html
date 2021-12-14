@@ -1,0 +1,52 @@
+<!--
+The navbar must have the following:
+
+box-sizing: border-box for all elements
+link text, the logo, and icons are surrounded by anchor tags
+links turn blue on hover
+anchor tags are display: inline-block
+clickable area of links immediately flow from one link to the next (padding will help achieve this)
+Google Fonts used for logo and link text ("Montserrat" and "Work Sans", respectively)
+the "Logo" text is 3em with .2em of padding above and below
+no explicit height given to the navbar
+default styling is removed as needed from the body, unordered list and anchor tag elements
+logo is horizontally centered on the navbar (automatic margins will help achieve this)
+
+    BONUS
+Using the following link, choose a footer to create and style using flexbox.
+Your logo might not look perfectly centered - are there some additional ways you can think of to achieve that ‘perfect’ look?
+Hint: You can ABSOLUTELY find something to POSITION that logo with
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flexbox Navbar</title>
+    <link rel="stylesheet" href="../css/flexbox-nav-exercise.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <nav id="navContainer">
+        <ul id="leftNav" class="listContainer">
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Market</a></li>
+            <li><a href="#">Jobs</a></li>
+        </ul>
+        <img src="../assets/img/mrrobot.png" alt="Logo">
+        <ul id="rightNav" class="listContainer">
+            <li><a href="#">Follow Us</a></li>
+            <li><span class="material-icons">search</span></li>
+            <li><span class="material-icons">shopping_cart</span></li>
+            <li><span class="material-icons">account_circle</span></li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>
