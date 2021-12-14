@@ -28,7 +28,9 @@ Hint: You can ABSOLUTELY find something to POSITION that logo with
     <title>Flexbox Navbar</title>
     <link rel="stylesheet" href="../css/flexbox-nav-exercise.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -39,12 +41,14 @@ Hint: You can ABSOLUTELY find something to POSITION that logo with
             <li><a href="#">Market</a></li>
             <li><a href="#">Jobs</a></li>
         </ul>
-        <img src="../assets/img/mrrobot.png" alt="Logo">
+
+        <a href="#" id="logo"><img src="../assets/img/mrrobot.png" alt="Logo"></a>
+
         <ul id="rightNav" class="listContainer">
             <li><a href="#">Follow Us</a></li>
-            <li><span class="material-icons">search</span></li>
-            <li><span class="material-icons">shopping_cart</span></li>
-            <li><span class="material-icons">account_circle</span></li>
+            <li><a href="#"><span class="material-icons">search</span></a></li>
+            <li><a href="#"><span class="material-icons">shopping_cart</span></a></li>
+            <li><a href="#"><span class="material-icons">account_circle</span></a></li>
         </ul>
     </nav>
 </header>

@@ -6,3 +6,55 @@ html {
     box-sizing: inherit;
 }
 
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: .5em 1em;
+}
+
+a:hover {
+    color: blue;
+}
+
+#logo {
+    padding: .2em 0;
+}
+
+#logo > img {
+    height: 2em;
+    width: 12em;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navContainer {
+    background-color: #AAA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#leftNav {
+    margin-left: 10px;
+}
+
+#rightNav {
+    margin-right: 10px;
+}
+
+.listContainer {
+    display: flex;
+    align-items: center;
+}
+
