@@ -10,7 +10,7 @@ ul {
 body {
     font-family: Helvetica, sans-serif;
     font-size: 16px;
-    margin: 10px;
+    margin: 20px;
     position: relative;
 }
 
@@ -87,11 +87,16 @@ footer {
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+
+    /* Hide the "skip to main content" link on desktop*/
+    .hidden-on-desktop {
+        display: none;
+    }
+
     h1 {
         float: left;
         margin: 0;
         height: 50px;
-
     }
 
     nav {
@@ -105,23 +110,19 @@ footer {
         margin: 0;
     }
 
+    .nav-links > li {
+        background-color: transparent;
+        margin: 0;
+    }
+
     a {
-        padding: 20px 20px;
+        padding: 20px 0 20px 20px;
     }
 
     a:hover {
         color: black;
     }
 
-    /* Hide the "skip to main content" link on desktop*/
-    .hidden-on-desktop {
-        display: none;
-    }
-
-    .nav-links > li {
-        background-color: transparent;
-        margin: 0;
-    }
 
     .header-img {
         clear: both;
