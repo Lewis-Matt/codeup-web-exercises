@@ -1,0 +1,156 @@
+/* Remove default formatting */
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 10px;
+    position: relative;
+}
+
+/* MOBILE - Everything < 992px width */
+.alert-info {
+    text-align: center;
+    background-color: #ccffff;
+    border: #3B94D9 solid 2px;
+
+    /* Rather than apply margins (L/R) to every element: just apply a margin to the body */
+    /*margin: 15px;*/
+}
+
+.alert-info > a {
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.alert-info > a:hover {
+    color: blue;
+}
+
+a {
+    display: block;
+    color: blue;
+    font-size: 1.1em;
+    padding: 20px;
+}
+
+a:hover {
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-links > li {
+    background-color: #cccccc;
+    margin: 5px 0;
+}
+
+.header-img {
+    text-align: center;
+    margin: 5px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.sub-section {
+    padding-bottom: 2.5em;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 2.5em;
+    bottom: 0;
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    h1 {
+        float: left;
+        margin: 0;
+        height: 50px;
+
+    }
+
+    nav {
+        float: right;
+        height: 50px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    a {
+        padding: 20px 20px;
+    }
+
+    a:hover {
+        color: black;
+    }
+
+    /* Hide the "skip to main content" link on desktop*/
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    .nav-links > li {
+        background-color: transparent;
+        margin: 0;
+    }
+
+    .header-img {
+        clear: both;
+        max-width: 100%;
+        height: auto;
+        padding: 25px 0 10px 0;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+
+    .main {
+        display: inline-block;
+        float: left;
+        max-width: 70%;
+        height: 100%;
+
+    }
+
+    .sub-section {
+        display: inline-block;
+        max-width: 25%;
+        height: 100%;
+        padding-left: 30px;
+    }
+
+    p {
+        height: 100%;
+    }
+}
