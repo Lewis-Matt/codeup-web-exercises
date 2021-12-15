@@ -19,7 +19,6 @@ body {
     text-align: center;
     background-color: #ccffff;
     border: #3B94D9 solid 2px;
-
     /* Rather than apply margins (L/R) to every element: just apply a margin to the body */
     /*margin: 15px;*/
 }
@@ -34,6 +33,8 @@ body {
     color: blue;
 }
 
+/* To make the entire link container clickable: display block with padding.
+If you put padding on the li selector, the padding will not be clickable */
 a {
     display: block;
     color: blue;
@@ -63,7 +64,10 @@ h1 {
 
 .header-img {
     text-align: center;
-    margin: 5px 0;
+    /* max-width overrides width, but min-width overrides max-width. Using width specifies fixed width
+    over the element w/o paying attention to the content (allowing overflow). Max-width gives
+    an upper bound, min-width gives a lower bound. If min = max, this is the same as just using
+    the width property. */
     max-width: 100%;
     height: auto;
 }
@@ -84,6 +88,11 @@ footer {
     bottom: 0;
 
 }
+
+/*The mobile-first approach means that you design/develop styling for your app starting from a
+mobile device going all the way up to a desktop computer and even TVs. For every following
+device, the breakpoint is specified with the media query min-width rule. If you are using
+ desktop-first (you shouldn't) then breakpoints are established with max-width. */
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
@@ -123,7 +132,6 @@ footer {
         color: black;
     }
 
-
     .header-img {
         clear: both;
         max-width: 100%;
@@ -141,7 +149,6 @@ footer {
         float: left;
         max-width: 70%;
         height: 100%;
-
     }
 
     .sub-section {
@@ -149,9 +156,5 @@ footer {
         max-width: 25%;
         height: 100%;
         padding-left: 30px;
-    }
-
-    p {
-        height: 100%;
     }
 }
