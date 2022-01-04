@@ -42,15 +42,27 @@
         <button type="button" href="#" class="btn btn-light"><i class="bi bi-person-fill">  </i>Sign up</button>
     </span>
 </nav>
-
 <!-- MAIN CONTENT -->
 <!-- Container provides us with some default styles so that our content isn't too wide, fluid ensures that the container spans the width of the viewport. -->
 <main class="container-fluid">
     <!-- Jumbotron Pizza, uses custom.css to overwrite some bootstrap scss -->
-    <div class="jumbotron">
+    <!-- d-none d-lg-block displays the jumbotron only on med to large screens -->
+    <div class="jumbotron d-none d-lg-block d-md-block">
         <h1>Welcome to Pizza World!</h1>
     </div>
-
+    <h2 class="h2">Build your own pizza!</h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span> Size and
+                crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span> Cheese and sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+        </li>
+    </ul>
 </main>
 <!-- Bootstrap script -->
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
