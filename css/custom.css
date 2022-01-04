@@ -1,0 +1,12 @@
+.jumbotron {
+    background-image: url("../assets/img/pizza.png");
+    /* Overrides default jumbotron padding of 64 23*/
+    padding: 64px 0;
+}
+
+.jumbotron h1 {
+    background-color: #FFF;
+    text-align: center;
+    opacity: 70%;
+    font-size: 3rem;
+}

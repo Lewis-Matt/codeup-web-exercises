@@ -8,33 +8,50 @@
     <!-- CDN to include bootstrap (Note codeup is using 4.6) I also downloaded the bootstrap css/js/jquery bundle to IDEA, still have to include CDN. -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <!-- Include Bootstrap before our own CSS, allowing our CSS to override any styling from Bootstrap -->
+    <link rel="stylesheet" href="../css/custom.css">
     <title>Pizza Order Form</title>
 </head>
 <!-- Bootstrap is class-based: everything is styled w/ classes -->
 <body>
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <ul class="navbar-nav nav-pill">
-        <li class="nav-item">
-            <a class="navbar-brand" href="#">Pizza World</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Order Online</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Menu</a>
-        </li>
-    </ul>
-    <form class="form-inline">
-        <!-- aria-label gives a string value to label an interactive element for accessibility-->
-        <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
-    </form>
-    <span class="navbar-text">
-      Navbar text with an inline element
+    <a class="navbar-brand" href="#">Pizza World</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Order online<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Menu</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
+        </form>
+    </div>
+    <!-- Span keeps the Signup button inline, the 'i class..' is using bootstrap icon. Spaced the icon from the text via <i>2 spaces here<i>-->
+    <span>
+        <button type="button" href="#" class="btn btn-light"><i class="bi bi-person-fill">  </i>Sign up</button>
     </span>
 </nav>
 
+<!-- MAIN CONTENT -->
+<!-- Container provides us with some default styles so that our content isn't too wide, fluid ensures that the container spans the width of the viewport. -->
+<main class="container-fluid">
+    <!-- Jumbotron Pizza, uses custom.css to overwrite some bootstrap scss -->
+    <div class="jumbotron">
+        <h1>Welcome to Pizza World!</h1>
+    </div>
+
+</main>
 <!-- Bootstrap script -->
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
