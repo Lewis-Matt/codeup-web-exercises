@@ -10,3 +10,7 @@
     opacity: 70%;
     font-size: 3rem;
 }
+
+.list-group-item {
+    padding: .75rem 2.25rem;
+}
