@@ -7,21 +7,59 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <!-- If you hover over the link, you can download the bootstrap library into IDEA, allowing you to use intellisense. -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Hello, Bootstrap!</title>
 </head>
+<!-- Bootstrap is class-based styling. The main styling is made using Syntactically awesome style sheets (Sass) and the syntax is normally .scss files (Sassy CSS). Sass allows the use of variables that can store information you can use throughout your style sheet. For example, you can store a colour value in a variable at the top of the file, and then use this variable when setting the colour of your elements. Sass also allows for nesting of styles, similar to how html components are nested inside of html components. Sass also allows for 'partials', which are Sass files that can be imported into another Sass file.  -->
 <body>
-<h1>Hello, Bootstrap!</h1>
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4">Hello, Bootstrap!</h1>
+</div>
 <main class="container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus autem, blanditiis consequatur deleniti dolorem dolorum eius error eum explicabo fuga laudantium necessitatibus non officia officiis perferendis porro possimus praesentium provident quam quod similique sit, temporibus ullam unde? Aliquid culpa delectus dolores eaque in, labore nulla qui quibusdam quo quos.</p>
+    <p class="p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus autem, blanditiis consequatur
+        deleniti dolorem dolorum eius error eum explicabo fuga laudantium necessitatibus non officia officiis
+        perferendis porro possimus praesentium provident quam quod similique sit, temporibus ullam unde? Aliquid culpa
+        delectus dolores eaque in, labore nulla qui quibusdam quo quos.</p>
+
+    <!-- Just copied and pasted this nav. -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+               aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+               aria-selected="false">Profile</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+               aria-selected="false">Contact</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Placeholder content
+            for the tab panel. This one relates to the home tab.
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Placeholder content for
+            the tab panel. This one relates to the profile tab.
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Placeholder content for
+            the tab panel. This one relates to the contact tab.
+        </div>
+    </div>
+
 </main>
+
 <!-- Bootstrap JS - Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
