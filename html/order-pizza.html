@@ -50,25 +50,28 @@
     <div class="jumbotron d-none d-lg-block d-md-block">
         <h1>Welcome to Pizza World!</h1>
     </div>
-    <h2 class="h2">Build your own pizza!</h2>
-    <!-- Tabbed Steps -->
-    <ul class="nav nav-tabs" id="myTabs" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="crustTab" data-toggle="tab" href="#crustCard" role="tab"
+    <h4>Build your own pizza!</h4>
+
+    <!-- NAV TABS -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item active" role="presentation">
+            <a class="nav-link" id="crustTab" data-toggle="tab" href="#crustCard" role="tab"
                aria-controls="crust" aria-selected="true"><span
                     class="badge badge-pill badge-secondary">1</span> Size and crust</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="cheeseTab" data-toggle="tab" href="#cheeseCard" role="tab"
-               aria-controls="crust" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span>
+               aria-controls="sauce" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span>
                 Cheese and sauce</a>
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="toppingTab" data-toggle="tab" href="#toppingCard" role="tab"
-               aria-controls="crust" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span>
+               aria-controls="topping" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span>
                 Toppings</a>
         </li>
     </ul>
+
+    <!-- NAV TAB CONTENT -->
     <div class="tab-content">
         <!-- Size and crust card -->
         <div class="card tab-pane fade show active" id="crustCard" role="tabpanel" aria-labelledby="crustTab">
@@ -76,6 +79,7 @@
                 Choose Size and Crust
             </div>
             <div class="card-body">
+
                 <!-- Hand-tossed Crust -->
                 <!-- mb-3 puts a space between the cards -->
                 <div class="card mb-3">
@@ -103,6 +107,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Thin Crust -->
                 <div class="card">
                     <div class="card-header">
@@ -129,9 +134,10 @@
                     </div>
                 </div>
             </div>
+
             <!-- Next step button -->
             <div class="card-footer text-right">
-                <a href="#cheeseTab" class="btn btn-primary btnNext">Next Step ></a>
+                <a class="btn btn-primary btnNext">Next Step ></a>
             </div>
         </div>
 
@@ -141,6 +147,7 @@
                 Choose Cheese and Sauce
             </div>
             <div class="card-body">
+
                 <!-- Cheese Card -->
                 <div class="card mb-3">
                     <div class="card-header">
@@ -156,6 +163,7 @@
                         </select>
                     </div>
                 </div>
+
                 <!-- Sauce Card -->
                 <div class="card">
                     <div class="card-header">
@@ -180,12 +188,13 @@
                     </div>
                 </div>
             </div>
+
             <!-- Previous and Next step buttons -->
             <div class="card-footer text-right">
                 <!-- Grouping makes it so there is no padding/margins between buttons-->
                 <div class="btn-group" role="group" aria-label="Previous Step or Next Step">
-                    <a href="#" class="btn btn-primary">< Previous Step</a>
-                    <a href="#" class="btn btn-primary">Next Step ></a>
+                    <a class="btn btn-primary btnPrevious">< Previous Step</a>
+                    <a class="btn btn-primary btnNext">Next Step ></a>
                 </div>
             </div>
         </div>
@@ -196,6 +205,7 @@
                 Choose Toppings
             </div>
             <div class="card-body">
+
                 <!-- Meats Card -->
                 <div class="card mb-3">
                     <div class="card-header">
@@ -228,6 +238,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Non-Meats Card -->
                 <div class="card">
                     <div class="card-header">
@@ -261,21 +272,24 @@
                     </div>
                 </div>
             </div>
-            <!-- Previous and Next step buttons -->
+
+            <!-- Checkout button -->
             <div class="card-footer text-right">
                 <a href="#" class="btn btn-primary">Checkout <i class="bi bi-cart-fill"></i></a>
             </div>
         </div>
     </div>
 </main>
-<!-- Bootstrap script -->
-<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+
+<!-- jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+
+<!-- btnNext btnPrevious Script -->
 <script src="../js/pizza-buttons.js"></script>
 </body>
 </html>
