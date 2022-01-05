@@ -54,11 +54,12 @@
 
     <!-- NAV TABS -->
     <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item active" role="presentation">
-            <a class="nav-link" id="crustTab" data-toggle="tab" href="#crustCard" role="tab"
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="crustTab" data-toggle="tab" href="#crustCard" role="tab"
                aria-controls="crust" aria-selected="true"><span
                     class="badge badge-pill badge-secondary">1</span> Size and crust</a>
         </li>
+        <!-- I should only have 'active' on the first li, but the nxt/previous buttons don't work w/o it here as well?? Edit: the problem seems to be that I was using documentation for Bootstrap 5 to write the jQuery script. I changed it back to the way it should be, using the appropriate selectors for BS4.-->
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="cheeseTab" data-toggle="tab" href="#cheeseCard" role="tab"
                aria-controls="sauce" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span>
@@ -79,7 +80,6 @@
                 Choose Size and Crust
             </div>
             <div class="card-body">
-
                 <!-- Hand-tossed Crust -->
                 <!-- mb-3 puts a space between the cards -->
                 <div class="card mb-3">
