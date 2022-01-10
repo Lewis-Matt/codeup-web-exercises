@@ -26,15 +26,33 @@ console.log(lengthChecker('matt', 5));
 
 // (CHALLENGE) Write a function that takes in a day of the week as a string and returns the number that matches the day of the week. 'Sunday' should return 1 and 'Saturday' should return 7.
 let daysOfWWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 function dayChecker(day) {
     return daysOfWWeek.indexOf(day) + 1;
 }
+
 console.log(dayChecker('Tuesday'));
 // ========== + Loops
 
 // Write a function that takes in a string input and logs each character of the string separately
+function lettersInString(str) {
+    for (let i = 0; i < str.length; i++) {
+        console.log(str[i]);
+    }
+}
+
+lettersInString('This is a string');
 
 // Write a function that takes in a string and logs it 133 times
+function lee(str) {
+    let i = 0;
+    while (i <= 133) {
+        console.log(`${i}: ${str}`);
+        i++;
+    }
+}
+
+lee('duck');
 
 // Write a function that takes in a string input and logs the first character, then the first two characts, etc., until the full string is logged. 
 /*
