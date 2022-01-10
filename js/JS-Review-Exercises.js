@@ -54,11 +54,9 @@ function lee(str) {
 
 lee('duck');
 
-// Write a function that takes in a string input and logs the first character, then the first two characts, etc., until the full string is logged. 
+// Write a function that takes in a string input and logs the first character, then the first two characters, etc., until the full string is logged.
 /*
-
 Example Input: 'Codeup'
-
 Example Output:
 
 "C"
@@ -69,11 +67,21 @@ Example Output:
 "Codeup"
 */
 
-// (CHALLENGE) Write a function that takes in two string inputs and for each letter in the first string, logs how many times that given letter appears in the second string. It should be case insensitive. If a letter appears more than once in the first string, the output should simply log the same message as many times as it appears in the first string.
+function charLogger(str) {
+    let i = 0;
+    let newString = '';
+    while (i < str.length) {
+        newString += str[i];
+        console.log(newString);
+        i++;
+    }
+}
+
+charLogger('Codeup');
+// (CHALLENGE) Write a function that takes in two string inputs and for each letter in the first string, logs how many times that given letter appears in the second string. It should be case-insensitive. If a letter appears more than once in the first string, the output should simply log the same message as many times as it appears in the first string.
 /*
 
 Example Inputs: "Codeup", "Coding Challenges"
-
 Example Output:
 
 'C' appears in 'Coding Challenges' 2 time(s)
@@ -82,8 +90,26 @@ Example Output:
 'e' appears in 'Coding Challenges' 2 time(s)
 'u' appears in 'Coding Challenges' 0 time(s)
 'p' appears in 'Coding Challenges' 0 time(s)
-
 */
+
+function letterChecker(str1, str2) {
+    // Normalize and separate into arrays of chars
+    let str1Array = str1.toLowerCase().split('');
+    let str2Array = str2.toLowerCase().split('');
+    // Loop through str1
+    for (let i = 0; i < str1.length; i++) {
+        // Loop through str2
+        let str1Count = 0;
+        for (let j = 0; j < str2.length; j++) {
+            if (str1Array[i] === str2Array[j]) {
+                str1Count++;
+                console.log(`${str1[i]} appears in '${str2}' ${str1Count} time(s)`);
+            }
+        }
+    }
+}
+
+letterChecker('Codeup', 'Coding Challenges');
 
 // ========== + Arrays
 
