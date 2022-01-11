@@ -212,11 +212,20 @@ console.log(sortByLength(['pumpkin', 'spice', 'coffee', 'is', 'delicious']));
 console.log('---------------Next Exercise---------------');
 
 // ========== + Objects
-
 // Write a function that takes in an object and returns the object with an added property called 'extra' and a value of 'extra value'
+let testObj = {
+    apple: 'doctor',
+    chicken: 'nugs'
+}
 
+function addProperty(obj) {
+    testObj.extra = 'extra value';
+    return testObj;
+}
+
+console.log(addProperty(testObj));
+console.log('---------------Next Exercise---------------');
 // Assume for the next questions, this can be used as the array of user objects:
-
 /*
   var users [
     {
@@ -244,10 +253,16 @@ console.log('---------------Next Exercise---------------');
 
 // Write a function that takes in an array of user objects and returns the user object of the user with the longest name
 
+
+console.log('---------------Next Exercise---------------');
 // Write a function that takes in an array of user objects and returns the 'Web Developer' with highest averageAnnualPizzasOrdered value
 
+
+console.log('---------------Next Exercise---------------');
 // Write a function that takes in an array of user objects and returns the same array of user objects without the 'averageAnnualPizzasOrdered' properties
 
+
+console.log('---------------Next Exercise---------------');
 // (CHALLENGE) Write a function that takes in an array of user objects, increases the value of averageAnnualPizzasOrdered by 5 for each user and returns the average annual pizzas ordered across all users, after this adjustment.
 
 
