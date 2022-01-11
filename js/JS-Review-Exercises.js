@@ -249,7 +249,13 @@ let users = [
         averageAnnualPizzasOrdered: 10
     }
 ];
-
+// Copy of array for use with last exercise
+// It's because copyOfUsers refers to the same object. Thus, when you delete a property on one object, it effects both (since they both point to the same object).
+// Read about deep copies and shallow copies of objects:
+// https://medium.com/@manjuladube/understanding-deep-and-shallow-copy-in-javascript-13438bad941c
+// let copyOfUsers = [...users]; what I tried, this is shallow copy
+// Deep copy
+let copyOfUsers = JSON.parse(JSON.stringify(users));
 
 // Write a function that takes in an array of user objects and returns the user object of the user with the longest name
 // https://flexiple.com/loop-through-object-javascript/
@@ -292,6 +298,7 @@ console.log('---------------Next Exercise---------------');
 
 // Write a function that takes in an array of user objects and returns the same array of user objects without the 'averageAnnualPizzasOrdered' properties
 function removePizzasOrdered(arrOfObjects) {
+    // Note that this deletes the property from the original array. Even though I created a copy of the array above this function, the copy also has the averageAnnualPizzasOrdered removed as well, this is because objects are reference types.
     arrOfObjects.forEach(user => {
         delete user.averageAnnualPizzasOrdered;
     });
@@ -300,9 +307,21 @@ function removePizzasOrdered(arrOfObjects) {
 
 console.log(removePizzasOrdered(users));
 console.log('---------------Next Exercise---------------');
+
 // (CHALLENGE) Write a function that takes in an array of user objects, increases the value of averageAnnualPizzasOrdered by 5 for each user and returns the average annual pizzas ordered across all users, after this adjustment.
+console.log(copyOfUsers);
 
+function updatePizzas(arrOfObjects) {
+    let pizzaCount = 0;
+    arrOfObjects.forEach(user => {
+        user.averageAnnualPizzasOrdered += 5;
+        pizzaCount += user.averageAnnualPizzasOrdered;
+    });
 
+    return (pizzaCount / arrOfObjects.length).toFixed(0);
+}
+
+console.log(updatePizzas(copyOfUsers));
 
 
 
