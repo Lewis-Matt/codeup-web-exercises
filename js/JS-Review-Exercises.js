@@ -148,15 +148,43 @@ console.log(checkIfInArray([6, 8, 7, 5, 3, 0, 9], 3));
 console.log('---------------Next Exercise---------------');
 
 // Write a function that takes in an array of numbers and returns the lowest number. Assume only number element values and an array of at least two numbers.
-let testArray = [1234,1236,747,31234,722,285946,26,151,61];
-function lowest (arr) {
+let testArray = [1234, 1236, 747, 31234, 722, 285946, 26, 151, 61];
+
+function lowest(arr) {
     return Math.min(...arr)
 }
+
 console.log(lowest(testArray));
+// Another solution is const min = arr.reduce((a, b) => Math.min(a, b)): reduce does the callback function on every element of the array.
+console.log('---------------Next Exercise---------------');
+
 // Write a function that takes in an array of numbers and returns the product of the lowest and highest number. Assume only number element values and an array of at least two numbers.
+function productOfExtremes(arr) {
+    let min = Math.min(...arr);
+    let max = Math.max(...arr);
+    return min * max;
+}
+
+// Uses testArray from 151
+console.log(productOfExtremes(testArray));
+console.log('---------------Next Exercise---------------');
 
 // Write a function that takes in an array of numbers and returns the sum of the lowest two numbers. Assume only number element values and an array of at least two numbers.
+// The shift() method removes the first item of an array.
+//
+// The shift() method changes the original array.
+//
+// The shift() method returns the shifted element.
+function sumTwoMins(arr) {
+    arr.sort(function (a, b) {
+        return a - b;
+    });
+    let min1 = arr.shift();
+    let min2 = arr.shift();
+    return min1 + min2;
+}
 
+console.log(sumTwoMins(testArray));
 // Write a function that takes in an array of strings and returns the first two words as a string concatenated together with a dash. Assume at least three string elements in the passed array.
 /*
 
