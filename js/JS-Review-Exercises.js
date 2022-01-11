@@ -226,34 +226,50 @@ function addProperty(obj) {
 console.log(addProperty(testObj));
 console.log('---------------Next Exercise---------------');
 // Assume for the next questions, this can be used as the array of user objects:
-/*
-  var users [
+
+const users = [
     {
-      name: 'Justin',
-      occupation: 'Web Developer',
-      averageAnnualPizzasOrdered: 22
+        name: 'Justin',
+        occupation: 'Web Developer',
+        averageAnnualPizzasOrdered: 22
     },
     {
-      name: 'Cathy',
-      occupation: 'Web Developer',
-      averageAnnualPizzasOrdered: 15
+        name: 'Cathy',
+        occupation: 'Web Developer',
+        averageAnnualPizzasOrdered: 15
     },
     {
-      name: 'Fred',
-      occupation: 'Data Engineer',
-      averageAnnualPizzasOrdered: 35
+        name: 'Fred',
+        occupation: 'Data Engineer',
+        averageAnnualPizzasOrdered: 35
     },
     {
-      name: 'Mary',
-      occupation: 'DBA',
-      averageAnnualPizzasOrdered: 10
+        name: 'Mary',
+        occupation: 'DBA',
+        averageAnnualPizzasOrdered: 10
     }
-  ]
-*/
+];
+
 
 // Write a function that takes in an array of user objects and returns the user object of the user with the longest name
+// https://flexiple.com/loop-through-object-javascript/
+function longestUserName(arrOfObjects) {
+    // Variable to keep track of user object with the longest name
+    let userWithLongestName = {};
+    // Variable to compare length of username to
+    let lengthOfLongestName = 0;
+    // Loop through array of objects
+    for (let i = 0; i < arrOfObjects.length; i++) {
+        // Check the length of the value of each property called 'name'
+        if (arrOfObjects[i].name.length > lengthOfLongestName) {
+            // If the username is longer than the length of the name stored in the comparator variable, set this user as the one with the longest name
+            userWithLongestName = arrOfObjects[i];
+            return userWithLongestName;
+        }
+    }
+}
 
-
+console.log(longestUserName(users));
 console.log('---------------Next Exercise---------------');
 // Write a function that takes in an array of user objects and returns the 'Web Developer' with highest averageAnnualPizzasOrdered value
 

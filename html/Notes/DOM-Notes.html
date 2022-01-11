@@ -4,7 +4,7 @@ by their id, class, or tag name. -->
 <button id="btnToClick">Click Me</button>
 <script>
     "use strict";
-    (function() {
+    (function () {
         var btnToClick = document.getElementById('btnToClick');
 
         console.log(btnToClick); // prints <button id="btnToClick">Click Me</button>
@@ -16,7 +16,7 @@ by their id, class, or tag name. -->
 <!-- When we call document.getElementById() with that id, we get back the button element.-->
 
 
-<!-- Besides locating elements by id, elements are also often located by class or tag name.-->
+<!-- Besides, locating elements by id, elements are also often located by class or tag name.-->
 <!-- In this case, class refers to the CSS classes assigned to an element within the class attribute.-->
 <!-- Tag name refers to the actual name of the HTML tag.-->
 
@@ -35,7 +35,7 @@ by their id, class, or tag name. -->
 
 <script>
     "use strict";
-    (function() {
+    (function () {
         // Get all elements with class 'even'
         var evenElements = document.getElementsByClassName('even');
 
@@ -68,7 +68,7 @@ by their id, class, or tag name. -->
         // li.even.list-two-item
     })();
 </script>
-<!--As you can see, elements returned by document.getElementsByClassName() or document.getElementsByTagName() must be accessed by as an array.-->
+<!--As you can see, elements returned by document.getElementsByClassName() or document.getElementsByTagName() must be accessed as an array.-->
 
 <!--Some elements, like form inputs, can be accessed directly by name through special properties on the document object.-->
 <form name="login">
@@ -86,7 +86,7 @@ by their id, class, or tag name. -->
 </form>
 <script>
     "use strict";
-    (function() {
+    (function () {
         // get the "username" input
         var usernameInput = document.forms.login.username;
         // you can get a value for a form input by using the value property.
@@ -105,7 +105,7 @@ the innerHTML property on the element you are working with.-->
 </div>
 <script>
     "use strict";
-    (function() {
+    (function () {
         // Get the main heading h1 by id
         var mainHeading = document.getElementById('main-heading');
 
@@ -132,7 +132,7 @@ the innerHTML property on the element you are working with.-->
 <a href="http://www.yahoo.com" id="search-link">Web Search</a>
 <script>
     "use strict";
-    (function() {
+    (function () {
         // Get the search link anchor by id
         var searchLink = document.getElementById("search-link");
 
@@ -166,7 +166,7 @@ The * portion of the name must be at least one character long and should be all 
 </ul>
 <script>
     "use strict";
-    (function() {
+    (function () {
         // Get the main heading h1 by id
         var listItems = document.getElementsByTagName('li');
 
@@ -190,8 +190,15 @@ The * portion of the name must be at least one character long and should be all 
 <body>
 <script>
     "use strict";
-    (function() {
+    (function () {
         // Get the body element (notice we need to use index 0 of the array!)
+        /*Well, document.getElementsByTagName queries for an unknown number of elements within your markup. It will return a HTMLCollection, which is an Array-like structure. That's why we need to address specific elements within that list via brackets. <body> and <head> elements are only allowed once within a valid HTML document, so this might look a little confusing. A better way to get those nodes is directly, via reference:
+        var head = document.head,
+        body = document.body;
+        To be on the safe side, combine that with a fallback, and you're fine:
+        head = document.head || document.getElementsByTagName("head")[0];
+        */
+        /*The getElementsByTagName() method returns a collection of all elements in the document with the specified tag name, as an HTMLCollection object. The HTMLCollection object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.*/
         var bodyElement = document.getElementsByTagName('body')[0];
 
         // Change the body font color
