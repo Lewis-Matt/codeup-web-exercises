@@ -227,7 +227,7 @@ console.log(addProperty(testObj));
 console.log('---------------Next Exercise---------------');
 // Assume for the next questions, this can be used as the array of user objects:
 
-const users = [
+let users = [
     {
         name: 'Justin',
         occupation: 'Web Developer',
@@ -262,22 +262,43 @@ function longestUserName(arrOfObjects) {
     for (let i = 0; i < arrOfObjects.length; i++) {
         // Check the length of the value of each property called 'name'
         if (arrOfObjects[i].name.length > lengthOfLongestName) {
+            lengthOfLongestName = arrOfObjects[i].name.length;
             // If the username is longer than the length of the name stored in the comparator variable, set this user as the one with the longest name
             userWithLongestName = arrOfObjects[i];
-            return userWithLongestName;
         }
     }
+    return userWithLongestName;
 }
 
 console.log(longestUserName(users));
 console.log('---------------Next Exercise---------------');
 // Write a function that takes in an array of user objects and returns the 'Web Developer' with highest averageAnnualPizzasOrdered value
+// The outer forEach() loop is used to iterate through the objects array. We then use the for...in loop to iterate through the properties of an individual object.
+function highestPizzasOrdered(arrOfObjects) {
+    let pizzaLover = {};
+    let mostPizzas = 0;
+    arrOfObjects.forEach(user => {
+        let pizzasOrdered = user.averageAnnualPizzasOrdered;
+        if (pizzasOrdered > mostPizzas) {
+            mostPizzas = user.averageAnnualPizzasOrdered;
+            pizzaLover = user;
+        }
+    });
+    return pizzaLover;
+}
 
-
+console.log(highestPizzasOrdered(users));
 console.log('---------------Next Exercise---------------');
+
 // Write a function that takes in an array of user objects and returns the same array of user objects without the 'averageAnnualPizzasOrdered' properties
+function removePizzasOrdered(arrOfObjects) {
+    arrOfObjects.forEach(user => {
+        delete user.averageAnnualPizzasOrdered;
+    });
+    return arrOfObjects;
+}
 
-
+console.log(removePizzasOrdered(users));
 console.log('---------------Next Exercise---------------');
 // (CHALLENGE) Write a function that takes in an array of user objects, increases the value of averageAnnualPizzasOrdered by 5 for each user and returns the average annual pizzas ordered across all users, after this adjustment.
 
