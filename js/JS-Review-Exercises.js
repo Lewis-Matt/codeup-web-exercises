@@ -45,6 +45,7 @@ function lettersInString(str) {
 
 lettersInString('This is a string');
 console.log('---------------Next Exercise---------------');
+
 // Write a function that takes in a string and logs it 133 times
 function lee(str) {
     let i = 0;
@@ -128,17 +129,30 @@ console.log('---------------Next Exercise---------------');
 function toArray(input1, input2) {
     return [...arguments];
 }
+
 console.log(toArray('duck', 7));
 console.log('---------------Next Exercise---------------');
+
 // Write a function that takes in and array and another input and returns true if the value of the second input is an element in the first input array
-function checkIfInArray (arr, input) {
+function checkIfInArray(arr, input) {
 // Loop through each index of arr
     for (let i = 0; i < arr.length; i++) {
-
+        if (arr[i] === input) {
+            return true;
+        }
     }
+    return false;
 }
-// Write a function that takes in an array of numbers and returns the lowest number. Assume only number element values and an array of at least two numbers.
 
+console.log(checkIfInArray([6, 8, 7, 5, 3, 0, 9], 3));
+console.log('---------------Next Exercise---------------');
+
+// Write a function that takes in an array of numbers and returns the lowest number. Assume only number element values and an array of at least two numbers.
+let testArray = [1234,1236,747,31234,722,285946,26,151,61];
+function lowest (arr) {
+    return Math.min(...arr)
+}
+console.log(lowest(testArray));
 // Write a function that takes in an array of numbers and returns the product of the lowest and highest number. Assume only number element values and an array of at least two numbers.
 
 // Write a function that takes in an array of numbers and returns the sum of the lowest two numbers. Assume only number element values and an array of at least two numbers.
