@@ -11,6 +11,7 @@ function triple(num) {
 }
 
 console.log(triple('fifteen'));
+console.log('---------------Next Exercise---------------');
 // Modify the above function to work with numeric strings as well.
 // Modify the above function to return a string output of 'not a number' if the input is not a number or numeric string.
 
@@ -23,7 +24,7 @@ function lengthChecker(str, length) {
 }
 
 console.log(lengthChecker('matt', 5));
-
+console.log('---------------Next Exercise---------------');
 // (CHALLENGE) Write a function that takes in a day of the week as a string and returns the number that matches the day of the week. 'Sunday' should return 1 and 'Saturday' should return 7.
 let daysOfWWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -32,6 +33,7 @@ function dayChecker(day) {
 }
 
 console.log(dayChecker('Tuesday'));
+console.log('---------------Next Exercise---------------');
 // ========== + Loops
 
 // Write a function that takes in a string input and logs each character of the string separately
@@ -42,7 +44,7 @@ function lettersInString(str) {
 }
 
 lettersInString('This is a string');
-
+console.log('---------------Next Exercise---------------');
 // Write a function that takes in a string and logs it 133 times
 function lee(str) {
     let i = 0;
@@ -53,7 +55,7 @@ function lee(str) {
 }
 
 lee('duck');
-
+console.log('---------------Next Exercise---------------');
 // Write a function that takes in a string input and logs the first character, then the first two characters, etc., until the full string is logged.
 /*
 Example Input: 'Codeup'
@@ -78,6 +80,7 @@ function charLogger(str) {
 }
 
 charLogger('Codeup');
+console.log('---------------Next Exercise---------------');
 // (CHALLENGE) Write a function that takes in two string inputs and for each letter in the first string, logs how many times that given letter appears in the second string. It should be case-insensitive. If a letter appears more than once in the first string, the output should simply log the same message as many times as it appears in the first string.
 /*
 
@@ -111,12 +114,29 @@ function letterChecker(str1, str2) {
 
 letterChecker('Codeup', 'Coding Challenges');
 
+// Try this
+// var str = "A,B,C,D,E";
+// var ch = ',';
+//
+// var count = [...str].filter(x => x === ch).length;
+// console.log(count);
+console.log('---------------Next Exercise---------------');
 // ========== + Arrays
 
 // Write a function that takes in two inputs and returns an array with those two inputs
-
+// arguments is an Array-like object accessible inside functions that contains the values of the arguments passed to that function.
+function toArray(input1, input2) {
+    return [...arguments];
+}
+console.log(toArray('duck', 7));
+console.log('---------------Next Exercise---------------');
 // Write a function that takes in and array and another input and returns true if the value of the second input is an element in the first input array
+function checkIfInArray (arr, input) {
+// Loop through each index of arr
+    for (let i = 0; i < arr.length; i++) {
 
+    }
+}
 // Write a function that takes in an array of numbers and returns the lowest number. Assume only number element values and an array of at least two numbers.
 
 // Write a function that takes in an array of numbers and returns the product of the lowest and highest number. Assume only number element values and an array of at least two numbers.
