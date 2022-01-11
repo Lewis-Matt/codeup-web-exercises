@@ -170,30 +170,46 @@ console.log(productOfExtremes(testArray));
 console.log('---------------Next Exercise---------------');
 
 // Write a function that takes in an array of numbers and returns the sum of the lowest two numbers. Assume only number element values and an array of at least two numbers.
-// The shift() method removes the first item of an array.
-//
-// The shift() method changes the original array.
-//
-// The shift() method returns the shifted element.
+
 function sumTwoMins(arr) {
+    // Sorts an array in-place. If the return (i.e. a-b) is < 0, it sorts a before b. If it is > 0, sorts b before a.
     arr.sort(function (a, b) {
         return a - b;
     });
+    // The shift() method removes the first item of an array.
+    // The shift() method changes the original array.
+    // The shift() method returns the shifted element.
     let min1 = arr.shift();
     let min2 = arr.shift();
     return min1 + min2;
 }
 
 console.log(sumTwoMins(testArray));
+console.log('---------------Next Exercise---------------');
+
 // Write a function that takes in an array of strings and returns the first two words as a string concatenated together with a dash. Assume at least three string elements in the passed array.
 /*
-
 Example Input: ['cat', 'dog', 'fish']
 Example Output: 'cat-dog'
 */
+function concatTwoWords(arr) {
+    return arr[0] + '-' + arr[1];
+}
+
+console.log(concatTwoWords(['cat', 'dog', 'fish']));
+console.log('---------------Next Exercise---------------');
+
 
 // (CHALLENGE) Write a function that takes in an array of strings and returns the array of strings sorted from shortest to longest string
+function sortByLength(arr) {
+    arr.sort((a, b) => {
+        return a.length - b.length;
+    });
+    return arr;
+}
 
+console.log(sortByLength(['pumpkin', 'spice', 'coffee', 'is', 'delicious']));
+console.log('---------------Next Exercise---------------');
 
 // ========== + Objects
 
