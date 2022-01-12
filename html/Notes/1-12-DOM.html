@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>Create an html document with a paragraph element with loremipsum text inside of it. Using DOM manipulation, change
+    the paragraph text dynamically to say something about the weather.
+</p>
+<p id="weather">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, commodi, deserunt error eum expedita
+    illum itaque
+    minima perferendis qui quo rerum, saepe tenetur veritatis.</p>
+
+<script>
+    let loremText = document.getElementById("weather");
+    let count = 0;
+    let max = 3;
+    let interval = 500;
+    let myInterval = setInterval(function () {
+        if (count >= max) {
+            clearInterval(myInterval);
+            loremText.innerHTML = "I hate Texas weather."
+        } else {
+            count++;
+        }
+    }, interval);
+</script>
+</body>
+</html>
