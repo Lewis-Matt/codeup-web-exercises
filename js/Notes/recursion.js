@@ -25,11 +25,10 @@ console.log(findSolution(13));
 
 - To do this, the function performs one of three actions. If the current number is the target number, the current history is a way to reach that target, so it is returned.
 - If the current number is > target, there is no point in exploring this branch because adding/multiplying will only make it bigger, so return null.
-- If current is still below target, the function tries both possible paths that start from the current numberr by calling itself twice, once for addition and once for multiplication. If the first call returns something that isn't null, it is returned. Otherwise the second call is returned, regardless of whether it produces a string or null.
+- If current is still below target, the function tries both possible paths that start from the current number by calling itself twice, once for addition and once for multiplication. If the first call returns something that isn't null, it is returned. Otherwise, the second call is returned, regardless of whether it produces a string or null.
 */
 
 // Example of all the calls to find, looking for a solution to the number 13:
-
 /*
 * find(1, "1")
 *   find(6, "(1 + 5)")
