@@ -44,3 +44,10 @@ console.log(findSolution(13));
 *           find(13, "(((1 * 3) + 5) + 5)")
 *               FOUND!
 */
+
+/*
+* The first time find is called, it starts by calling itself (line 13) to explore the solution that starts with (1 + 5) - since line 17 initiates current at 1.
+* The call with further recurse to explore every continued solution that yields a number less than or equal to the target number. It doesn't, so it returns null back to the first call.
+* The || operator causes the call that explores (1 * 3) to happen. This passes the line 10 check (3 < target) so it proceeds to the recursive call again (line 13) and does (3 + 5) || (3 * 3) and continues checking until the solution is found.
+* That innermost call returns a string, and each of the || operators in the intermediate calls passes that string along, ultimately returning the solution.
+*/
