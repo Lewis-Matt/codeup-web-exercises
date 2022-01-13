@@ -1,4 +1,16 @@
 "use strict";
+
+function power(base, exponent) {
+    if (exponent === 0) { // Base case: otherwise infinite loop
+        return 1;
+    } else {
+        return base * power(base, exponent - 1);
+    }
+}
+console.log(power(2,3));
+// This is close to the mathematical definition of exponentiation. A loop is 3x faster (in the case of the exponent being 3) as this will recursively call the power function 3 times.
+// Running through a loop is generally cheaper than calling a function multiple times. Often, though, a program deals with such complex concepts that giving up some efficiency in order to make the program more straight-forward is helpful.
+
 // From Eloquent JS pg. 51
 
 /* Start from 1 and repeatedly either adding 5 or multiplying by 3, and infinite set of numbers can be produced. Write a function, given a number, that tries to find a sequence of such additions and multiplications that produces that number. For example, 13 can be reached by first multiplying by 3 and then adding 5 twice, whereas the number 15 cannot be reached at all.*/
