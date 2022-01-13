@@ -24,6 +24,9 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+
+<!-----------------------------------PART TWO DOM EVENTS EXERCISE------------------------------------------->
+
 <!--Add 4 buttons to the page. Attach click event listeners to each of the buttons and have the handlers perform the modifications
 that were automatically taking place. For example, the first button should set inner html of mainHeader to "JavaScript is Cool".-->
 <button id="btn1">Change text of main header</button>
@@ -81,35 +84,37 @@ that were automatically taking place. For example, the first button should set i
     let btn5 = document.getElementById('btn5');
     btn5.addEventListener('click', btn5Listener)
 
+    // ---------------------------------PART ONE DOM EXERCISE-------------------------------------------
+
     // The below IIFE does the same as the button events above.
-    // (function () {
-    //     "use strict";
-    //     // TODO: Uncomment next line and get the main header element by id
-    //     let mainHeader = document.getElementById("main-header");
-    //     // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-    //     mainHeader.innerHTML = "JavaScript is Cool";
-    //     // TODO: Uncomment the next line and get the sub header element by id
-    //     let subHeader = document.getElementById("sub-header");
-    //     // TODO: Set the text color of subHeader to blue
-    //     subHeader.style.color = '#00F';
-    //     // TODO: Uncomment the next line and get all list items
-    //     let listItems = document.getElementsByTagName('li');
-    //     // TODO: Set text color on every other list item to grey
-    //     for (let i = 0; i < listItems.length; i += 2) {
-    //         listItems[i].style.color = '#888'
-    //     }
-    //     // TODO: Set text color of li with dbid = 1 to blue
-    //     for (let i = 0; i < listItems.length; i++) {
-    //         let dbID = listItems[i].getAttribute(("data-dbid"));
-    //         if (dbID === '1') {
-    //             listItems[i].style.color = '#00F';
-    //         }
-    //     }
-    //     // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-    //     let subParagraphs = document.getElementsByClassName("sub-paragraph");
-    //     // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-    //     subParagraphs[0].innerHTML = "Mission Accomplished!";
-    // })();
+    /*(function () {
+        "use strict";
+        // TODO: Uncomment next line and get the main header element by id
+        let mainHeader = document.getElementById("main-header");
+        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        mainHeader.innerHTML = "JavaScript is Cool";
+        // TODO: Uncomment the next line and get the sub header element by id
+        let subHeader = document.getElementById("sub-header");
+        // TODO: Set the text color of subHeader to blue
+        subHeader.style.color = '#00F';
+        // TODO: Uncomment the next line and get all list items
+        let listItems = document.getElementsByTagName('li');
+        // TODO: Set text color on every other list item to grey
+        for (let i = 0; i < listItems.length; i += 2) {
+            listItems[i].style.color = '#888'
+        }
+        // TODO: Set text color of li with dbid = 1 to blue
+        for (let i = 0; i < listItems.length; i++) {
+            let dbID = listItems[i].getAttribute(("data-dbid"));
+            if (dbID === '1') {
+                listItems[i].style.color = '#00F';
+            }
+        }
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        let subParagraphs = document.getElementsByClassName("sub-paragraph");
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerHTML = "Mission Accomplished!";
+    })();*/
 </script>
 </body>
 </html>
