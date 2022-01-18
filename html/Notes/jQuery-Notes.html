@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Notes</title>
+    <style>
+        code, p {
+            margin-bottom: 25px;
+            line-height: 1.25em;
+        }
+
+        body {
+            padding: .5em 1em;
+        }
+
+    </style>
+</head>
+<body>
+<h1>jQuery Overview</h1>
+<p>
+    We will be using the jQuery object to find and create HTML elements from the DOM.<br>
+    Definition:
+    Return a collection of matched elements either found in the DOM based on passed argument(s) or created by passing an
+    HTML string.
+    Shorthand:
+    In jQuery, we commonly use the dollar sign $, an alias of jQuery to reference the jQuery object.
+</p>
+<p>
+    JavaScript provides the ability to natively determine if the window has finished loading using the window.onload
+    event handler.<br>
+    <code>
+        window.onload = function() {<br>
+        alert( 'The page has finished loading!' );<br>
+        }<br>
+    </code>
+    While this is a good way to make sure the page is fully loaded and ready for DOM manipulation, it waits until all
+    images have finished downloading. We usually do not need the image files to be fully downloaded to begin
+    manipulating DOM objects.
+</p>
+<p>
+    We can use jQuery to select the document object and add an event listener called ready. This event listener will
+    fire as soon as the DOM is ready to be manipulated, before all the images have completed downloading.
+
+    To use the document ready event listener, we can select the document and chain the ready() method:<br>
+
+    <code>$(document).ready();</code>
+</p>
+<p>
+    Passing an anonymous function in ready() will execute our code when the document is ready for JavaScript
+    manipulation:<br>
+    <code>
+        $(document).ready(function() {<br>
+        alert( 'The DOM has finished loading!' );<br>
+        });<br>
+    </code>
+</p>
+<p>
+    While using document ready is very common, if we put our JavaScript at the bottom of our document, it will already
+    be loaded by the time the JavaScript is loaded. Using document ready will ensure the DOM is loaded before
+    running.
+</p>
+<h3>Usage</h3>
+<p>
+    All JavaScript code snippets should be assumed to be inside a larger file with "use strict"; at the top and inside a
+    $(document).ready function.<br>
+    my-custom-javascript.js <br>
+    <code>
+        "use strict";<br>
+
+        $(document).ready(function() {<br>
+
+        // INSERT JAVASCRIPT CODE SAMPLE HERE <br>
+
+        });
+    </code>
+</p>
+<h3>jQuery version notes</h3>
+<p>We are using 2.2.4 release for this course.
+    Each version has two different release types: compressed (production) and uncompressed (development).
+    We will be using the uncompressed copies for our applications and will switch them out for the compressed versions
+    when we launch our product on a production server.</p>
+<script src="/js/jquery-2.2.4.js"></script>
+</body>
+</html>
