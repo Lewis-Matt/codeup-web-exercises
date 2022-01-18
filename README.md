@@ -19,3 +19,6 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 - switch
 - does str1 occur in str2
 - regex
+
+### warmup-exercises.js
+- filter
