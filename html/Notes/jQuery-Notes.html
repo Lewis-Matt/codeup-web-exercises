@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -16,6 +16,24 @@
             padding: .5em 1em;
         }
 
+        .center {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border: solid 2px black;
+
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        td {
+            border: solid 1px black;
+
+        }
     </style>
 </head>
 <body>
@@ -74,6 +92,86 @@
         });
     </code>
 </p>
+<h2>jQuery Selectors</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Selector</th>
+        <th class="center">Syntax</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>ID Selector</td>
+        <td class="center"><code>#id</code></td>
+        <td>Selects a single element with the given id attribute.</td>
+    </tr>
+    <tr>
+        <td>Class Selector</td>
+        <td class="center"><code>.class</code></td>
+        <td>Selects all elements with the given class.</td>
+    </tr>
+    <tr>
+        <td>Element Selector</td>
+        <td class="center"><code>element</code></td>
+        <td>Selects all elements with the given tag name.</td>
+    </tr>
+    <tr>
+        <td>Multiple Selector</td>
+        <td class="center"><code>selector1[, selector2[, ...]]</code></td>
+        <td>Selects the combined results of all the specified selectors.</td>
+    </tr>
+    <tr>
+        <td>All Selector</td>
+        <td class="center"><code>*</code></td>
+        <td>Selects all elements.</td>
+    </tr>
+    </tbody>
+</table>
+<p>
+    The general syntax for manipulating elements with jQuery selectors is:
+</p>
+<code>$('selector')</code>
+<p>There are several important things to note here:</p>
+<ul>
+    <li>the selector is written inside a string</li>
+    <li>the string is inside of $(), which is just calling a function named $</li>
+    <li>this will return us a jQuery object</li>
+</ul>
+<p>
+    $ is a valid identifier in javascript, which means we can name our functions or variables $ (although you probably
+    shouldn't). $ is a commonly used shorthand for jQuery, and using either one will accomplish the same thing. So these
+    two
+    code blocks are functionally identical:
+    <code>
+        <br> $('selector')
+
+        <br> jQuery('selector')</code>
+</p>
+<p>
+    All selector expressions return us a jQuery object, which is just an object that represents zero or more HTML
+    elements, with all the methods of jQuery attached to it.
+    For now, we need to know the basics of two methods:
+</p>
+<ul>
+    <li>.html: returns the HTML contents of selected element or the first element in a collection. Similar to the
+        innerHTML property we previously covered.
+    </li>
+    <li>.css: allows us to change CSS properties for a given element or elements. Similar to the style property
+        previously discussed.
+    </li>
+</ul>
+<p>
+    Basic syntax is: $(selector).action()
+</p>
+
+<ul>
+    <li>A $ sign to define/access jQuery</li>
+    <li>A (selector) to "query (or find)" HTML elements</li>
+    <li>A jQuery action() to be performed on the element(s)</li>
+</ul>
+
 <h3>jQuery version notes</h3>
 <p>We are using 2.2.4 release for this course.
     Each version has two different release types: compressed (production) and uncompressed (development).
