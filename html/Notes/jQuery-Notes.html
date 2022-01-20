@@ -171,6 +171,35 @@
     <li>A (selector) to "query (or find)" HTML elements</li>
     <li>A jQuery action() to be performed on the element(s)</li>
 </ul>
+<h2>Events</h2>
+<ul>
+    <li>an event listener, or event handler function is a callback function that is called when an event happens</li>
+    <li>the handler function is passed the event object when it is called</li>
+    <li>the event object contains details about the event that occurred, as well as methods for modifying the event, for
+        example, <code>preventDefault</code>
+    </li>
+    <li>the event object can be omitted from the function definition if it is not used</li>
+    <li>we can attach an anonymous function or a named function as a callback function</li>
+    <li>any anonymous function can be refactored to be a named function</li>
+</ul>
+<h3>jQuery Mouse Events</h3>
+<ul>
+    <li>.click(): <code>$( selector ).click( handler )</code></li>
+    <li>.dblclick()</li>
+    <li>.hover(): The .hover event handler combines two other event handlers: mouseenter and mouseleave. So .hover will
+        take in two different callback functions that will be called when the mouse enters the element, and when the
+        mouse leaves the element.
+        <ul>
+            <li><code> $( selector ).hover( handlerIn, handlerOut )</code></li>
+            <li>This is the same as attaching both handlers separately:</li>
+            <li><code>$( selector ).mouseenter(handlerIn) <br> $( selector ).mouseleave(handlerOut)</code></li>
+        </ul>
+    </li>
+    <li>When we are inside a callback function for an event, <code>$(this)</code> always refer to the selected DOM
+        element that triggered the event.
+    </li>
+</ul>
+
 
 <h3>jQuery version notes</h3>
 <p>We are using 2.2.4 release for this course.
