@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+<p>Press the correct sequence of keys to activate cheat!</p>
+
+
+
+
+<script src="../js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    // This code will log a number reference that is tied to each key that is entered on your keyboard.
+    // Or use https://keycode.info/
+    // Up, Up, Down, Down, Left, Right, Left, Right, B, A, enter
+    $(document).keyup(function (event) {
+        console.log(event.keyCode);
+    });
+    /*
+    const up = 38;
+    const down = 40;
+    const left = 37;
+    const right = 39;
+    const a = 65;
+    const b = 66;
+    const ent = 13;
+    */
+    const cheatArray = [38,38,40,40,37,39,37,39,66,65,13];
+
+    $(document).keydown(function() {
+
+    })
+</script>
+</body>
+</html>
