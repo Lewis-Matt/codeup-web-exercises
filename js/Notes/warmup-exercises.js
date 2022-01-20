@@ -18,4 +18,3 @@ function namesWithFourLetters(arr) {
 }
 
 console.log(namesWithFourLetters(namesArray));
-
