@@ -1,7 +1,10 @@
 "use strict";
 $(document).ready(function() {
+    // EXERCISE 1
     // Add an alert that says the pages has finished loading
     alert("The DOM has finished loading.")
+
+    // EXERCISE 2
     // ID SELECTORS
     // Use jQuery to select an element by the id. Alert the contents of the element.
     let descriptionContents = $('#description').html();
@@ -16,5 +19,11 @@ $(document).ready(function() {
     // MULTIPLE SELECTORS
     // Combine your selectors that highlight all the h1, p, and li elements.
     $('h1, p, li').css('background-color', '#fffd7a');
+
+    // EXERCISE 3
+
+
+
+
 
 });
