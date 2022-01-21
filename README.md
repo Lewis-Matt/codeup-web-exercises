@@ -28,4 +28,4 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 - jQuery mouse & key events
 - jQuery + Bootstrap: .addClass() .removeClass()
 - function for logging keypress and comparing against array of key-codes
-
+- key vs keyCode: actual key as a string (e.g. 'a') vs the numeric code (65) for the key

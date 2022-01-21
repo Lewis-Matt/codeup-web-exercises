@@ -17,6 +17,7 @@
         body {
             font-family: 'Press Start 2P', cursive;
         }
+
         /* Set hint img display, .toggle() toggles the display between none and block */
         .hide {
             display: none;
@@ -81,7 +82,7 @@
         let elColor = $(errorEl).css("background");
         $(errorEl).css("background", "#F00");
         $(elText).html("WRONG KEY");
-        setTimeout(function(){
+        setTimeout(function () {
             $(errorEl).css("background", elColor);
             $('.card-header').html('Key Codes');
         }, time);
@@ -90,6 +91,14 @@
     }
 
     // KONAMI CHEAT FUNCTION
+    // Another way to log/store the key pressed: key is the actual letter/key pressed, stored as a string. Whereas keycode is the numerical code.
+/*
+    $(document).keydown(function (e) {
+        if (e.key === 'a') {
+            alert('Welcome!');
+        }
+    });
+*/
     $(document).keyup(function (event) {
         // Logs numerical value of key pressed (for reference)
         console.log(event.keyCode);
