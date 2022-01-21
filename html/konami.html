@@ -17,7 +17,7 @@
         body {
             font-family: 'Press Start 2P', cursive;
         }
-
+        /* Set hint img display, .toggle() toggles the display between none and block */
         .hide {
             display: none;
         }
@@ -26,26 +26,26 @@
 
 <body class="container-lg text-center p-3">
 <div class="jumbotron bg-warning">
-    <h1 class="text-center fw-bold text-uppercase p-3 animate">Konami Code</h1>
-    <h6 class="text-center hidden-on-success">Press the correct sequence of keys to activate cheat!</h6>
+    <h1 class="text-center fw-bold text-uppercase px-3 pt-2 pb-1 animate">Konami Code</h1>
+    <h6 class="text-center hidden-on-success px-3 pb-1">Press the correct sequence of keys to activate cheat!</h6>
     <!-- SPOILER BUTTON -->
     <button type="button" class="btn btn-primary mb-3 hint hidden-on-success">Spoiler Button</button>
 </div>
 <!-- When spoiler button is clicked, hint image is displayed -->
 <div class="container-fluid align-items-center hint-container">
-    <img src="../assets/img/Konami-code.png" id="hint-image" class="img-fluid hide" alt=""/>
+    <img src="../assets/img/Konami-code.png" id="hint-image" class="img-fluid hide hidden-on-success" alt=""/>
 </div>
-<div class="card border-warning border-3 mt-3 update-color">
-    <h3 class="card-header border-warning border-3 hidden-on-success">Key Codes</h3>
+<div class="card border-warning border-3 mt-3 update-color error">
+    <h3 class="card-header border-warning border-3 hidden-on-success error">Key Codes</h3>
     <!-- KONAMI div: Contra image is added after this div on success-->
-    <div class="card m-3 border-warning border-3 konami">
+    <div class="card m-3 border-warning border-3 konami error">
         <ul class="list-group text-uppercase text-center hidden-on-success">
-            <li class="list-group-item">up = 38</li>
-            <li class="list-group-item">down = 40</li>
-            <li class="list-group-item">left = 37</li>
-            <li class="list-group-item">right = 39</li>
-            <li class="list-group-item">a = 65</li>
-            <li class="list-group-item">b = 66</li>
+            <li class="list-group-item error">up = 38</li>
+            <li class="list-group-item error">down = 40</li>
+            <li class="list-group-item error">left = 37</li>
+            <li class="list-group-item error">right = 39</li>
+            <li class="list-group-item error">a = 65</li>
+            <li class="list-group-item error">b = 66</li>
         </ul>
     </div>
 </div>
@@ -63,7 +63,7 @@
     // https://keycode.info/
 
     // Store keycodes as an array: compare counter w/ length to indicate the end of the code.
-    // Could have used indexof(keyPressed) to check if each keypress matches
+    // I had originally set each keycode into its own variable, then used indexof(keyPressed) to check if each keypress matches. I was able to refactor into something much simpler using a counter variable as the iterator and to compare against the array's length.
     const cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 
     // The function looks for the first key (38/up) to start the sequence
@@ -73,6 +73,17 @@
 
     // Need a way to restart if the user enters the wrong sequence
     let restart = function () {
+        // Incorrect sequence changes background color for 1 second
+        let errorEl = $(".error");
+        let time = 800;
+        let elText = $('.card-header').html('')
+        let elColor = $(errorEl).css("background");
+        $(errorEl).css("background", "#F00");
+        $(elText).html("WRONG KEY");
+        setTimeout(function(){
+            $(errorEl).css("background", elColor);
+            $('.card-header').html('Key Codes');
+        }, time);
         beginning = false;
         counter = 0;
     }
@@ -95,10 +106,8 @@
         if (beginning) {
             // Incorrect sequence
             if (keyPressed !== cheatArray[counter]) {
-                // Error change bg to red for 1 sec
-                // $('.error').css('background-color','#F00').delay(1000).queue(function(){
-                //     $(this).css("background", "#FFF").dequeue();
-                // });
+
+
                 restart();
             } else {
                 // Correct key in the sequence was entered, increase counter (which also moves to the next index of the array)
