@@ -23,3 +23,9 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 ### warmup-exercises.js
 - filter
 - using REGEX and test()
+
+### konami.html
+- jQuery mouse & key events
+- jQuery + Bootstrap: .addClass() .removeClass()
+- function for logging keypress and comparing against array of key-codes
+
