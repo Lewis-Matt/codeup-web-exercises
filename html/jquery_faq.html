@@ -6,6 +6,46 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jQuery FAQ</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlighted {
+            background-color: hotpink;
+        }
+
+        h1, h4 {
+            text-align: center;
+        }
+
+        h1 {
+            border-bottom: black 4px solid;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 15px 25px;
+        }
+
+        dt {
+            font-size: 1.15em;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        dd {
+            font-style: italic;
+            padding: 5px 5px;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -32,6 +72,10 @@
     <dt>10. How do I apply for a job with the National Park Service?</dt>
     <dd>USAJOBs</dd>
 </dl>
+<div>
+    <input type="button" value="Show Answers" id="hideFAQs"/>
+</div>
+<hr>
 <h4>Notes on html &ltdl&gt element</h4>
 <p>
     The &ltdl&gt HTML element represents a description list. The element encloses a list of groups of terms (specified
@@ -45,13 +89,27 @@
 <!-- JS/jQuery Scripts -->
 <script>
     "use strict";
-    // TODO: Add a class to all dd elements named invisible.
+    $(document).ready(function () {
+        // TODO: Add a class to all dd elements named invisible.
+        $('dd').addClass('invisible');
 
-    // TODO: Create some CSS rules that sets elements with the invisible class to visibility: hidden;.
+        // TODO: Create some CSS rules that sets elements with the invisible class to visibility: hidden;.
+        // $('.invisible').css('visibility', 'hidden');
 
-    // TODO: Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.
+        // TODO: Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.
+        $('#hideFAQs').click(function (event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
 
-    // TODO: When any of the dt elements is clicked, the element that was clicked should be highlighted.
+        // TODO: When any of the dt elements is clicked, the element that was clicked should be highlighted.
+        $('dt').hover(function () {
+            $(this).css('cursor', 'pointer');
+        })
+            .click(function () {
+                $(this).toggleClass('highlighted');
+            });
+    });
 
 </script>
 </body>
