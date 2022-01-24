@@ -77,11 +77,11 @@
     let restart = function () {
         // Incorrect sequence changes background color for 1 second
         let errorEl = $(".error");
-        let time = 800;
+        let time = 1000;
         let elText = $('.card-header').html('')
         let elColor = $(errorEl).css("background");
         $(errorEl).css("background", "#F00");
-        $(elText).html("WRONG KEY");
+        $(elText).html("WRONG KEY - Start Over!");
         setTimeout(function () {
             $(errorEl).css("background", elColor);
             $('.card-header').html('Key Codes');

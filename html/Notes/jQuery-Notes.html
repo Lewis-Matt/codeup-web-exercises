@@ -224,6 +224,35 @@
     Remove all event handlers from all paragraph tags:<br>
     <code>$('p').off();</code>
 </p>
+
+<h3>Attribute Methods</h3>
+<h5>Getters and Setters</h5>
+<p>
+    any of the methods we will cover in this lesson can act as both getters and setters. This means that they can both find an existing value, or modify that value.
+</p>
+<h5>Method Chaining</h5>
+<p>
+    Most of the jQuery methods return a jQuery object, specifically when they are used as setters. This means that we can continue to add, or chain, methods calls together so long as the methods we are calling return a jQuery object.
+</p>
+<h4>.html()</h4>
+<ul>
+    <li>
+        The .html() method can be used both to get the current HTML of an element, and to change the HTML of selected element(s).
+    </li>
+    <li>
+        When no arguments are passed to .html(), it will retrieve the HTML contents of a selected element.
+    </li>
+    <li>
+        e.g. getting the contents of an element <br><code>var h1Contents = $('#codeup').html();</code>
+    </li>
+    <li>
+        Refactoring further, we could eliminate the temporary variable h1Contents:<br>
+        <code>$('#codeup').click(function() { <br>
+            alert($(this).html()); <br>
+            });</code>
+    </li>
+</ul>
+
 <h2>jQuery version notes</h2>
 <p>We are using 2.2.4 release for this course.
     Each version has two different release types: compressed (production) and uncompressed (development).
