@@ -19,8 +19,15 @@
             background-color: hotpink;
         }
 
-        img {
+        #logo {
             width: 15%;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            border: solid black 2px;
+            margin-bottom: 10px;
         }
 
         h1, h2, h4 {
@@ -39,8 +46,7 @@
 
         body {
             font-family: Helvetica, sans-serif;
-            padding: 15px 25px;
-            background-image: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+            background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
         }
 
         dt {
@@ -54,7 +60,7 @@
             padding: 5px 5px 5px 20px;
             border: 2px solid black;
             border-radius: 5px;
-            background-color: rgba(62, 142, 65, .5);
+            background-color: #f3e7e9;
         }
 
         .flex {
@@ -95,9 +101,9 @@
         }
     </style>
 </head>
-<body>
+<body class="container">
 <div class="flex">
-    <img src='/assets/img/NationalParkService.png' alt="">
+    <img id="logo" src='/assets/img/NationalParkService.png' alt="">
 </div>
 <h1>National Park Service</h1>
 <h2>Frequently Asked Questions</h2>
@@ -161,9 +167,30 @@
     <input type="button" value="Highlight" id="yellow" data-toggle="tooltip" data-placement="top"
            title="This will highlight the last list item!"/>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="image-container col text-center" id="cont-1">
+            <img src="../assets/img/guy%20typing.jpg" id="img-1" alt="">
+            <button class="btn btn-secondary" id="swap1">Swap 1</button>
+        </div>
+
+        <div class="image-container col text-center" id="cont-2">
+            <img src="../assets/img/meeting1.jpg" id="img-2" alt="">
+            <button class="btn btn-secondary" id="swap2">Swap 2</button>
+
+        </div>
+
+        <div class="image-container col text-center" id="cont-3">
+            <img src="../assets/img/mountain%20guy.jpg" id="img-3" alt="">
+            <button class="btn btn-secondary" id="swap3">Swap 3</button>
+
+        </div>
+    </div>
+</div>
+
 
 <hr>
-<h4>Notes on html &ltdl&gt element</h4>
+<h4>The HTML Description List Element</h4>
 <p>
     The &ltdl&gt HTML element represents a description list. The element encloses a list of groups of terms (specified
     using
@@ -220,7 +247,20 @@
             });
 
         // TODO: Bonus Stuff
+        // The left frame swaps to the right and takes the image from the frame in the center.
+        $('#swap1').click(function () {
+            $('#img-1').prependTo('#cont-2');
+            $('#img-2').prependTo('#cont-1');
+        })
+        // The center frame swaps randomly to either the left or right.
+        $('#swap2').click(function () {
 
+        })
+        // The right frame swaps to the left and takes the image from the frame in the center.
+        $('#swap3').click(function () {
+            $('#cont-3').children(':first-child').prependTo('#cont-2');
+            $('#cont-2').children(':first-child').appendTo('#cont-3');
+        })
     });
 
 </script>
