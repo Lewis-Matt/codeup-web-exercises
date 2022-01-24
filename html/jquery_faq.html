@@ -44,7 +44,7 @@
             padding: 5px 5px;
         }
 
-        div {
+        .flex {
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-<div>
+<div class="flex">
     <img src='/assets/img/NationalParkService.png' alt="">
 </div>
 <h1>National Park FAQ</h1>
@@ -79,9 +79,39 @@
     <dt>10. How do I apply for a job with the National Park Service?</dt>
     <dd>USAJOBs</dd>
 </dl>
-<div>
+<div class="flex">
     <input type="button" value="Show Answers" id="hideFAQs"/>
 </div>
+
+<div>
+    <h3>Yellowstone</h3>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    </ul>
+    <h3>Big Bend</h3>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    </ul>
+    <h3>Denali</h3>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+    </ul>
+</div>
+
+<!--TODO: Create a button that, when clicked, makes the last li in each ul have a yellow background.-->
+<div class="flex">
+    <input type="button" value="Yellow" id="yellow"/>
+</div>
+
 <hr>
 <h4>Notes on html &ltdl&gt element</h4>
 <p>
@@ -117,6 +147,24 @@
             .click(function () {
                 $(this).toggleClass('highlighted');
             });
+
+        // TODO: Create a button that, when clicked, makes the last li in each ul have a yellow background.
+        $('#yellow').click(function () {
+            $('ul').children('li:last-child').css('background-color', 'yellow');
+        });
+
+        // TODO: When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+        $('h3').click(function () {
+            $('ul').children().css('font-weight', 'bold');
+        });
+
+        //TODO: When any list item is clicked, the first li of the parent ul should have a font color of blue.
+        $('li').click(function () {
+            $('li').parent().children(':first-child').css('color', 'blue');
+        });
+
+
+
     });
 
 </script>
