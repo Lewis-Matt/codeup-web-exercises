@@ -15,6 +15,10 @@
             background-color: hotpink;
         }
 
+        img {
+            width: 15%;
+        }
+
         h1, h4 {
             text-align: center;
         }
@@ -49,7 +53,9 @@
     </style>
 </head>
 <body>
-
+<div>
+    <img src='/assets/img/NationalParkService.png' alt="">
+</div>
 <h1>National Park FAQ</h1>
 <dl>
     <dt>1. Who is the director of the National Park Service?</dt>
@@ -85,6 +91,7 @@
     implement a glossary
     or to display metadata (a list of key-value pairs).
 </p>
+
 <!-- Import JQUERY 2.2.4 -->
 <script src="../js/jquery-2.2.4.js"></script>
 <!-- JS/jQuery Scripts -->
@@ -96,6 +103,7 @@
 
         // TODO: Create some CSS rules that sets elements with the invisible class to visibility: hidden;.
         // $('.invisible').css('visibility', 'hidden');
+        // Added in <style>
 
         // TODO: Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.
         $('#hideFAQs').click(function () {
