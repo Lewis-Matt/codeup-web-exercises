@@ -42,12 +42,12 @@
     We will be using the jQuery object to find and create HTML elements from the DOM.
 </p>
 <p>
-    Definition:<br>
+    <strong>Definition:</strong><br>
     Return a collection of matched elements either found in the DOM based on passed argument(s) or created by passing an
     HTML string.
 </p>
 <p>
-    Shorthand:<br>
+    <strong>Shorthand:</strong><br>
     In jQuery, we commonly use the dollar sign $, an alias of jQuery to reference the jQuery object.
 </p>
 <p>
@@ -87,7 +87,8 @@
     be loaded by the time the JavaScript is loaded. Using document ready will ensure the DOM is loaded before
     running.
 </p>
-<h3>Usage</h3>
+<hr>
+<h1>Usage</h1>
 <p>
     All JavaScript code snippets should be assumed to be inside a larger file with "use strict"; at the top and inside a
     $(document).ready function.<br>
@@ -176,6 +177,7 @@
     <li>A (selector) to "query (or find)" HTML elements</li>
     <li>A jQuery action() to be performed on the element(s)</li>
 </ul>
+<hr>
 <h2>Events</h2>
 <ul>
     <li>an event listener, or event handler function is a callback function that is called when an event happens</li>
@@ -235,14 +237,14 @@
     Remove all event handlers from all paragraph tags:<br>
     <code>$('p').off();</code>
 </p>
-
-<h3>Attribute Methods</h3>
-<h5>Getters and Setters</h5>
+<hr>
+<h2>Attribute Methods</h2>
+<h3>Getters and Setters</h3>
 <p>
     any of the methods we will cover in this lesson can act as both getters and setters. This means that they can both
     find an existing value, or modify that value.
 </p>
-<h5>Method Chaining</h5>
+<h3>Method Chaining</h3>
 <p>
     Most of the jQuery methods return a jQuery object, specifically when they are used as setters. This means that we
     can continue to add, or chain, methods calls together so long as the methods we are calling return a jQuery object.
@@ -305,13 +307,14 @@
     </li>
 </ul>
 
-<h4>.addClass(), .removeClass()</h4>
+<h4>.addClass() and .removeClass()</h4>
 <p>
     Adding classes dynamically to elements is a great way to control the styling of a page and use event handlers to add
     functionality. <strong>The below section is an example:</strong>
 </p>
 <!--------------------EXAMPLE------------------>
-<h1>Example Page</h1>
+<hr>
+<h2>Example Page</h2>
 <div class="centered important">
     <h3>NOTICE</h3>
     <p>This is an important message!</p>
@@ -335,6 +338,7 @@
     });
 </script>
 <!--------------------END OF EXAMPLE------------------>
+<hr>
 <p>
     The JavaScript is adding a click event to the element with the id highlight-important. When the event handler is
     triggered, the first thing it runs is event.preventDefault(), which will stop the default behavior of the anchor
@@ -348,7 +352,7 @@
     Clicking on the highlight-important link should add the highlighted class to all elements with a class of important,
     thereby making them have a yellow background color.
 </p>
-<h6>.removeClass() works similarly to .addClass()</h6>
+<p><em>.removeClass() works similarly to .addClass()</em></p>
 
 <h4>.toggleClass()</h4>
 <p>
@@ -358,6 +362,36 @@
 <p>
     If the class name is present, .toggleClass() will remove it; otherwise, the new class name will be added.
 </p>
+<hr>
+<h2>Traversing</h2>
+<p>Methods for traversing the DOM</p>
+<ul>
+    <li>.each() Iterate over a jQuery object, executing a function for each matched element.</li>
+    <li>.first() Reduce the set of matched elements to the first in the set.</li>
+    <li>.last() Reduce the set of matched elements to the final one in the set.</li>
+    <li>.parent() Get the parent of each element in the current set of matched elements, optionally filtered by a
+        selector.
+    </li>
+    <li>.children() Get the children of each element in the set of matched elements, optionally filtered by a
+        selector.
+    </li>
+    <li>.next() Get the immediately following sibling in the set of matched elements.</li>
+</ul>
+<h4>.each()</h4>
+Syntax<br>
+<code>.each( function(index, element) { /* ... */ } )
+</code><br>
+<p>As we see, it passes the index and the element to the callback function at the beginning of each pass.</p>
+<p>We could use jQuery to highlight every other li element using the .each() method:</p>
+<code>
+    $('li').each(function(index) {<br>
+    if (index % 2 !== 0) {<br>
+    $(this).css('background-color', '#FF0');<br>
+    }<br>
+    });<br>
+</code>
+<br>
+<hr>
 <h2>jQuery version notes</h2>
 <p>We are using 2.2.4 release for this course.
     Each version has two different release types: compressed (production) and uncompressed (development).
