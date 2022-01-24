@@ -100,7 +100,7 @@
     });
 </code>
 
-<h2>jQuery Selectors</h2>
+<h2><a href="https://api.jquery.com/category/selectors/">jQuery Selectors</a></h2>
 <table>
     <thead>
     <tr>
@@ -189,7 +189,7 @@
     <li>we can attach an anonymous function or a named function as a callback function</li>
     <li>any anonymous function can be refactored to be a named function</li>
 </ul>
-<h3>jQuery Mouse Events</h3>
+<h3><a href="https://api.jquery.com/category/events/mouse-events/">jQuery Mouse Events</a></h3>
 <ul>
     <li>.click(): <code>$( selector ).click( handler )</code></li>
     <li>.dblclick()</li>
@@ -212,7 +212,7 @@
         element that triggered the event.
     </li>
 </ul>
-<h3>jQuery Keyboard Events</h3>
+<h3><a href="https://api.jquery.com/category/events/keyboard-events/">jQuery Keyboard Events</a></h3>
 <ul>
     <li>.keydown()</li>
     <li>.keypress() is the same as keydown, with one small exception: modifier keys (shift, control, escape, etc) being
@@ -238,7 +238,7 @@
     <code>$('p').off();</code>
 </p>
 <hr>
-<h2>Attribute Methods</h2>
+<h2><a href="https://api.jquery.com/category/attributes/">Attribute Methods</a></h2>
 <h3>Getters and Setters</h3>
 <p>
     any of the methods we will cover in this lesson can act as both getters and setters. This means that they can both
@@ -363,8 +363,7 @@
     If the class name is present, .toggleClass() will remove it; otherwise, the new class name will be added.
 </p>
 <hr>
-<h2>Traversing</h2>
-<p>Methods for traversing the DOM</p>
+<h2><a href="https://api.jquery.com/category/traversing/">Methods for traversing the DOM</a></h2>
 <ul>
     <li>.each() Iterate over a jQuery object, executing a function for each matched element.</li>
     <li>.first() Reduce the set of matched elements to the first in the set.</li>
@@ -390,7 +389,45 @@ Syntax<br>
     }<br>
     });<br>
 </code>
-<br>
+
+<h4>.first()</h4>
+<p>
+    Selects the first element of a set
+</p>
+<code>$('li').first().css('background-color', '#FF0');
+</code><br>
+<h4>.last()</h4>
+<p>
+    Selects the last element in a set
+</p>
+<h4>.children()</h4>
+<p>
+    To get all the child elements of a selected element, we can use the .children() method. This will return all the
+    child elements or all elements selected by the optional selector arguments.
+</p>
+<p>
+    If we only wanted to manipulate the children of the ul with the id of national-parks we could use the .children()
+    method:
+</p>
+<code>$('#national-parks').children().css('font-weight', 'bold');
+</code><br>
+<h4>.parent()</h4>
+<p>
+    <strong>Note:</strong> there is also a method called <code>.parents()</code>:<br>
+    The .parents() and .parent() methods are similar, except that the latter only travels a single level up the DOM
+    tree. Also, $( "html" ).parent() method returns a set containing document whereas $( "html" ).parents() returns an
+    empty set. Both methods allow an option argument with a selector to only retrieve matching elements.
+</p>
+<code>$('li').parent().css('background-color', '#0F0');</code><br>
+<h4>.next()</h4>
+<p>
+    If we wanted to give the ul with the id of national-parks a salmon background color when the sibling h3
+    (#national-parks-heading) is clicked, we could do it like so:
+</p>
+<code>$('#national-parks-heading').next().css('background-color', 'salmon');
+</code><br>
+
+
 <hr>
 <h2>jQuery version notes</h2>
 <p>We are using 2.2.4 release for this course.
