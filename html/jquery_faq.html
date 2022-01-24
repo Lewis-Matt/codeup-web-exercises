@@ -21,6 +21,7 @@
 
         h1 {
             border-bottom: black 4px solid;
+            padding-bottom: 15px;
         }
 
         body {
@@ -97,8 +98,7 @@
         // $('.invisible').css('visibility', 'hidden');
 
         // TODO: Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.
-        $('#hideFAQs').click(function (event) {
-            event.preventDefault();
+        $('#hideFAQs').click(function () {
             $('dd').toggleClass('invisible');
         });
 
