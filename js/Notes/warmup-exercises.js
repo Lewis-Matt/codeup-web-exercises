@@ -7,6 +7,7 @@ let filtered = namesArray.filter(string => string.length === 4);
 console.log(filtered);
 
 console.log('For Loop Version')
+
 function namesWithFourLetters(arr) {
     let sortedArray = [];
     for (let i = 0; i < arr.length; i++) {
@@ -45,6 +46,7 @@ console.log('----------24 JANUARY----------')
 // INPUT 1: "42958372" --- EXPECTED OUTPUT 1: 40
 // INPUT 2: "917485" --- EXPECTED OUTPUT 2: 34
 console.log('Method using .forEach()')
+
 let sumOfNumbers = function (str) {
     let sum = 0;
     let strArr = str.split('');
@@ -56,15 +58,18 @@ let sumOfNumbers = function (str) {
 }
 
 console.log(sumOfNumbers("42958372"));
+
 // Another method using the reduce() method
 // The reduce() method executes a reducer function for array element.
 // The reduce() method returns a single value: the function's accumulated result.
 // The reduce() method does not change the original array.
 console.log('Method using .reduce()')
-let sumOfNumbersAlt = function(str) {
+
+let sumOfNumbersAlt = function (str) {
     let strArr = str.split('');
-    return strArr.reduce(function (total, currentNumber) {
-        return (Number(total) + Number(currentNumber));
+    return strArr.reduce(function (sum, currentNumber) {
+        return (Number(sum) + Number(currentNumber));
     });
 }
+
 console.log(sumOfNumbersAlt("42958372"));
