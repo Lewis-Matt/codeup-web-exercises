@@ -228,16 +228,19 @@
 <h3>Attribute Methods</h3>
 <h5>Getters and Setters</h5>
 <p>
-    any of the methods we will cover in this lesson can act as both getters and setters. This means that they can both find an existing value, or modify that value.
+    any of the methods we will cover in this lesson can act as both getters and setters. This means that they can both
+    find an existing value, or modify that value.
 </p>
 <h5>Method Chaining</h5>
 <p>
-    Most of the jQuery methods return a jQuery object, specifically when they are used as setters. This means that we can continue to add, or chain, methods calls together so long as the methods we are calling return a jQuery object.
+    Most of the jQuery methods return a jQuery object, specifically when they are used as setters. This means that we
+    can continue to add, or chain, methods calls together so long as the methods we are calling return a jQuery object.
 </p>
 <h4>.html()</h4>
 <ul>
     <li>
-        The .html() method can be used both to get the current HTML of an element, and to change the HTML of selected element(s).
+        The .html() method can be used both to get the current HTML of an element, and to change the HTML of selected
+        element(s).
     </li>
     <li>
         When no arguments are passed to .html(), it will retrieve the HTML contents of a selected element.
@@ -251,13 +254,105 @@
             alert($(this).html()); <br>
             });</code>
     </li>
+    <li>.text() is similar to .html(), just as innerText is to innerHTML</li>
 </ul>
+
+<h4>.css()</h4>
+<ul>
+    <li>
+        The .css method can be used to both retrieve the current value of a CSS property, or make changes to an element
+        or elements' style.
+    </li>
+    <li>
+        When used to set a property, the .css method returns a jQuery object, so we can chain multiple calls to the .css
+        method.
+    </li>
+    <li>
+        To change multiple properties at once, we can chain calls to the .css method, or pass an object as an argument.
+        The object we pass must have keys designating CSS properties, and values that we want to change.
+    </li>
+    <li>
+        <code>
+            $('#my-element').css({<br>
+            'color': 'firebrick',<br>
+            'background-color': 'papayawhip'<br>
+            });
+        </code>
+    </li>
+    <li>
+        Of course, we could define an object ahead of time and then later use it in our calls to .css:
+    </li>
+    <li>
+        <code>
+            var highlightedStyles = {<br>
+            'color': 'red',<br>
+            'background-color': 'yellow',<br>
+            'font-size': '28px'<br>
+            };<br>
+            $('#my-element').css(highlightedStyles);<br>
+        </code>
+    </li>
+</ul>
+
+<h4>.addClass(), .removeClass()</h4>
+<p>
+    Adding classes dynamically to elements is a great way to control the styling of a page and use event handlers to add
+    functionality. <strong>The below section is an example:</strong>
+</p>
+<!--------------------EXAMPLE------------------>
+<h1>Example Page</h1>
+<div class="centered important">
+    <h3>NOTICE</h3>
+    <p>This is an important message!</p>
+</div>
+<div class="not-important">
+    <h2>Lorem Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut
+        aliquip ex ea commodo.</p>
+</div>
+<p class="centered important">This is also very important.</p>
+<a href="#" id="highlight-important">Click to highlight important text.</a>
+
+<script src="/js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    $(document).ready(function () {
+        $('#highlight-important').click(function (event) {
+            event.preventDefault();
+            $('.important').addClass('highlighted');
+        });
+    });
+</script>
+<!--------------------END OF EXAMPLE------------------>
+<p>
+    The JavaScript is adding a click event to the a element with the id highlight-important. When the event handler is
+    triggered, the first thing it runs is event.preventDefault(), which will stop the default behavior of the anchor
+    element from firing.
+</p>
+<p>
+    After the event is updated, we then see the .addClass() method being used to add the highlighted class to the
+    elements selected by $('.important').
+</p>
+<p>
+    Clicking on the highlight-important link should add the highlighted class to all elements with a class of important,
+    thereby making them have a yellow background color.
+</p>
+<h6>.removeClass() works similarly to .addClass()</h6>
+
+<h4>.toggleClass()</h4>
+<p>
+    The .toggleClass method allows us to add a class to an element or elements if the class is not already present, or
+    to remove the class if it is present on the matched element(s).
+</p>
+<p>
+    If the class name is present, .toggleClass() will remove it; otherwise, the new class name will be added.
+</p>
+
 
 <h2>jQuery version notes</h2>
 <p>We are using 2.2.4 release for this course.
     Each version has two different release types: compressed (production) and uncompressed (development).
     We will be using the uncompressed copies for our applications and will switch them out for the compressed versions
     when we launch our product on a production server.</p>
-<script src="/js/jquery-2.2.4.js"></script>
 </body>
 </html>
