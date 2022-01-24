@@ -39,21 +39,27 @@
 <body>
 <h1>jQuery Overview</h1>
 <p>
-    We will be using the jQuery object to find and create HTML elements from the DOM.<br>
-    Definition:
+    We will be using the jQuery object to find and create HTML elements from the DOM.
+</p>
+<p>
+    Definition:<br>
     Return a collection of matched elements either found in the DOM based on passed argument(s) or created by passing an
     HTML string.
-    Shorthand:
+</p>
+<p>
+    Shorthand:<br>
     In jQuery, we commonly use the dollar sign $, an alias of jQuery to reference the jQuery object.
 </p>
 <p>
     JavaScript provides the ability to natively determine if the window has finished loading using the window.onload
-    event handler.<br>
-    <code>
-        window.onload = function() {<br>
-        alert( 'The page has finished loading!' );<br>
-        }<br>
-    </code>
+    event handler.
+</p>
+<code>
+    window.onload = function() {<br>
+    alert( 'The page has finished loading!' );<br>
+    }<br>
+</code>
+<p>
     While this is a good way to make sure the page is fully loaded and ready for DOM manipulation, it waits until all
     images have finished downloading. We usually do not need the image files to be fully downloaded to begin
     manipulating DOM objects.
@@ -61,20 +67,21 @@
 <p>
     We can use jQuery to select the document object and add an event listener called ready. This event listener will
     fire as soon as the DOM is ready to be manipulated, before all the images have completed downloading.
-
-    To use the document ready event listener, we can select the document and chain the ready() method:<br>
-
-    <code>$(document).ready();</code>
 </p>
 <p>
-    Passing an anonymous function in ready() will execute our code when the document is ready for JavaScript
-    manipulation:<br>
-    <code>
-        $(document).ready(function() {<br>
-        alert( 'The DOM has finished loading!' );<br>
-        });<br>
-    </code>
+    To use the document ready event listener, we can select the document and chain the ready() method:<br>
 </p>
+<code>$(document).ready();</code>
+<p>
+    Passing an anonymous function in ready() will execute our code when the document is ready for JavaScript
+    manipulation:
+</p>
+<code>
+    $(document).ready(function() {<br>
+    alert( 'The DOM has finished loading!' );<br>
+    });<br>
+</code>
+
 <p>
     While using document ready is very common, if we put our JavaScript at the bottom of our document, it will already
     be loaded by the time the JavaScript is loaded. Using document ready will ensure the DOM is loaded before
@@ -84,14 +91,14 @@
 <p>
     All JavaScript code snippets should be assumed to be inside a larger file with "use strict"; at the top and inside a
     $(document).ready function.<br>
-    my-custom-javascript.js <br>
-    <code>
-        "use strict";<br>
-        $(document).ready(function() {<br>
-        // INSERT JAVASCRIPT CODE SAMPLE HERE <br>
-        });
-    </code>
 </p>
+<code>
+    "use strict";<br>
+    $(document).ready(function() {<br>
+    // INSERT JAVASCRIPT CODE SAMPLE HERE <br>
+    });
+</code>
+
 <h2>jQuery Selectors</h2>
 <table>
     <thead>
@@ -144,11 +151,10 @@
     shouldn't). $ is a commonly used shorthand for jQuery, and using either one will accomplish the same thing. So these
     two
     code blocks are functionally identical:
-    <code>
-        <br> $('selector')
-
-        <br> jQuery('selector')</code>
 </p>
+<code>
+    <br> $('selector')
+    <br> jQuery('selector')</code>
 <p>
     All selector expressions return us a jQuery object, which is just an object that represents zero or more HTML
     elements, with all the methods of jQuery attached to it.
@@ -165,7 +171,6 @@
 <p>
     Basic syntax is: $(selector).action()
 </p>
-
 <ul>
     <li>A $ sign to define/access jQuery</li>
     <li>A (selector) to "query (or find)" HTML elements</li>
@@ -191,8 +196,14 @@
         mouse leaves the element.
         <ul>
             <li><code> $( selector ).hover( handlerIn, handlerOut )</code></li>
-            <li>This is the same as attaching both handlers separately:</li>
-            <li><code>$( selector ).mouseenter(handlerIn) <br> $( selector ).mouseleave(handlerOut)</code></li>
+            <li>This is the same as attaching both handlers separately:
+                <ul>
+                    <li>
+                        <code>$( selector ).mouseenter(handlerIn)</code>
+                    </li>
+                    <li><code>$( selector ).mouseleave(handlerOut)</code></li>
+                </ul>
+            </li>
         </ul>
     </li>
     <li>When we are inside a callback function for an event, <code>$(this)</code> always refer to the selected DOM
@@ -217,7 +228,7 @@
 </p>
 <p>
     The .off method removes event listeners from a specified element or elements. We can use it to remove event
-    listeners for a specific event or all the event listeners. <<br><br>
+    listeners for a specific event or all the event listeners. <br><br>
 
     Remove any handlers for the click event from all elements with the class clickable: <br>
     <code>$('.clickable').off('click');</code><br><br>
