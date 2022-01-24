@@ -166,14 +166,14 @@
         });
 
         // TODO: when the user types the letter 'c', pop up a confirm that says "Logout?"
-        $(document).keydown(function(e) {
+        $(document).keyup(function(e) {
             if(e.key === 'c') {
                 confirm('Logout');
             }
         });
         // TODO: when the user types the letter 'p', prompt the user to enter their username
-        $(document).keydown(function(e) {
-            if(e.key === 'p') {
+        $(document).on('keydown', function(event) {
+            if(event.key === 'p') {
                 prompt('Username:');
             }
         });
