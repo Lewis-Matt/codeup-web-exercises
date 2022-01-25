@@ -35,3 +35,4 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 - toggleClass()
 - chain methods
 - hover() and change cursor
+- html description list <dl>
