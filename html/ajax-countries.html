@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countries</title>
+</head>
+<body>
+<button onclick="showCountries()">Show Countries</button>
+<p>This is with vanilla JS: no jQuery</p>
+<div id="feed"></div>
+
+<script>
+    function showCountries() {
+        // Creates a request: (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.
+        let myRequest = new XMLHttpRequest();
+        // open() initializes a newly-created request, or re-initializes an existing one. open(method, url, whether it is async or not)
+        // If this value is false, the send() method does not return until the response is received. If true, notification of a completed transaction is provided using event listeners.
+        myRequest.open('GET', 'https://restcountries.com/v3.1/all', true);
+        // .onload is the function called when an XMLHttpRequest transaction completes successfully.
+        myRequest.onload = function () {
+            // In this example, we are just handling the 200 http code
+            if (myRequest.status === 200) {
+                console.log('Success');
+                // response property returns the response's body content as an ArrayBuffer, Blob, Document, JavaScript Object, or DOMString, depending on the value of the request's responseType property.
+                // You may attempt to request the data be provided in a specific format by setting the value of responseType after calling open() to initialize the request but before calling send() to send the request to the server.
+                // This api responds with JSON, so we have to parse it into useable string in order to manipulate the DOM
+                let countries = JSON.parse(this.response);
+                console.log(countries);
+                // Loop through every country in the country array of objects
+                countries.forEach(country => {
+                    // Create a new div on the page for each country
+                    const countryCard = document.createElement('div');
+                    // Create a new img for each country flag
+                    const countryCardImage = document.createElement('img');
+                    // Get/set the source of the image by accessing the relevant property in each country object
+                    countryCardImage.src = country.flags.png;
+                    // Display the country name in the div we created
+                    countryCard.innerHTML = country.name.common;
+                    // Display the country flag in the div we created
+                    countryCard.appendChild(countryCardImage);
+                    // Put every completed div into the parent div container
+                    document.getElementById('feed').appendChild(countryCard);
+                });
+            }
+        }
+        // If the request is asynchronous (which is the default), this method returns as soon as the request is sent and the result is delivered using events. If the request is synchronous, this method doesn't return until the response has arrived.
+        myRequest.send();
+    }
+
+</script>
+</body>
+</html>
