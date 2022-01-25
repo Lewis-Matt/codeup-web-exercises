@@ -248,6 +248,8 @@
             });
 
         // TODO: Bonus Stuff
+        // I am abandoning this for now
+
         // The left frame swaps to the right and takes the image from the frame in the center.
         $('#swap1').click(function () {
             $('#img-1').prependTo('#cont-2');
@@ -259,8 +261,9 @@
         })
         // The right frame swaps to the left and takes the image from the frame in the center.
         $('#swap3').click(function () {
-            $('#cont-3').children(':first-child').prependTo('#cont-2');
-            $('#cont-2').children(':first-child').appendTo('#cont-3');
+            $('#img-3').prependTo('#cont-2');
+            $('#img-2').prependTo('#cont-3');
+
         })
     });
 
