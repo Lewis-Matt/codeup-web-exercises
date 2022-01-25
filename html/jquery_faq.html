@@ -97,21 +97,26 @@
         .image-container {
             width: 384px;
             height: 224px;
-            border: solid brown 5px;
+            border: solid black 3px;
+            border-radius: 10px;
+            margin: 5px;
         }
 
         #cont-1 {
-            background: url("../assets/img/guy typing.jpg");
+            background: url("../assets/img/guy typing.jpg") no-repeat;
+            background-size: cover;
+
         }
 
         #cont-2 {
-            background: url("../assets/img/meeting1.jpg");
+            background: url("../assets/img/meeting1.jpg") no-repeat;
+            background-size: cover;
 
         }
 
         #cont-3 {
-            background: url("../assets/img/mountain guy.jpg");
-
+            background: url("../assets/img/mountain guy.jpg") no-repeat;
+            background-size: cover;
         }
 
     </style>
@@ -274,6 +279,7 @@
 
         // The center frame swaps randomly to either the left or right.
         $('#swap2').click(function () {
+            // Random integer, either 0 or 1
             let randomFrame = Math.floor(Math.random() * 2);
             if (randomFrame === 0) {
                 let temp = frame1.css("background");
