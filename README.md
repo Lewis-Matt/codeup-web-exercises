@@ -39,3 +39,4 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 
 ### ajax-notes.html
 - good css styling for code blocks
+- \&emsp; is the tab character in html
