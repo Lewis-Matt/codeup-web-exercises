@@ -89,7 +89,7 @@ let findDuplicates = function (str) {
     // Note that, since the element is dynamically updated, [] notation must be used for accessing the obj properties
     strArr.forEach(element => {
         // For every element, either increment the value or create the key-value pair.
-        // If the key doesn't exist, it will evaluate to undef, so it will go to 0 + 1ß
+        // Returns the value of duplicatesObj[element] if it exists, otherwise 0. If it exists, then 1 is added to the number of times the number is present. If it didn't exist, duplicatesObj[element] = 1
         duplicatesObj[element] = (duplicatesObj[element] || 0) + 1;
     });
     console.log(duplicatesObj);
