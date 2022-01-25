@@ -77,7 +77,7 @@ console.log(sumOfNumbersAlt("42958372"));
 // 25 JANUARY
 console.log('----------25 JANUARY----------');
 
-// Find any repeating numbers (consecutive) and return an object with Key: Value as 'number: # times it repeats'ß
+// Find any repeating numbers (consecutive) and return an object with Key: Value as 'number: # times it repeats'
 // INPUT: “42992338111134”
 // EXPECTED OUTPUT: {9: 2, 3: 2, 1: 4}
 
@@ -85,7 +85,11 @@ const testString = '42992338111134';
 let findDuplicates = function (str) {
     const duplicatesObj = {};
     let strArr = str.split('');
+    // Loop through every index of the array. Set each property key to the element value (of the arr) and set the value as the number of times the number appears in the arr.
+    // Note that, since the element is dynamically updated, [] notation must be used for accessing the obj properties
     strArr.forEach(element => {
+        // For every element, either increment the value or create the key-value pair.
+        // If the key doesn't exist, it will evaluate to undef, so it will go to 0 + 1ß
         duplicatesObj[element] = (duplicatesObj[element] || 0) + 1;
     });
     console.log(duplicatesObj);
