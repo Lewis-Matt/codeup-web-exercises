@@ -36,3 +36,6 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 - chain methods
 - hover() and change cursor
 - html description list <dl>
+
+### ajax-notes.html
+- good css styling for code blocks

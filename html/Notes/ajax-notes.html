@@ -6,9 +6,38 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ajax Notes</title>
+    <style>
+        li {
+            padding: 5px 0;
+        }
+        body {
+            padding: 10px;
+        }
+        h2 {
+            border-bottom: solid black 2px;
+        }
+        p {
+            text-indent: 25px;
+        }
+        code {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 3px solid #f36d33;
+            color: #666;
+            page-break-inside: avoid;
+            font-family: monospace;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 1.6em;
+            max-width: 100%;
+            overflow: auto;
+            padding: 1em 1.5em;
+            display: block;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
 <body>
-
 <h1>Ajax</h1>
 <p>
     Ajax is a group of interrelated Web development techniques used on the client-side to create asynchronous web
@@ -75,9 +104,9 @@
     and properties are separated by a commas.
 </p>
 <code>
-    {<br>
-    "name1": "value1",<br>
-    "name2": "value2"<br>
+    {
+    "name1": "value1",
+    "name2": "value2"
     }
 </code><br>
 <p>The value of a property can be one of the following:</p>
@@ -120,9 +149,33 @@
     <br>});
 </code>
 <p>
-
+    In the above, we are instructing jQuery to send a POST request, along with some additional info to the server.
 </p>
-
+<p>
+    The Ajax options object has numerous parameters and values it can use. Some of the most common options are:
+</p>
+<ul>
+    <li><strong>type</strong> — The type of HTTP request to send to the server. Can be "GET", "POST", "PUT", or "DELETE".
+        The default is "GET".
+    </li>
+    <li><strong>data</strong> — Data to be included with the request. Typically this will be a JavaScript object. If the
+        request type is GET the data will be encoded into the URL being requested. Otherwise, it is included with the
+        request behind the scenes.
+    </li>
+    <li><strong>dataType</strong> — The type of data we expect the server to send back from our request. Common options are
+        "json", "xml", "html", or "text". By default, jQuery will try to guess this value based on the response content.
+    </li>
+    <li><strong>url</strong> — Rather than passing the request URL as a string to $.ajax() you can just pass a JavaScript
+        object on its own and include the url option to specify where to send the request. We will see an example of
+        this further on.
+    </li>
+    <li><strong>username & password</strong> — If a server requires a username and password you can specify it using these
+        parameters.
+    </li>
+    <li><strong>headers</strong> — an object of whose key value pairs represent custom HTTP headers to send along with the
+        request
+    </li>
+</ul>
 </body>
 
 </html>
