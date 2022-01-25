@@ -24,13 +24,6 @@
             width: 15%;
         }
 
-        .imgs {
-            width: 100%;
-            border-radius: 10px;
-            border: solid black 2px;
-            margin-bottom: 10px;
-        }
-
         h1, h2, h4 {
             text-align: center;
         }
@@ -100,6 +93,27 @@
         li {
             padding-left: 20px;
         }
+
+        .image-container {
+            width: 384px;
+            height: 224px;
+            border: solid brown 5px;
+        }
+
+        #cont-1 {
+            background: url("../assets/img/guy typing.jpg");
+        }
+
+        #cont-2 {
+            background: url("../assets/img/meeting1.jpg");
+
+        }
+
+        #cont-3 {
+            background: url("../assets/img/mountain guy.jpg");
+
+        }
+
     </style>
 </head>
 <body class="container">
@@ -171,18 +185,18 @@
 <div class="container">
     <div class="row">
         <div class="image-container col text-center" id="cont-1">
-            <img src="../assets/img/guy%20typing.jpg" class="imgs" id="img-1" alt="">
+            <!--            <img src="../assets/img/guy%20typing.jpg" class="imgs" id="img-1" alt="">-->
             <button class="btn btn-secondary" id="swap1">Swap 1</button>
         </div>
 
         <div class="image-container col text-center" id="cont-2">
-            <img src="../assets/img/meeting1.jpg" class="imgs" id="img-2" alt="">
+            <!--            <img src="../assets/img/meeting1.jpg" class="imgs" id="img-2" alt="">-->
             <button class="btn btn-secondary" id="swap2">Swap 2</button>
 
         </div>
 
         <div class="image-container col text-center" id="cont-3">
-            <img src="../assets/img/mountain%20guy.jpg" class="imgs" id="img-3" alt="">
+            <!--            <img src="../assets/img/mountain%20guy.jpg" class="imgs" id="img-3" alt="">-->
             <button class="btn btn-secondary" id="swap3">Swap 3</button>
 
         </div>
@@ -248,22 +262,35 @@
             });
 
         // TODO: Bonus Stuff
-        // I am abandoning this for now
-
         // The left frame swaps to the right and takes the image from the frame in the center.
+        let frame1 = $('#cont-1');
+        let frame2 = $('#cont-2');
+        let frame3 = $('#cont-3');
         $('#swap1').click(function () {
-            $('#img-1').prependTo('#cont-2');
-            $('#img-2').prependTo('#cont-1');
-        })
+            let temp = frame2.css('background');
+            frame2.css('background', frame1.css('background'));
+            frame1.css('background', temp);
+        });
+
         // The center frame swaps randomly to either the left or right.
         $('#swap2').click(function () {
+            let randomFrame = Math.floor(Math.random() * 2);
+            if (randomFrame === 0) {
+                let temp = frame1.css("background");
+                frame1.css("background", frame2.css("background"));
+                frame2.css("background", temp);
+            } else {
+                let temp = frame3.css("background");
+                frame3.css("background", frame2.css("background"));
+                frame2.css("background", temp);
+            }
+        });
 
-        })
         // The right frame swaps to the left and takes the image from the frame in the center.
         $('#swap3').click(function () {
-            $('#img-3').prependTo('#cont-2');
-            $('#img-2').prependTo('#cont-3');
-
+            let temp = frame2.css('background');
+            frame2.css('background', frame3.css('background'));
+            frame3.css('background', temp);
         })
     });
 

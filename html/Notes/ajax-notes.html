@@ -17,6 +17,21 @@
     XMLHttpRequest object. Despite the name, the use of XML is not required (JSON is often used in the AJAJ variant),
     and the requests do not need to be asynchronous.
 </p>
+<p>AJAX is a developer's dream, because you can:</p>
+<ul>
+    <li>Read data from a web server - after the page has loaded</li>
+    <li>Update a web page without reloading the page</li>
+    <li>Send data to a web server - in the background</li>
+</ul>
+<p>Ajax uses a combo of:</p>
+<ul>
+    <li>A browser built-in XMLHttpRequest object (to request data from a web server) or JSON</li>
+    <li>JavaScript and HTML DOM (to display or use the data)ß</li>
+</ul>
+<p><strong>
+    In short;</strong> AJAX is about loading data in the background and displaying it on the webpage, without reloading
+    the whole
+    page.</p>
 <h2>XML</h2>
 <ul>
     <li>XML stands for eXtensible Markup Language</li>
@@ -31,6 +46,7 @@
     <li>All elements can have sub elements (child elements):</li>
     <li>Thousands of XML formats exist, in many different industries, to describe day-to-day data transactions.</li>
 </ul>
+<p>All modern browsers have a built-in XMLHttpRequest object.</p>
 <h3>Example of XML format of a XMLNews document</h3>
 <code>
     <?xml version="1.0" encoding="UTF-8"?>
@@ -63,8 +79,8 @@
     "name1": "value1",<br>
     "name2": "value2"<br>
     }
-</code>
-The value of a property can be one of the following:
+</code><br>
+<p>The value of a property can be one of the following:</p>
 <ul>
     <li>A quoted string</li>
     <li>A number</li>
@@ -75,5 +91,38 @@ The value of a property can be one of the following:
 </ul>
 <p>In the real-world you will most likely not edit these files directly; rather, JSON would most likely be automatically
     generated, or sent and received by a web server.</p>
+<h2>Fetch API</h2>
+<p>
+    Modern Browsers can use Fetch API instead of the XMLHttpRequest Object.
+    The Fetch API interface allows web browser to make HTTP requests to web servers.
+    If you use the XMLHttpRequest Object, Fetch can do the same in a simpler way.
+</p>
+<h2>AJAX Requests</h2>
+<p>
+    The syntax to perform an Ajax request in plain JavaScript can be rather challenging. To save ourselves from that
+    complexity, we will be using jQuery to issue Ajax requests. The simplest way to issue an Ajax request is the
+    following:
+</p>
+<code>
+    $.ajax("/some-url")
+</code>
+<p>
+    This will issue a GET request to your server, asking for the file stored at /some-url.
+</p>
+<p>The easiest way to manipulate the Ajax options is to pass a JavaScript object like the following:</p>
+<code>
+    $.ajax("/some-url", {
+    <br>type: "POST",
+    <br>data: {
+    <br>name: "John",
+    <br>location: "Boston"
+    <br>}
+    <br>});
+</code>
+<p>
+
+</p>
+
 </body>
+
 </html>
