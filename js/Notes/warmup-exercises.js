@@ -73,3 +73,21 @@ let sumOfNumbersAlt = function (str) {
 }
 
 console.log(sumOfNumbersAlt("42958372"));
+
+// 25 JANUARY
+console.log('----------25 JANUARY----------');
+
+// Find any repeating numbers (consecutive) and return an object with Key: Value as 'number: # times it repeats'ß
+// INPUT: “42992338111134”
+// EXPECTED OUTPUT: {9: 2, 3: 2, 1: 4}
+
+const testString = '42992338111134';
+let findDuplicates = function (str) {
+    const duplicatesObj = {};
+    let strArr = str.split('');
+    strArr.forEach(element => {
+        duplicatesObj[element] = (duplicatesObj[element] || 0) + 1;
+    });
+    console.log(duplicatesObj);
+}
+findDuplicates(testString);
