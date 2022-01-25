@@ -5,20 +5,28 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ajax Notes</title>
+    <title>AJAX Notes</title>
     <style>
         li {
             padding: 5px 0;
         }
+
         body {
             padding: 10px;
         }
+
         h2 {
             border-bottom: solid black 2px;
         }
+
+        h1, h2 {
+            text-align: center;
+        }
+
         p {
             text-indent: 25px;
         }
+
         code {
             background: #f4f4f4;
             border: 1px solid #ddd;
@@ -38,7 +46,7 @@
     </style>
 </head>
 <body>
-<h1>Ajax</h1>
+<h1>AJAX</h1>
 <p>
     Ajax is a group of interrelated Web development techniques used on the client-side to create asynchronous web
     applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the
@@ -141,11 +149,11 @@
 <p>The easiest way to manipulate the Ajax options is to pass a JavaScript object like the following:</p>
 <code>
     $.ajax("/some-url", {
-    <br>type: "POST",
-    <br>data: {
-    <br>name: "John",
-    <br>location: "Boston"
-    <br>}
+    <br>&emsp;type: "POST",
+    <br>&emsp;data: {
+    <br>&emsp;&emsp;name: "John",
+    <br>&emsp;&emsp;location: "Boston"
+    <br>&emsp;}
     <br>});
 </code>
 <p>
@@ -155,27 +163,164 @@
     The Ajax options object has numerous parameters and values it can use. Some of the most common options are:
 </p>
 <ul>
-    <li><strong>type</strong> — The type of HTTP request to send to the server. Can be "GET", "POST", "PUT", or "DELETE".
+    <li><strong>type</strong> — The type of HTTP request to send to the server. Can be "GET", "POST", "PUT", or
+        "DELETE".
         The default is "GET".
     </li>
     <li><strong>data</strong> — Data to be included with the request. Typically this will be a JavaScript object. If the
         request type is GET the data will be encoded into the URL being requested. Otherwise, it is included with the
         request behind the scenes.
     </li>
-    <li><strong>dataType</strong> — The type of data we expect the server to send back from our request. Common options are
+    <li><strong>dataType</strong> — The type of data we expect the server to send back from our request. Common options
+        are
         "json", "xml", "html", or "text". By default, jQuery will try to guess this value based on the response content.
     </li>
-    <li><strong>url</strong> — Rather than passing the request URL as a string to $.ajax() you can just pass a JavaScript
+    <li><strong>url</strong> — Rather than passing the request URL as a string to $.ajax() you can just pass a
+        JavaScript
         object on its own and include the url option to specify where to send the request. We will see an example of
         this further on.
     </li>
-    <li><strong>username & password</strong> — If a server requires a username and password you can specify it using these
+    <li><strong>username & password</strong> — If a server requires a username and password you can specify it using
+        these
         parameters.
     </li>
-    <li><strong>headers</strong> — an object of whose key value pairs represent custom HTTP headers to send along with the
-        request
+    <li><strong>headers</strong> — an object of whose key value pairs represent custom HTTP headers to send along with
+        the request.
     </li>
 </ul>
+<h3>Handling Responses</h3>
+<p>
+    It is important to be aware that Ajax requests are done asynchronously. This means that even though the request is
+    fired off when we call $.ajax(), JavaScript does not sit and wait for the response to come back. The server could
+    reply in a fraction of a second, or it could reply in half a minute!
+</p>
+<p>
+    Just because and AJAX request has been sent, there is no guarantee that is has to come back from the server by the
+    time the next line of JS is executed.
+</p>
+<p>
+    A function that we create to be called when some process completes is called a callback function. The primary way to
+    attach a callback to your Ajax request is to tack .done() to the end of your request and pass your callback to it,
+    like the following:
+</p>
+<code>
+    $.ajax("/some-url").done(function(data, status, jqXhr) {
+    &emsp;alert("AJAX call completed successfully!");
+    &emsp;console.log("Request status: " + status);
+    &emsp;console.log("Data returned from server:");
+    &emsp;console.log(data);
+    });
+</code>
+<p>
+    <em>.done()</em> is a method that accepts a callback function as an argument. jQuery will then call that function
+    once the Ajax request has come back successfully. The callback function, when called, will be passed 3 arguments:
+</p>
+<ul>
+    <li>data: the body of the response from the server</li>
+    <li>status: a string indicating the status of the request</li>
+    <li>jqXhr: a jQuery object that represents the Ajax request</li>
+</ul>
+<p>
+    If jQuery thinks the server returned a JSON object, the argument will be an object. If jQuery thinks it was text,
+    the argument will be a string. You can force a particular data type with the dataType option. We can omit
+    parameters, commonly we will only need the <em>data</em> parameter.
+</p>
+<p>
+    There are three different methods you can use to specify callback functions for an Ajax request. They are:
+</p>
+<ul>
+    <li>.done — Takes in a function that is called when the request completes successfully.</li>
+    <li>.fail — Takes in a function that is called when a request completed with an error (e.g. the server sent back a
+        404).
+    </li>
+    <li>.always — Takes in a function that is called for both failed and successful requests.</li>
+</ul>
+<p>
+    The function passed to .fail will be called with 3 arguments:
+</p>
+<ul>
+    <li>jqXhr — a jQuery object that represents the Ajax request</li>
+    <li>status — a string representing the status of the request</li>
+    <li>error — an object that represents the error that occurred, if any</li>
+</ul>
+<p><em>The callback function attached with .always() will be called with the same arguments the were passed to either
+    the .done callback, or the .fail callback, depending on whether the request was successful or not.</em></p>
+<p>
+    An example combining all three callback types might look like:
+</p>
+<code>
+    $.ajax("/some-url").done(function(data, status, jqXhr) {
+    <br>&emsp;alert("Everything went great! Check out the server's response in the console.");
+    <br>&emsp;console.log(data);
+    <br>}).fail(function(jqXhr, status, error) {
+    <br>&emsp;alert("There was an error! Check the console for details");
+    <br>&emsp;console.log("Response status: " + status);
+    <br>&emsp;console.log("Error object: " + error);
+    <br>}).always(function() {
+    <br>&emsp;alert("This function always runs!");
+    <br>});
+</code>
+
+<p>
+    You can assign your Ajax request to a variable and then attach callbacks to that variable. Our above example could
+    be rewritten as:
+</p>
+<code>
+    &emsp;// Assign to variable
+    <br>var jqXhr = $.ajax("/some-url");
+    <br>
+    <br>// Attach callback functions individually
+    <br>jqXhr.done(function(data, status, jqXhr) {
+    <br>&emsp;alert("Everything went great!");
+    <br>});
+    <br>
+    <br>jqXhr.fail(function(jqXhr, status, error) {
+    <br>&emsp;alert("There was an error!");
+    <br>});
+    <br>
+    <br>jqXhr.always(function() {
+    <br>&emsp;alert("And we're done!");
+    <br>});
+</code>
+<p>
+    Remember that any anonymous function can be replaced with a named function, and as our code starts to get more
+    complex, it usually makes sense to do so.
+</p>
+<h3>Get & Post Shorthand</h3>
+<code>
+    $.get("/users", {
+    <br>&emsp;limit:  10,
+    <br>&emsp;offset: 20
+    <br>}).done(function(data) {
+    <br>&emsp;// do something with the data
+    <br>});
+
+</code>
+<p>Would be the same as:</p>
+<code>
+    $.ajax({
+    <br>&emsp;url: "/users",
+    <br>&emsp;type: "GET",
+    <br>&emsp;data: {
+    <br>&emsp;&emsp;limit:  10,
+    <br>&emsp;&emsp;offset: 20
+    <br>&emsp;}
+    <br>}).done(function(data) {
+    <br>&emsp;// do something with the data
+    <br>});
+</code>
+<p>Post shorthand:</p>
+<code>
+    $.post("/address/save", {
+    <br>&emsp;first_name: "George",
+    <br>&emsp;last_name:  "Weathers",
+    <br>&emsp;city:       "Denver",
+    <br>&emsp;state:      "CO"
+    <br>}).done(function(data) {
+    <br>&emsp;// do something with the response
+    <br>});
+</code>
 </body>
+
 
 </html>
