@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Notes</title>
+</head>
+<body>
+
+<h1>Ajax</h1>
+<p>
+    Ajax is a group of interrelated Web development techniques used on the client-side to create asynchronous web
+    applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the
+    background) without interfering with the display and behavior of the existing page. Data can be retrieved using the
+    XMLHttpRequest object. Despite the name, the use of XML is not required (JSON is often used in the AJAJ variant),
+    and the requests do not need to be asynchronous.
+</p>
+<h2>XML</h2>
+<ul>
+    <li>XML stands for eXtensible Markup Language</li>
+    <li>XML is a markup language much like HTML</li>
+    <li>XML was designed to store and transport data</li>
+    <li>XML was designed to be self-descriptive</li>
+    <li>XML was designed to carry data - with focus on what data is</li>
+    <li>HTML was designed to display data - with focus on how data looks</li>
+    <li>XML tags are not predefined like HTML tags are</li>
+    <li>XML documents are formed as element trees.</li>
+    <li>An XML tree starts at a root element and branches from the root to child elements.</li>
+    <li>All elements can have sub elements (child elements):</li>
+    <li>Thousands of XML formats exist, in many different industries, to describe day-to-day data transactions.</li>
+</ul>
+<h3>Example of XML format of a XMLNews document</h3>
+<code>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <nitf>
+        <head>
+            <title>Colombia Earthquake</title>
+        </head>
+        <body>
+        <headline>
+            <hl1>143 Dead in Colombia Earthquake</hl1>
+        </headline>
+        <byline>
+            <bytag>By Jared Kotler, Associated Press Writer</bytag>
+        </byline>
+        <dateline>
+            <location>Bogota, Colombia</location>
+            <date>Monday January 25 1999 7:28 ET</date>
+        </dateline>
+        </body>
+    </nitf>
+</code>
+<h2>JavaScript Object Notation - JSON</h2>
+<p>
+    JSON is a data-interchange format that is easy for humans to read and write. It is widely used in cloud based
+    services and web application programming interfaces (APIs). Object properties in JSON must be double-quoted strings,
+    and properties are separated by a commas.
+</p>
+<code>
+    {<br>
+    "name1": "value1",<br>
+    "name2": "value2"<br>
+    }
+</code>
+The value of a property can be one of the following:
+<ul>
+    <li>A quoted string</li>
+    <li>A number</li>
+    <li>An object</li>
+    <li>An array</li>
+    <li>true or false</li>
+    <li>null</li>
+</ul>
+<p>In the real-world you will most likely not edit these files directly; rather, JSON would most likely be automatically
+    generated, or sent and received by a web server.</p>
+</body>
+</html>
