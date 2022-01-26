@@ -1,8 +1,20 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Online Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ajax-store.css">
 </head>
+<!--TODO: Your online tool store should load data from the JSON file using a get request and append the data to the table. You will need to use either $.ajax() or $.get(), and a .done() callback.-->
+
+<!--TODO: Add some new entries to inventory.json and see how the data on the page gets updated.-->
+
+<!--TODO: Add a "Refresh" button that will load inventory.json for you without having to refresh the entire page.-->
+
+<!--TODO: Add Twitter Bootstrap to your online store with some custom CSS to make the style your own.-->
 <body>
 
 <h1>My Tool Store</h1>
@@ -19,20 +31,11 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
+<!-- JQUERY 2.2.4 CDN-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-<script>
-    (function () {
-        "use strict";
-        // TODO: Create an AJAX GET request for the file under data/inventory.json
-
-        // TODO: Take the data from inventory.json and append it to the products table
-        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-        //             its contents and fields
-        //       HINT: You will want to target #insertProducts for your new HTML elements
-    })();
-</script>
-
+<!-- JAVASCRIPT W/ JQUERY SCRIPTS -->
+<script src="../js/ajax-store.js"></script>
 </body>
 </html>
