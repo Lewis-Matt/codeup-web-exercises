@@ -18,15 +18,18 @@ $(document).ready(function () {
             const tags = document.createElement('p');
             // Create element containing the date posted
             const datePosted = document.createElement('p');
+
             // Add the above format to parent div
             $(blogPost).append(title, body, tags, datePosted);
             // Add entire blog post to the html
             $('#posts').append(blogPost);
+
             // Insert the json data into the created fields
             title.innerHTML = post.title;
             body.innerHTML = post.content;
             tags.innerHTML = `Tagged: ${post.categories}`;
             datePosted.innerHTML = `Posted on - ${post.date}`;
+
             // Add bootstrap classes for styling
             $(title).addClass('p-3 bg-warning');
             $(tags).addClass('tag-bg');
