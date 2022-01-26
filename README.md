@@ -47,3 +47,4 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 ## ajax-store.js
 - $.ajax() uses intelligent guess if a datatype isn't specified
 -- so you may not have to JSON.parse() if the datatype is assumed to be JSON
+- different methods of inserting elements w/ data into DOM

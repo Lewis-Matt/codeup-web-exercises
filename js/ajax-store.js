@@ -5,7 +5,7 @@
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
-    $.ajax('../data/inventory.json').done(function (data, status){
+    $.ajax('../data/inventory.json').done(function (data, status) {
         console.log("Request status: " + status);
         console.log("Data returned from server:");
         console.log(data);
@@ -15,15 +15,17 @@
             // Creates a new row for each tool
             const toolRow = document.createElement('tr');
             // Create entry for each column in the table
+            // Could have done = `<td> ${tool.title} </td>` to reduce code (however MDN says the below is more secure)
             const titleTD = document.createElement('td')
             const quantityTD = document.createElement('td');
             const priceTD = document.createElement('td');
             const categoriesTD = document.createElement('td');
             // Adds table data to row
-            $(toolRow).append(titleTD,quantityTD,priceTD,categoriesTD);
+            $(toolRow).append(titleTD, quantityTD, priceTD, categoriesTD);
             // Adds table row to table
             $('#insertProducts').append(toolRow);
             // Insert data into created columns
+            // NOTE we are already in the data array, so we need to access each object property
             titleTD.innerHTML = tool.title;
             quantityTD.innerHTML = tool.quantity;
             priceTD.innerHTML = `$ ${tool.price}`;
@@ -32,6 +34,7 @@
     });
 })();
 
-// create tr for each item
-// create td for each column
-// append each item to the table
+// Refresh Button
+let refresh = function () {
+    $('#products').ajax.reload()
+}
