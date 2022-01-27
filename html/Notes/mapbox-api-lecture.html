@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>First Mapbox Map</title>
     <!-- Mapbox CSS -->
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <!-- Custom CSS -->
     <style>
         #map {
@@ -17,7 +17,7 @@
 <body>
 
 <h1>My First Mapbox Map!</h1>
-
+<div class="my-class"></div>
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
@@ -35,10 +35,29 @@
     });
 
     // Create a new marker
-    // Create a new marker.
     const marker = new mapboxgl.Marker()
         .setLngLat([-98.4916, 29.4252])
         .addTo(map);
+
+    // Create popup
+    var popup = new mapboxgl.Popup()
+        .setLngLat([-98.489615, 29.426827])
+        .setHTML("<p>Codeup Rocks!</p>")
+        .addTo(map)
+
+    // Create Geocode
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        // Fetch is like an ajax get request
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function(data) {
+                return data.features[0].center;
+            });
+    }
 
 </script>
 </body>
