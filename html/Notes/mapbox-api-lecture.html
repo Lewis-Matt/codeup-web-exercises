@@ -19,7 +19,8 @@
 <h1>My First Mapbox Map!</h1>
 <div>
     <p>
-        Mapbox GL JS is an API to create interactive maps on a web page using WebGL. <a href="https://docs.mapbox.com/mapbox-gl-js/api/">Documentation</a>
+        Mapbox GL JS is an API to create interactive maps on a web page using WebGL. <a
+            href="https://docs.mapbox.com/mapbox-gl-js/api/">Documentation</a>
     </p>
     <p>
         A token will allow us to make up to 50,000 free requests per month.
@@ -32,10 +33,15 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
+<!--Mapbox Geocoder Util Methods-->
+<script src="/js/mapbox-geocoder-utils.js"></script>
+
 <!-- Custom JS -->
 <script>
-    // Create the map
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWlzdGVybGV3aXMiLCJhIjoiY2t5eGhjeTZvMDJpYjJ1bHUzazYzNTdrNiJ9.cF5riL-ynSmmajrVSJLnsA';
+    // TODO: Create the map
+    // TODO: Store TOKEN in variable
+    const accessToken = 'pk.eyJ1IjoibWlzdGVybGV3aXMiLCJhIjoiY2t5eGhjeTZvMDJpYjJ1bHUzazYzNTdrNiJ9.cF5riL-ynSmmajrVSJLnsA';
+    mapboxgl.accessToken = accessToken;
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -46,39 +52,41 @@
     // After the map variable holding the Mapbox map object has been initialized, the map view may be changed using the various methods the Mapbox GL JS API provides. For example, to change the zoom level, including map.setZoom(4) after the map variable is created would change the zoom level to show most of the US.
     map.setZoom(10);
 
-    // Create a new marker/pin
+    // TODO: Create a new marker/pin
     // The methods .setLngLat() and .addTo() must be called on this marker object to set the position of the marker and add it to the map.
     const marker = new mapboxgl.Marker()
         .setLngLat([-98.4916, 29.4252])
         .addTo(map);
 
-    // Create popup
+    // TODO: Create popup
     // To add a simple popup to a map, a new popup object must be created and methods should be called, as with a marker, to set its position and place it on the map. Additionally, the methods .setHTML() or .setText() can be added to control the content inside an info window.
     let popup = new mapboxgl.Popup()
         .setLngLat([-98.489615, 29.426827])
         .setHTML("<p>Codeup Rocks!</p>")
         .addTo(map)
 
-    // Pop attached to the marker created (have to click the marker on the map)
+    // TODO: Popup attached to the marker created (have to click the marker on the map)
     let alamoPopup = new mapboxgl.Popup()
         .setHTML("<p>Remember The Alamo!</p>")
     marker.setPopup(alamoPopup)
 
     // Mapbox provides a separate API for making geocode requests. Geocoding is the process of finding the coordinates (latitude and longitude) of a specific physical address. While Mapbox plugins can be used to add user interfaces that interact with this API, calls to the API can be made directly. You will be provided with methods to make these API calls more streamlined.  To use these methods, make sure you create a JavaScript file called mapbox-geocoder-utils.js
+    // Linked on line 36
 
-    // Create Geocode
-    function geocode(search, token) {
-        let baseUrl = 'https://api.mapbox.com';
-        let endPoint = '/geocoding/v5/mapbox.places/';
-        // Fetch is like an ajax get request
-        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-            .then(function(res) {
-                return res.json();
-                // to get all the data from the request, comment out the following three lines...
-            }).then(function(data) {
-                return data.features[0].center;
-            });
-    }
+    // TODO: Create Geocode
+    // Here is example code using the Geocode helper function to log the coordinates of Codeup and then recenter the map to focus on Codeup:
+
+    // geocode("600 Navarro St #350, San Antonio, TX 78205", accessToken).then(function (result) {
+    //     console.log(result);
+    //     map.setCenter(result);
+    //     map.setZoom(20);
+    // });
+
+    // TODO: reverse geocode method from mapbox-geocoder-utils.js
+    reverseGeocode({lng: -98.4861, lat: 29.4260}, accessToken).then(function (results) {
+        // logs the address for The Alamo
+        console.log(results);
+    });
 
 </script>
 </body>

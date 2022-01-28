@@ -18,6 +18,8 @@ function geocode(search, token) {
     var endPoint = '/geocoding/v5/mapbox.places/';
     // The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
     return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+        // The then() method returns a Promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise.
+        // The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
         .then(function(res) {
             return res.json();
             // to get all the data from the request, comment out the following three lines...
