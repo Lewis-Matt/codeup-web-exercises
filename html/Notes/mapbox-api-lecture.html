@@ -5,6 +5,7 @@
     <title>First Mapbox Map</title>
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+
     <!-- Custom CSS -->
     <style>
         #map {
@@ -30,6 +31,9 @@
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
 
+<!-- TOKEN -->
+<script src="/js/mapbox-config.js"></script>
+
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
@@ -39,8 +43,7 @@
 <!-- Custom JS -->
 <script>
     // TODO: Create the map
-    // TODO: Store TOKEN in variable
-    const accessToken = 'pk.eyJ1IjoibWlzdGVybGV3aXMiLCJhIjoiY2t5eGhjeTZvMDJpYjJ1bHUzazYzNTdrNiJ9.cF5riL-ynSmmajrVSJLnsA';
+    // stored in mapbox-config.js (added to .gitignore)
     mapboxgl.accessToken = accessToken;
     const map = new mapboxgl.Map({
         container: 'map',
