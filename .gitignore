@@ -1,2 +1,7 @@
+## A pattern that starts with an exclamation mark (!) negates (re-include) any file that is ignored by the previous pattern.
+
+## Ignore all config files
 /config/**
+
+## Ignores api token for mapbox
 /config/mapbox-token.js
