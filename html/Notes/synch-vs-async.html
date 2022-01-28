@@ -35,5 +35,18 @@
     intermediate state, as it were. In essence, it's the browser's way of saying "I promise to get back to you with
     the answer as soon as I can," hence the name "promise."
 </p>
+<p>
+    However, promises are specifically made for handling async operations, and have many advantages over old-style
+    callbacks:
+</p>
+<ul>
+    <li>You can chain multiple async operations together using multiple .then() operations, passing the result of one
+        into the next one as an input.
+    </li>
+    <li>Promise callbacks are always called in the strict order they are placed in the event queue.</li>
+    <li>Error handling is much better — all errors are handled by a single .catch() block at the end of the block,
+        rather than being individually handled in each level of the "pyramid".
+    </li>
+</ul>
 </body>
 </html>
