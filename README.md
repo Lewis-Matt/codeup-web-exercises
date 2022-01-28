@@ -43,6 +43,7 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 
 ## XMLHttpRequest-countries.html
 - send and manage response to api using vanilla js
+- const mediaUrl = HTMLMediaElement.src
 
 ## ajax-store.js
 - $.ajax() uses intelligent guess if a datatype isn't specified
@@ -51,3 +52,5 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 
 ### /Users/misterlewis/IdeaProjects/sirius-dom-assessment/index.html
 - $().on('dblcick', function... $().each...) for doing something everytime you dblclick (rather than just the first time)
+
+
