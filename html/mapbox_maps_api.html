@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapbox Maps Exercise</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            width: 80%;
+            height: 500px;
+        }
+        .popups {
+            font-family: fantasy;
+            font-size: 1.25em;
+        }
+    </style>
+
+
+</head>
+<body>
+<!-- The Mapbox container -->
+<div id='map'></div>
+
+<!-------------------------SCRIPTS------------------------->
+<!-- TOKEN -->
+<script src="/config/mapbox-token.js"></script>
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!--Mapbox Geocoder Util Methods-->
+<script src="/js/mapbox-geocoder-utils.js"></script>
+
+
+<script>
+    mapboxgl.accessToken = accessToken;
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-streets-v11',
+        zoom: 8,
+        // The geographic center of the U.S.
+        // Note: Mapbox GL uses longitude, latitude coordinate order (as opposed to latitude, longitude) to match GeoJSON.
+        center: [-103.771556, 44.967243]
+    });
+
+    /*    // TODO: Generate a map that shows the city with your favorite restaurant using geocoding.
+        geocode("Cancun Mexican Grill, Chippewa Mall Drive, Chippewa Falls, WI", accessToken).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(15);
+            // TODO: Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
+            const cancunMarker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map);
+            // TODO: Create a popup with the name of the restaurant. Make sure the info window does not display until the marker has been clicked on.
+            let cancunPopup = new mapboxgl.Popup()
+                .setHTML("<p>Cancun Mexican Grill</p>")
+            cancunMarker.setPopup(cancunPopup)
+        });*/
+
+    // TODO: Create an array of objects with information about each restaurant
+    const casaBonitaInfo = {
+        address: "Casa Bonita, West Colfax Avenue, Lakewood, CO",
+        popupHTML: "<h2>Casa Bonita!</h2>" +
+            "<p>I was visiting friends in Denver in 2007, we were watching the Casa Bonita episode and I asked if it was a real place. Spent the rest of the night there!</p>"
+    };
+
+    const brauhausInfo = {
+        address: "Brauhaus Schönbuch, Bolzstraße 10, 70173 Stuttgart, Germany",
+        popupHTML: "<h2>Brauhaus Schönbuch</h2>" +
+            "<p>This was the default going-away location when someone left the team.</p>"
+    };
+
+    const pelonsInfo = {
+        address: "Pelon's Baja Grill, 3619 Pacific Ave, Virginia Beach, VA 23451",
+        popupHTML: "<h2>Pelon's</h2>" +
+            "<p>Good memories with the old crew!</p>"
+    };
+
+    let markerArray = [casaBonitaInfo, brauhausInfo, pelonsInfo];
+
+    // Function to add markers and popups for each restaurant in markerArray
+    function markAndPop(array, token, map) {
+        array.forEach(restaurant => {
+            let address = restaurant.address;
+            geocode(address, token).then(function (coordinates) {
+                let popup = new mapboxgl.Popup({className: 'popups'})
+                    .setHTML(restaurant.popupHTML);
+                let marker = new mapboxgl.Marker({color: 'orange'})
+                    .setLngLat(coordinates)
+                    .addTo(map)
+                    .setPopup(popup);
+                popup.addTo(map);
+            });
+        });
+    }
+
+    markAndPop(markerArray, accessToken, map);
+
+</script>
+</body>
+</html>
