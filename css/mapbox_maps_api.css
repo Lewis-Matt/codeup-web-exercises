@@ -1,0 +1,21 @@
+#map {
+    width: 90%;
+    height: 500px;
+}
+
+.popups {
+    max-width: 200px;
+    font-family: fantasy;
+    font-size: .9em;
+    text-align: center;
+}
+
+#sidebar {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Helvetica, sans-serif;
+}

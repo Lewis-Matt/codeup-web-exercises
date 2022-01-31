@@ -10,26 +10,23 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
 
     <!-- Custom CSS -->
-    <style>
-        #map {
-            width: 90%;
-            height: 500px;
-        }
-
-        .popups {
-            max-width: 200px;
-            font-family: fantasy;
-            font-size: .9em;
-            text-align: center;
-        }
-
-    </style>
-
+    <link href="../css/mapbox_maps_api.css" rel="stylesheet">
 
 </head>
 <body>
 <!-- The Mapbox container -->
 <div id='map'></div>
+<!--Sidebar-->
+<div id="sidebar">
+    <!--TODO: Add a select input that allows the user to change the zoom level to 5, 15, or 20.-->
+    <label for="zoom">Zoom Select:</label>
+    <select name="zoom" id="zoom">
+        <option value="5"></option>
+        <option value="15"></option>
+        <option value="20"></option>
+    </select>
+</div>
+
 
 <!-------------------------SCRIPTS------------------------->
 <!-- TOKEN -->
@@ -151,20 +148,21 @@
     // TODO: Loop through the geojson.features array to add each marker and popup
     geojson.features.forEach(feature => {
         // Creates HTML element for each feature **** doesn't work when passes into mapboxgl.Marker(locationContainer)
-/*        const locationContainer = document.createElement('div');
-        locationContainer.className = 'markers';*/
+        /*        const locationContainer = document.createElement('div');
+                locationContainer.className = 'markers';*/
 
         // Create a marker, w/ popup, for each feature and add to map
-        new mapboxgl.Marker()
+        new mapboxgl.Marker({className: 'markers'})
             .setLngLat(feature.geometry.coordinates)
             .setPopup(
-                new mapboxgl.Popup({className: 'popups', offset: 37, anchor: 'bottom'})
+                new mapboxgl.Popup({className: 'popups', offset: 0, anchor: 'top'})
                     .setHTML(
                         `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
                     )
             )
             .addTo(map);
     })
+    // TODO: Add a select input that allows the user to change the zoom level to 5, 15, or 20.
 
 
 </script>
