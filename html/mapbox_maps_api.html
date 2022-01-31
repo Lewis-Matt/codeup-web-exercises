@@ -12,13 +12,17 @@
     <!-- Custom CSS -->
     <style>
         #map {
-            width: 80%;
+            width: 90%;
             height: 500px;
         }
+
         .popups {
+            max-width: 200px;
             font-family: fantasy;
-            font-size: 1.25em;
+            font-size: .9em;
+            text-align: center;
         }
+
     </style>
 
 
@@ -41,7 +45,7 @@
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/satellite-streets-v11',
-        zoom: 8,
+        zoom: 1,
         // The geographic center of the U.S.
         // Note: Mapbox GL uses longitude, latitude coordinate order (as opposed to latitude, longitude) to match GeoJSON.
         center: [-103.771556, 44.967243]
@@ -63,43 +67,105 @@
         });*/
 
     // TODO: Create an array of objects with information about each restaurant
-    const casaBonitaInfo = {
-        address: "Casa Bonita, West Colfax Avenue, Lakewood, CO",
-        popupHTML: "<h2>Casa Bonita!</h2>" +
-            "<p>I was visiting friends in Denver in 2007, we were watching the Casa Bonita episode and I asked if it was a real place. Spent the rest of the night there!</p>"
-    };
+    /*    const casaBonitaInfo = {
+            address: "Casa Bonita, West Colfax Avenue, Lakewood, CO",
+            popupHTML: "<h2>Casa Bonita!</h2>" +
+                "<p>I was visiting friends in Denver in 2007, we were watching the Casa Bonita episode of South Park and I asked if it was a real place: spent the rest of the night there!</p>"
+        };
 
-    const brauhausInfo = {
-        address: "Brauhaus Schönbuch, Bolzstraße 10, 70173 Stuttgart, Germany",
-        popupHTML: "<h2>Brauhaus Schönbuch</h2>" +
-            "<p>This was the default going-away location when someone left the team.</p>"
-    };
+        const brauhausInfo = {
+            address: "Brauhaus Schönbuch, Bolzstraße 10, 70173 Stuttgart, Germany",
+            popupHTML: "<h2>Brauhaus Schönbuch</h2>" +
+                "<p>This was the default going-away location when someone left the team.</p>"
+        };
 
-    const pelonsInfo = {
-        address: "Pelon's Baja Grill, 3619 Pacific Ave, Virginia Beach, VA 23451",
-        popupHTML: "<h2>Pelon's</h2>" +
-            "<p>Good memories with the old crew!</p>"
-    };
+        const pelonsInfo = {
+            address: "Pelon's Baja Grill, 3619 Pacific Ave, Virginia Beach, VA 23451",
+            popupHTML: "<h2>Pelon's</h2>" +
+                "<p>Good memories with the old crew!</p>"
+        };
 
-    let markerArray = [casaBonitaInfo, brauhausInfo, pelonsInfo];
+        let markerArray = [casaBonitaInfo, brauhausInfo, pelonsInfo];
 
-    // Function to add markers and popups for each restaurant in markerArray
-    function markAndPop(array, token, map) {
-        array.forEach(restaurant => {
-            let address = restaurant.address;
-            geocode(address, token).then(function (coordinates) {
-                let popup = new mapboxgl.Popup({className: 'popups'})
-                    .setHTML(restaurant.popupHTML);
-                let marker = new mapboxgl.Marker({color: 'orange'})
-                    .setLngLat(coordinates)
-                    .addTo(map)
-                    .setPopup(popup);
-                popup.addTo(map);
+        //TODO: Function to add markers and popups for each restaurant in markerArray, using geocoder on the address
+        function markAndPop(array, token, map) {
+            array.forEach(restaurant => {
+                let address = restaurant.address;
+                geocode(address, token).then(function (coordinates) {
+                    let popup = new mapboxgl.Popup({className: 'popups', offset: 37, anchor: 'bottom'})
+                        .setHTML(restaurant.popupHTML);
+                    let marker = new mapboxgl.Marker({color: 'orange', className: 'markers'})
+                        .setLngLat(coordinates)
+                        .addTo(map)
+                        .setPopup(popup);
+                    popup.addTo(map);
+                });
             });
-        });
-    }
+        }
 
-    markAndPop(markerArray, accessToken, map);
+        markAndPop(markerArray, accessToken, map);*/
+
+
+    // TODO: Object of features using GeoJSON:
+    // GeoJSON is a format for encoding a variety of geographic data structures.
+    // https://geojson.org/
+    const geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-105.07067574411924, 39.74189852530432]
+                },
+                'properties': {
+                    'title': 'Casa Bonita',
+                    'description': 'I was visiting friends in Denver in 2007, we were watching the Casa Bonita episode of South Park and I asked if it was a real place: spent the rest of the night there!'
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [9.177743940788524, 48.780413595091524]
+                },
+                'properties': {
+                    'title': 'Brauhaus Schönbuch',
+                    'description': 'This was the default going-away location when someone left the team.'
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-75.98034377487741, 36.86507195784292]
+                },
+                'properties': {
+                    'title': 'Pelon\'s Baja Grill',
+                    'description': 'Good memories with the old crew!'
+                }
+            }
+        ]
+    };
+
+    // TODO: Loop through the geojson.features array to add each marker and popup
+    geojson.features.forEach(feature => {
+        // Creates HTML element for each feature **** doesn't work when passes into mapboxgl.Marker(locationContainer)
+/*        const locationContainer = document.createElement('div');
+        locationContainer.className = 'markers';*/
+
+        // Create a marker, w/ popup, for each feature and add to map
+        new mapboxgl.Marker()
+            .setLngLat(feature.geometry.coordinates)
+            .setPopup(
+                new mapboxgl.Popup({className: 'popups', offset: 37, anchor: 'bottom'})
+                    .setHTML(
+                        `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                    )
+            )
+            .addTo(map);
+    })
+
 
 </script>
 </body>
