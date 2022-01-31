@@ -32,7 +32,7 @@
 <div id='map'></div>
 
 <!-- TOKEN -->
-<script src="/config/mapbox-token.js"></script>
+<script src="/config/keys.js"></script>
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -43,8 +43,8 @@
 <!-- Custom JS -->
 <script>
     // TODO: Create the map
-    // stored in mapbox-config.js (added to .gitignore)
-    mapboxgl.accessToken = accessToken;
+    // stored in keys.js (added to .gitignore)
+    mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -79,14 +79,14 @@
     // TODO: Create Geocode
     // Here is example code using the Geocode helper function to log the coordinates of Codeup and then recenter the map to focus on Codeup:
 
-    // geocode("600 Navarro St #350, San Antonio, TX 78205", accessToken).then(function (result) {
+    // geocode("600 Navarro St #350, San Antonio, TX 78205", MAPBOX_KEY).then(function (result) {
     //     console.log(result);
     //     map.setCenter(result);
     //     map.setZoom(20);
     // });
 
     // TODO: reverse geocode method from mapbox-geocoder-utils.js
-    reverseGeocode({lng: -98.4861, lat: 29.4260}, accessToken).then(function (results) {
+    reverseGeocode({lng: -98.4861, lat: 29.4260}, MAPBOX_KEY).then(function (results) {
         // logs the address for The Alamo
         console.log(results);
     });

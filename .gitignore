@@ -4,4 +4,4 @@
 /config/**
 
 ## Ignores api token for mapbox
-/config/mapbox-token.js
+/config/keys.js

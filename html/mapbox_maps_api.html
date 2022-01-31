@@ -40,7 +40,7 @@
 
 <!-------------------------SCRIPTS------------------------->
 <!-- TOKEN -->
-<script src="/config/mapbox-token.js"></script>
+<script src="/config/keys.js"></script>
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <!--Mapbox Geocoder Util Methods-->
@@ -52,7 +52,7 @@
         crossorigin="anonymous"></script>
 
 <script>
-    mapboxgl.accessToken = accessToken;
+    mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/satellite-streets-v11',
@@ -63,7 +63,7 @@
     });
 
     /*    // TODO: Generate a map that shows the city with your favorite restaurant using geocoding.
-        geocode("Cancun Mexican Grill, Chippewa Mall Drive, Chippewa Falls, WI", accessToken).then(function (result) {
+        geocode("Cancun Mexican Grill, Chippewa Mall Drive, Chippewa Falls, WI", MAPBOX_KEY).then(function (result) {
             console.log(result);
             map.setCenter(result);
             map.setZoom(15);
@@ -201,7 +201,7 @@
     // Note: had to add another script for geocoder, as well as a link to geocoder css
     map.addControl(
         new MapboxGeocoder({
-            accessToken: accessToken,
+            accessToken: MAPBOX_KEY,
             mapboxgl: mapboxgl
         })
     );
