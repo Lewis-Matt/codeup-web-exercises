@@ -8,7 +8,9 @@
     <title>Mapbox Maps Exercise</title>
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+    <link rel='stylesheet'
+          href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css'
+          type='text/css'/>
     <!-- Custom CSS -->
     <link href="../css/mapbox_maps_api.css" rel="stylesheet">
 
@@ -21,8 +23,7 @@
     <!--TODO: Add a select input that allows the user to change the zoom level to 5, 15, or 20.-->
     <label for="zoom">Zoom Select:</label>
     <select name="zoom" id="zoom">
-        <option value="default" selected></option>
-        <option value="5">5</option>
+        <option value="5" selected>5</option>
         <option value="15">15</option>
         <option value="20">20</option>
     </select>
@@ -43,7 +44,8 @@
 <!--Mapbox GL JS Geocoder plugin-->
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
 <!--jQuery-->
-<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
 
 <script>
     mapboxgl.accessToken = accessToken;
@@ -153,14 +155,15 @@
         ]
     };
 
+    let markerArray = [];
     // TODO: Loop through the geojson.features array to add each marker and popup
     geojson.features.forEach(feature => {
         // Creates HTML element for each feature **** doesn't work when passes into mapboxgl.Marker(locationContainer)
         /*        const locationContainer = document.createElement('div');
                 locationContainer.className = 'markers';*/
-
+        let markerArray = [];
         // Create a marker, w/ popup, for each feature and add to map
-        new mapboxgl.Marker({className: 'markers'})
+        markerArray[feature] = new mapboxgl.Marker({className: 'markers'})
             .setLngLat(feature.geometry.coordinates)
             .setPopup(
                 new mapboxgl.Popup({className: 'popups', offset: 0, anchor: 'top'})
@@ -170,6 +173,8 @@
             )
             .addTo(map);
     })
+
+
     // TODO: Add a select input that allows the user to change the zoom level to 5, 15, or 20.
     let zoomSelect = $("#zoom");
     // The change event is sent to an element when its value changes.
@@ -181,12 +186,17 @@
     });
 
     // TODO:Add a button that will hide all markers.
+    $('#removeMarkers').click(function () {
+        markerArray.forEach(marker => {
+            marker.remove()
+        })
+    })
 
     // TODO: Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.
     // Note: had to add another script for geocoder, as well as a link to geocoder css
     map.addControl(
         new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
+            accessToken: accessToken,
             mapboxgl: mapboxgl
         })
     );
