@@ -1,25 +1,63 @@
+body {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    padding: 25px;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: #cccccc;
+}
+
 #map {
-    width: 90%;
+    width: 100%;
     height: 500px;
+    border: solid white 2px;
+    border-radius: 10px;
 }
 
 .popups {
     max-width: 200px;
-    font-family: fantasy;
+    font-family: Helvetica, sans-serif;
     font-size: .9em;
     text-align: center;
 }
 
 #sidebar {
+    width: 200px;
+    height: auto;
+    display: flex;
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 125px;
+    left: 50px;
     background: #ffffff;
-    padding: 5px;
+    padding: 10px;
+    border: solid black 1px;
     border-radius: 5px;
     font-family: Helvetica, sans-serif;
+    flex-direction: column;
+    align-items: center;
 }
 
+#select-zoom {
+    margin-bottom: 10px;
+}
+
+#removeMarkers {
+    font-family: Helvetica, sans-serif;
+    padding: 5px;
+    background: #e9e9ed;
+    border: solid #8f8f9d 2px;
+    border-radius: 5px;
+}
+
+
+/*TODO: Replace the generic marker icon */
 .mapboxgl-marker-anchor-center {
     background-image: url('../assets/img/local_dining_white_24dp.svg');
     background-size: cover;

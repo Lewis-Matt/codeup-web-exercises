@@ -16,23 +16,27 @@
 
 </head>
 <body>
-<!-- The Mapbox container -->
-<div id='map'></div>
-<!--Sidebar-->
-<div id="sidebar">
-    <!--TODO: Add a select input that allows the user to change the zoom level to 5, 15, or 20.-->
-    <label for="zoom">Zoom Select:</label>
-    <select name="zoom" id="zoom">
-        <option value="5" selected>5</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-    </select>
-    <div>
-        <!--TODO:Add a button that will hide all markers.-->
-        <button id="removeMarkers">Remove Markers</button>
+<div class="container">
+    <!-- The Mapbox container -->
+    <h1>MAPBOX API</h1>
+    <div id='map'></div>
+    <!--Sidebar-->
+    <div id="sidebar">
+        <!--TODO: Add a select input that allows the user to change the zoom level to 5, 15, or 20.-->
+        <div id="select-zoom">
+            <label for="zoom">Zoom Select:</label>
+            <select name="zoom" id="zoom">
+                <option value="5" selected>5</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <div>
+            <!--TODO:Add a button that will hide all markers.-->
+            <button id="removeMarkers">Remove Markers</button>
+        </div>
     </div>
 </div>
-
 
 <!-------------------------SCRIPTS------------------------->
 <!-- TOKEN -->
@@ -202,10 +206,10 @@
         })
     );
 
-    // Animation Marker
-    const bouncingMarker = new mapboxgl.Marker({color: '#F84C4C'});
-    bouncingMarker.setLngLat([0, 0]);
-    bouncingMarker.addTo(map);
+    // TODO: Animate a marker to bounce up and down. Alter the animation to stop after two seconds. Make the amount of bounce animation scale according to zoom level.
+    // const bouncingMarker = new mapboxgl.Marker({color: '#F84C4C'});
+    // bouncingMarker.setLngLat([0, 0]);
+    // bouncingMarker.addTo(map);
 
 
 </script>
