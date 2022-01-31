@@ -10,7 +10,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather on a Map!</title>
+    <title>clima.io: Weather on a map!</title>
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <!-- Mapbox Geocoder CSS -->
@@ -24,17 +24,27 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<div class="container" id="main-container">
-    <!-- NAVBAR ELEMENTS -->
+<div class="container border border-warning" id="main-container">
     <header>
-        <div class="nav container-fluid" id="nav-container">
-            <nav class="navbar border border-primary">
-                <div class="">hamburger</div>
-                <div class="">searchbar</div>
-            </nav>
-        </div>
+        <!-- NAVBAR ELEMENTS -->
+        <nav class="navbar navbar-expand-lg border border-danger" id="nav-container">
+            <div class="container-fluid">
+                <div class="navbar-brand mb-0 h1">clima.io</div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="border border-primary">
+
+                    <div class="">hamburger</div>
+
+                    <div class="">searchbar</div>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main class="container">
+    <main class="container border border-primary">
         <!--CURRENT WEATHER AT LOCATION SEARCHED-->
         <div class="card">
             <div>San Antonio</div>
@@ -50,6 +60,8 @@
             <div class="card-header">Five-Day Forecast</div>
             <div>Use jquery to insert a table in this div containing day, weather icon, Low, Hi</div>
         </div>
+        <!--Map is inserted below-->
+        <div id="map" class="container-fluid">MAPPY MAP</div>
     </main>
     <footer>
         <div>
