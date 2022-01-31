@@ -28,30 +28,30 @@
 <body>
 <div class="container border border-warning" id="main-container">
     <!-- NAVBAR ELEMENTS -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light">
         <div class="container-fluid flex-nowrap">
             <a class="navbar-brand" href="#">clima.io</a>
-            <form class="d-flex">
+            <!--Flex grow to make search bar take up the majority of the nav-->
+            <form class="d-flex flex-grow-1">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </nav>
 
-    <main class="container border border-primary">
-
+    <main class="container col border border-primary">
         <!--CURRENT WEATHER AT LOCATION SEARCHED-->
-        <div class="card">
-            <div>San Antonio</div>
+        <div class="card mb-2 text-center" id="current-weather">
+            <div class="card-header">San Antonio</div>
             <div>59 degrees</div>
             <div>Cloudy</div>
-            <div>
-                <div>H: 40</div>
-                <div>L: 30</div>
+            <div class="d-flex mx-auto">
+                <div id="currentHI" class="">H: 40</div>
+                <div id="currentLO" class="">L: 30</div>
             </div>
         </div>
         <!--FIVE-DAY FORECAST-->
-        <div class="card">
+        <div class="card mb-2 text-center" id="five-day-container">
             <div class="card-header">Five-Day Forecast</div>
             <div class="row" id="day1">
                 <div id="weekday1" class="col">Today</div>
@@ -85,12 +85,10 @@
             </div>
         </div>
         <!--Map is inserted below-->
-        <div id="map" class="container-fluid">MAPPY MAP</div>
+        <div id="map" class="card"></div>
     </main>
-    <footer>
-        <div>
-            Left Side Copyright
-        </div>
+    <footer class="mx-3">
+        © 2022 clima software inc.
     </footer>
 </div>
 
