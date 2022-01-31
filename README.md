@@ -53,4 +53,8 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 ### /Users/misterlewis/IdeaProjects/sirius-dom-assessment/index.html
 - $().on('dblcick', function... $().each...) for doing something everytime you dblclick (rather than just the first time)
 
-
+## mapbox_maps_api.html
+- geoJSON
+- looping through geoJSON to add markers and popups
+- .change(function(){})
+- hiding api tokens
