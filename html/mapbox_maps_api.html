@@ -161,9 +161,9 @@
         // Creates HTML element for each feature **** doesn't work when passes into mapboxgl.Marker(locationContainer)
         /*        const locationContainer = document.createElement('div');
                 locationContainer.className = 'markers';*/
-        let markerArray = [];
+
         // Create a marker, w/ popup, for each feature and add to map
-        markerArray[feature] = new mapboxgl.Marker({className: 'markers'})
+        let marker = new mapboxgl.Marker()
             .setLngLat(feature.geometry.coordinates)
             .setPopup(
                 new mapboxgl.Popup({className: 'popups', offset: 0, anchor: 'top'})
@@ -172,8 +172,9 @@
                     )
             )
             .addTo(map);
+        markerArray.push(marker);
     })
-
+    console.log(markerArray)
 
     // TODO: Add a select input that allows the user to change the zoom level to 5, 15, or 20.
     let zoomSelect = $("#zoom");
@@ -200,6 +201,11 @@
             mapboxgl: mapboxgl
         })
     );
+
+    // Animation Marker
+    const bouncingMarker = new mapboxgl.Marker({color: '#F84C4C'});
+    bouncingMarker.setLngLat([0, 0]);
+    bouncingMarker.addTo(map);
 
 
 </script>

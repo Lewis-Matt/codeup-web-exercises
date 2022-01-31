@@ -20,6 +20,15 @@
     font-family: Helvetica, sans-serif;
 }
 
-.markers {
+.mapboxgl-marker-anchor-center {
+    background-image: url('../assets/img/local_dining_white_24dp.svg');
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
+svg {
+    display: none;
 }
