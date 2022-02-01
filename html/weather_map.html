@@ -32,10 +32,12 @@
         <div class="container-fluid flex-nowrap">
             <a class="navbar-brand" href="#">clima.io</a>
             <!--Flex grow to make search bar take up the majority of the nav-->
-            <form class="d-flex flex-grow-1">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+<!--            <form class="d-flex flex-grow-1">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--            </form>-->
+            <!--LOCATION TO ADD GEOCODER-->
+            <div id="geocoder-search"></div>
         </div>
     </nav>
 
@@ -99,7 +101,7 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <!--Mapbox Geocoder Util Methods-->
-<script src="/js/mapbox-geocoder-utils.js"></script>
+<!--<script src="/js/mapbox-geocoder-utils.js"></script>-->
 <!--Mapbox GL JS Geocoder plugin-->
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
 <!--jQuery-->
