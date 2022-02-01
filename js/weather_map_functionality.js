@@ -1,8 +1,9 @@
 "use strict";
 (function () {
-    // Initialize weather/location data to a default location (San Antonio)
+    // INITIALIZE WEATHER/LOCATION DATA TO A DEFAULT LOCATION (CODEUP)
     let lon = -98.489765;
     let lat = 29.426742;
+    // NEEDED FOR REVERSE GEOCODE QUERY
     let defaultCords = {
         lng: lon,
         lat: lat
@@ -14,13 +15,13 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/satellite-streets-v11',
         zoom: 14,
-        center: [lon, lat],
+        // DEFAULT LOCATION
+        center: [lon, lat]
     });
 
     // MAPBOX GEOCODER CONTROL API: ADDS SEARCH BOX TO MAP
-    // NOTE: Input field class: .mapboxgl-ctrl-geocoder--input
     const geocoder = new MapboxGeocoder({
-        accessToken: MAPBOX_KEY, // Marker placed and styling
+        accessToken: MAPBOX_KEY,
         marker: {
             color: 'orange',
         }, mapboxgl: mapboxgl
@@ -30,9 +31,9 @@
     // GEOCODER SEARCH BOX ADDED TO NAV ELEMENT
     document.getElementById('geocoder-search').appendChild(geocoder.onAdd(map));
 
-    // ADDS A MARKER WHEREVER THE USER CLICKS AND UPDATES WEATHER
+    // INITIALIZES A NEW MARKER TO BE ADDED ON CLICK
     let marker = new mapboxgl.Marker();
-
+    // ADDS A MARKER WHEREVER THE USER CLICKS AND UPDATES WEATHER
     function add_marker(event) {
         let coordinates = event.lngLat;
         console.log(coordinates)
@@ -40,8 +41,9 @@
         marker.setLngLat(coordinates).addTo(map);
         lat = coordinates.lat;
         lon = coordinates.lng;
+        // UPDATES ENDPOINT WITH CURRENT LAT AND LON
         endpoint = `${OPEN_WEATHER.base}onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely&appid=${OPEN_WEATHER.key}`;
-        // Reverse geocode to display clicked marker as the new location
+        // REVERSE GEOCODE TO DISPLAY CLICKED MARKER AS THE NEW LOCATION
         reverseGeocode(coordinates, MAPBOX_KEY).then(function (results) {
             $('#current-city').text(results);
         })
@@ -49,7 +51,9 @@
     }
 
     map.on('click', add_marker);
-    // FETCHES WEATHER OBJECT FOR GIVEN DEFAULT COORDINATES
+
+
+    // SETS WEATHER API ENDPOINT FOR DEFAULT COORDINATES
     let endpoint = `${OPEN_WEATHER.base}onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely&appid=${OPEN_WEATHER.key}`;
 
     // GETS WEATHER FOR COORDINATES
@@ -71,7 +75,7 @@
     // GETS THE GEOJSON OBJECT FOR THE GEOCODER SEARCH QUERY
     geocoder.on('results', function (results) {
         console.log(results);
-        // Gets the coordinates from geoJSON object
+        // GETS THE COORDINATES FROM GEOJSON OBJECT
         // Note: mapbox gl/geoJSON uses lon/lat, openweather uses lat/lon
         // The geocoder results.features[] is an array of the top 5 matches/suggestions.
         lon = results.features[0].geometry.coordinates[0];
@@ -94,7 +98,7 @@
             .then(function (res) {
                 return res.json();
             })
-            // to get all the data from the request, comment out the following three lines...
+            // RETURNS THE LOCATION NAME
             .then(function (data) {
                 return data.features[0].place_name;
             });
