@@ -6,6 +6,7 @@
     background-color: #292929;
 
 }
+
 /* Larger height on desktop*/
 @media screen and (min-width: 992px) {
     #map {
@@ -32,10 +33,30 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 #current-weather {
     background-color: #292929;
 }
 
 #five-day-container {
     background-color: #292929;
+}
+
+#geocoder-search {
+    display: flex;
+    width: auto;
+    justify-content: end;
+
+}
+
+.mapboxgl-ctrl-geocoder--input {
+    background-color: #292929;
+    border-radius: 10px;
+    color: #FFF;
+}
+
+.mapboxgl-ctrl-geocoder {
+    width: 500px;
+    border: solid white 1px;
+    border-radius: 10px;
 }

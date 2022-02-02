@@ -13,7 +13,8 @@
     mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/misterlewis/ckz5ofbx6000g14lpwckpt357',
+        style: 'mapbox://styles/mapbox/satellite-v9',
+        // style: 'mapbox://styles/misterlewis/ckz5plzl9000514ppixs81zgr',
         zoom: 14,
         // DEFAULT LOCATION
         center: [lon, lat]
