@@ -34,6 +34,7 @@
 
     // INITIALIZES A NEW MARKER TO BE ADDED ON CLICK
     let marker = new mapboxgl.Marker();
+
     // ADDS A MARKER WHEREVER THE USER CLICKS AND UPDATES WEATHER
     function add_marker(event) {
         let coordinates = event.lngLat;
@@ -104,6 +105,7 @@
             });
     }
 
+    // TODO: ******** This needs to be refactored into a loop ********
     // ADDS WEATHER TO HTML ELEMENTS
     function displayWeather(response) {
         // TODAY
@@ -117,32 +119,32 @@
         let day1 = response.daily[1];
         $('#weekday1').text(aryDates[0])
         $('#icon1').html(`<img src=http://openweathermap.org/img/w/${day1.weather[0].icon}.png height="75px"/>`)
-        $('#low1').text(day1.temp.min.toFixed(0)+ `℉`)
-        $('#hi1').text(day1.temp.max.toFixed(0)+ `℉`)
+        $('#low1').text(day1.temp.min.toFixed(0) + `℉`)
+        $('#hi1').text(day1.temp.max.toFixed(0) + `℉`)
         // Day 2
         let day2 = response.daily[2];
         $('#weekday2').text(aryDates[1])
         $('#icon2').html(`<img src=http://openweathermap.org/img/w/${day2.weather[0].icon}.png height="75px"/>`)
-        $('#low2').text(day1.temp.min.toFixed(0)+ `℉`)
-        $('#hi2').text(day1.temp.max.toFixed(0)+ `℉`)
+        $('#low2').text(day1.temp.min.toFixed(0) + `℉`)
+        $('#hi2').text(day1.temp.max.toFixed(0) + `℉`)
         // Day 3
         let day3 = response.daily[3];
         $('#weekday3').text(aryDates[2])
         $('#icon3').html(`<img src=http://openweathermap.org/img/w/${day3.weather[0].icon}.png height="75px"/>`)
-        $('#low3').text(day3.temp.min.toFixed(0)+ `℉`)
-        $('#hi3').text(day3.temp.max.toFixed(0)+ `℉`)
+        $('#low3').text(day3.temp.min.toFixed(0) + `℉`)
+        $('#hi3').text(day3.temp.max.toFixed(0) + `℉`)
         // Day 4
         let day4 = response.daily[4];
         $('#weekday4').text(aryDates[3])
         $('#icon4').html(`<img src=http://openweathermap.org/img/w/${day4.weather[0].icon}.png height="75px"/>`)
-        $('#low4').text(day4.temp.min.toFixed(0)+ `℉`)
-        $('#hi4').text(day4.temp.max.toFixed(0)+ `℉`)
+        $('#low4').text(day4.temp.min.toFixed(0) + `℉`)
+        $('#hi4').text(day4.temp.max.toFixed(0) + `℉`)
         // Day 5
         let day5 = response.daily[5];
         $('#weekday5').text(aryDates[4])
         $('#icon5').html(`<img src=http://openweathermap.org/img/w/${day5.weather[0].icon}.png height="75px"/>`)
-        $('#low5').text(day5.temp.min.toFixed(0)+ `℉`)
-        $('#hi5').text(day5.temp.max.toFixed(0)+ `℉`)
+        $('#low5').text(day5.temp.min.toFixed(0) + `℉`)
+        $('#hi5').text(day5.temp.max.toFixed(0) + `℉`)
     }
 })();
 
