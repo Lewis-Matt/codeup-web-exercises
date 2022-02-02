@@ -18,7 +18,8 @@
 #main-container {
     position: relative;
     min-height: 100vh;
-    font-family: 'Ubuntu', sans-serif;}
+    font-family: 'Ubuntu', sans-serif;
+}
 
 
 /* Set >= to the height of the footer */
@@ -78,5 +79,15 @@ footer {
 
 p {
     font-size: 1.25em;
+    margin-bottom: 0;
 }
 
+
+.row {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.col {
+    padding: 0;
+}
