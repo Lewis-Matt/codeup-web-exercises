@@ -34,6 +34,8 @@
     <!-- NAVBAR ELEMENTS -->
     <nav class="navbar navbar-light flex-nowrap ">
         <a class="navbar-brand text-white fs-3" href="#">clima.io</a>
+        <!-- CLOCK -->
+        <div id="clock" class="text-white fs-3 d-none d-md-block"></div>
         <!--LOCATION TO ADD GEOCODER-->
         <div id="geocoder-search"></div>
     </nav>
@@ -42,11 +44,13 @@
         <!--CURRENT WEATHER AT LOCATION SEARCHED-->
         <div class="card mb-2 text-center border-secondary border-2 fs-6" id="current-weather">
             <div class="card-header text-white" id="current-city">San Antonio</div>
-            <div id="current-temp">59 degrees</div>
+            <div id="current-temp" class="fs-1">59 degrees</div>
             <div class="row">
-                <div id="currentHI" class="col">H: 40</div>
+                <div class="col"></div>
+                <div id="currentHI" class="col fs-3">H: 40</div>
                 <div id="current-conditions" class="col">Cloudy</div>
-                <div id="currentLO" class="col">L: 30</div>
+                <div id="currentLO" class="col fs-3">L: 30</div>
+                <div class="col"></div>
             </div>
         </div>
         <!-- WEATHER ALERTS -->
@@ -63,7 +67,6 @@
                 </div>
             </div>
         </div>
-
         <!-- FIVE DAY OUTLOOK -->
         <div class="card my-2 pb-2 text-center border-secondary border-2" id="five-day-container">
             <button class="card-header fw-bold fs-4 text-white btn dropdown-toggle" id="outlook" type="button"

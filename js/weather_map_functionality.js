@@ -105,7 +105,6 @@
             });
     }
 
-
     // ADDS WEATHER TO HTML ELEMENTS
     function displayWeather(response) {
         // TODAY
@@ -113,6 +112,9 @@
         $('#current-conditions').html(`<img src=http://openweathermap.org/img/w/${response.current.weather[0].icon}.png  /><p class="text-capitalize">${response.current.weather[0].description}</p>`)
         $('#currentHI').text(`H: ${response.daily[0].temp.max.toFixed(0)}℉`)
         $('#currentLO').text(`L: ${response.daily[0].temp.min.toFixed(0)}℉`)
+
+        // WEATHER ALERT
+        $('#alert').text(response.alerts[0].description);
 
         // TODO: ******** This needs to be refactored into a loop ********
         // FIVE-DAY FORECAST
@@ -157,6 +159,36 @@
         $('#wind5').text(`${day5.wind_speed.toFixed(0)} mph`)
         $('#humid5').text(`${day5.humidity}%`)
     }
+
+    // CLOCK FUNCTION
+    function showTime(){
+        let date = new Date();
+        let h = date.getHours(); // 0 - 23
+        let m = date.getMinutes(); // 0 - 59
+        let s = date.getSeconds(); // 0 - 59
+        let session = "AM";
+
+        if(h == 0){
+            h = 12;
+        }
+
+        if(h > 12){
+            h = h - 12;
+            session = "PM";
+        }
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+
+        let time = h + ":" + m + ":" + s + " " + session;
+        document.getElementById("clock").innerText = time;
+        document.getElementById("clock").textContent = time;
+
+        setTimeout(showTime, 1000);
+    }
+
+    showTime();
 })();
 
 
