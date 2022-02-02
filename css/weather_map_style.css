@@ -13,18 +13,16 @@
         width: 100%;
         height: 600px;
     }
+
 }
 
 #main-container {
     position: relative;
     min-height: 100vh;
     font-family: 'Ubuntu', sans-serif;
-}
-
-
-/* Set >= to the height of the footer */
-main {
+    /* Set >= to the height of the footer */
     padding-bottom: 2.5em;
+
 }
 
 /* Fixed to bottom */
@@ -43,11 +41,11 @@ footer {
     background-color: #fff;
 }
 
+
 #geocoder-search {
     display: flex;
-    width: auto;
     justify-content: end;
-
+    flex-grow: 1;
 }
 
 .mapboxgl-ctrl-geocoder--input {
@@ -58,10 +56,10 @@ footer {
 }
 
 .mapboxgl-ctrl-geocoder {
-    width: 500px;
     border: solid darkgrey 2px;
     border-radius: 10px;
-}
+    max-width: 500px;
+    }
 
 #currentHILO-container {
     justify-content: center;
@@ -74,14 +72,13 @@ footer {
 }
 
 #current-temp {
-    font-size: 2em;
+    font-size: 2.25em;
 }
 
 p {
     font-size: 1.25em;
     margin-bottom: 0;
 }
-
 
 .row {
     flex-wrap: nowrap;
