@@ -25,20 +25,20 @@
 </head>
 
 <!--------------------------------BODY-------------------------------->
-<body>
-<div class="container border border-warning" id="main-container">
+<body class="bg-dark">
+<div class="container" id="main-container">
     <!-- NAVBAR ELEMENTS -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light ">
         <div class="container-fluid flex-nowrap">
-            <a class="navbar-brand" href="#">clima.io</a>
+            <a class="navbar-brand text-white" href="#">clima.io</a>
             <!--LOCATION TO ADD GEOCODER-->
             <div id="geocoder-search"></div>
         </div>
     </nav>
 
-    <main class="container col border border-primary">
+    <main class="container col">
         <!--CURRENT WEATHER AT LOCATION SEARCHED-->
-        <div class="card mb-2 text-center" id="current-weather">
+        <div class="card mb-2 text-center text-white border border-light" id="current-weather">
             <div class="card-header" id="current-city">San Antonio</div>
             <div id="current-temp">59 degrees</div>
             <div id="current-conditions">Cloudy</div>
@@ -48,7 +48,7 @@
             </div>
         </div>
         <!--FIVE-DAY FORECAST-->
-        <div class="card mb-2 text-center" id="five-day-container">
+        <div class="card mb-2 text-center text-white border border-light" id="five-day-container">
             <div class="card-header">Five-Day Forecast</div>
             <div class="row" id="day1">
                 <div id="weekday1" class="col">Today</div>
@@ -82,9 +82,9 @@
             </div>
         </div>
         <!--Map is inserted below-->
-        <div id="map" class="card"></div>
+        <div id="map" class="card text-white border border-light"></div>
     </main>
-    <footer class="mx-3">
+    <footer class="mx-3 text-white">
         © 2022 clima software inc.
     </footer>
 </div>

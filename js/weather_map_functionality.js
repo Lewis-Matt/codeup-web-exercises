@@ -13,7 +13,7 @@
     mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/satellite-streets-v11',
+        style: 'mapbox://styles/misterlewis/ckz5ofbx6000g14lpwckpt357',
         zoom: 14,
         // DEFAULT LOCATION
         center: [lon, lat]
@@ -51,7 +51,6 @@
     }
 
     map.on('click', add_marker);
-
 
     // SETS WEATHER API ENDPOINT FOR DEFAULT COORDINATES
     let endpoint = `${OPEN_WEATHER.base}onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely&appid=${OPEN_WEATHER.key}`;
