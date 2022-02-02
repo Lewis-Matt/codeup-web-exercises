@@ -105,15 +105,16 @@
             });
     }
 
-    // TODO: ******** This needs to be refactored into a loop ********
+
     // ADDS WEATHER TO HTML ELEMENTS
     function displayWeather(response) {
         // TODAY
         $('#current-temp').text(response.current.temp.toFixed(0) + `℉`)
         $('#current-conditions').html(`<img src=http://openweathermap.org/img/w/${response.current.weather[0].icon}.png  /><p class="text-capitalize">${response.current.weather[0].description}</p>`)
-        $('#currentHI').text(response.daily[0].temp.max.toFixed(0) + `℉`)
-        $('#currentLO').text(response.daily[0].temp.min.toFixed(0) + `℉`)
+        $('#currentHI').text(`H: ${response.daily[0].temp.max.toFixed(0)}℉`)
+        $('#currentLO').text(`L: ${response.daily[0].temp.min.toFixed(0)}℉`)
 
+        // TODO: ******** This needs to be refactored into a loop ********
         // FIVE-DAY FORECAST
         // Day 1
         let day1 = response.daily[1];
@@ -121,30 +122,40 @@
         $('#icon1').html(`<img src=http://openweathermap.org/img/w/${day1.weather[0].icon}.png  />`)
         $('#low1').text(day1.temp.min.toFixed(0) + `℉`)
         $('#hi1').text(day1.temp.max.toFixed(0) + `℉`)
+        $('#wind1').text(`${day1.wind_speed.toFixed(0)} mph`)
+        $('#humid1').text(`${day1.humidity}%`)
         // Day 2
         let day2 = response.daily[2];
         $('#weekday2').text(aryDates[1])
         $('#icon2').html(`<img src=http://openweathermap.org/img/w/${day2.weather[0].icon}.png  />`)
         $('#low2').text(day1.temp.min.toFixed(0) + `℉`)
         $('#hi2').text(day1.temp.max.toFixed(0) + `℉`)
+        $('#wind2').text(`${day2.wind_speed.toFixed(0)} mph`)
+        $('#humid2').text(`${day2.humidity}%`)
         // Day 3
         let day3 = response.daily[3];
         $('#weekday3').text(aryDates[2])
         $('#icon3').html(`<img src=http://openweathermap.org/img/w/${day3.weather[0].icon}.png  />`)
         $('#low3').text(day3.temp.min.toFixed(0) + `℉`)
         $('#hi3').text(day3.temp.max.toFixed(0) + `℉`)
+        $('#wind3').text(`${day3.wind_speed.toFixed(0)} mph`)
+        $('#humid3').text(`${day3.humidity}%`)
         // Day 4
         let day4 = response.daily[4];
         $('#weekday4').text(aryDates[3])
         $('#icon4').html(`<img src=http://openweathermap.org/img/w/${day4.weather[0].icon}.png  />`)
         $('#low4').text(day4.temp.min.toFixed(0) + `℉`)
         $('#hi4').text(day4.temp.max.toFixed(0) + `℉`)
+        $('#wind4').text(`${day4.wind_speed.toFixed(0)} mph`)
+        $('#humid4').text(`${day4.humidity}%`)
         // Day 5
         let day5 = response.daily[5];
         $('#weekday5').text(aryDates[4])
         $('#icon5').html(`<img src=http://openweathermap.org/img/w/${day5.weather[0].icon}.png  />`)
         $('#low5').text(day5.temp.min.toFixed(0) + `℉`)
         $('#hi5').text(day5.temp.max.toFixed(0) + `℉`)
+        $('#wind5').text(`${day5.wind_speed.toFixed(0)} mph`)
+        $('#humid5').text(`${day5.humidity}%`)
     }
 })();
 
