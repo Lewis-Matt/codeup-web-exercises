@@ -114,7 +114,11 @@
         $('#currentLO').text(`L: ${response.daily[0].temp.min.toFixed(0)}℉`)
 
         // WEATHER ALERT
-        $('#alert').text(response.alerts[0].description);
+        if (response.alerts[0].description === '') {
+            $('#alert').text('There are currently no alerts for this location.')
+        } else {
+            $('#alert').text(response.alerts[0].description);
+        }
 
         // TODO: ******** This needs to be refactored into a loop ********
         // FIVE-DAY FORECAST
@@ -161,18 +165,18 @@
     }
 
     // CLOCK FUNCTION
-    function showTime(){
+    function showTime() {
         let date = new Date();
         let h = date.getHours(); // 0 - 23
         let m = date.getMinutes(); // 0 - 59
         let s = date.getSeconds(); // 0 - 59
         let session = "AM";
 
-        if(h == 0){
+        if (h == 0) {
             h = 12;
         }
 
-        if(h > 12){
+        if (h > 12) {
             h = h - 12;
             session = "PM";
         }

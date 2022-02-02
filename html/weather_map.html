@@ -44,17 +44,95 @@
         <!--CURRENT WEATHER AT LOCATION SEARCHED-->
         <div class="card mb-2 text-center border-secondary border-2 fs-6" id="current-weather">
             <div class="card-header text-white" id="current-city">San Antonio</div>
-            <div id="current-temp" class="fs-1">59 degrees</div>
+            <div id="current-temp" class="fs-1 fw-bold">59 degrees</div>
             <div class="row">
                 <div class="col"></div>
-                <div id="currentHI" class="col fs-3">H: 40</div>
+                <div id="currentHI" class="col fs-3 hi">H: 40</div>
                 <div id="current-conditions" class="col">Cloudy</div>
-                <div id="currentLO" class="col fs-3">L: 30</div>
+                <div id="currentLO" class="col fs-3 lo">L: 30</div>
                 <div class="col"></div>
             </div>
         </div>
+
+        <!-- MAP -->
+        <div class="card text-white border-secondary border-2 " id="map-container">
+            <button class="card-header fw-bold fs-4 text-white btn dropdown-toggle" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
+                ClimaClick™
+            </button>
+            <div class="collapse" id="collapseMap">
+                <!--Map is inserted below-->
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <!-- FIVE DAY OUTLOOK -->
+        <div class="card my-2 text-center border-secondary border-2" id="five-day-container">
+            <button class="card-header fw-bold fs-4 text-white btn dropdown-toggle" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseForecast" aria-expanded="false" aria-controls="collapseForecast">
+                Five Day Outlook
+            </button>
+            <div class="collapse" id="collapseForecast">
+                <!-- Headings -->
+                <div class="row fs-5 fw-bold mb-3 mt-2 px-2 card-body">
+                    <div class="col">Day</div>
+                    <div class="col">Conditions</div>
+                    <div class="col lo">Low</div>
+                    <div class="col hi">Hi</div>
+                    <div class="col d-none d-md-block">Wind</div>
+                    <div class="col d-none d-md-block">Humidity</div>
+                </div>
+                <!-- Day 1 -->
+                <div class="row px-2  fs-5 " id="day1">
+                    <div id="weekday1" class="col">Today</div>
+                    <div id="icon1" class="col">ICON</div>
+                    <div id="low1" class="col lo">45</div>
+                    <div id="hi1" class="col hi">72</div>
+                    <div id="wind1" class="col d-none d-md-block">Wind</div>
+                    <div id="humid1" class="col d-none d-md-block">Humidity</div>
+                </div>
+                <!-- Day 2 -->
+                <div class="row px-2 fs-5  " id="day2">
+                    <div id="weekday2" class="col">Today</div>
+                    <div id="icon2" class="col align-self-center">ICON</div>
+                    <div id="low2" class="col lo">45</div>
+                    <div id="hi2" class="col hi">72</div>
+                    <div id="wind2" class="col d-none d-md-block">Wind</div>
+                    <div id="humid2" class="col d-none d-md-block">Humidity</div>
+                </div>
+                <!-- Day 3 -->
+                <div class="row px-2  fs-5 " id="day3">
+                    <div id="weekday3" class="col">Today</div>
+                    <div id="icon3" class="col">ICON</div>
+                    <div id="low3" class="col lo">45</div>
+                    <div id="hi3" class="col hi">72</div>
+                    <div id="wind3" class="col d-none d-md-block">Wind</div>
+                    <div id="humid3" class="col d-none d-md-block">Humidity</div>
+                </div>
+                <!-- Day 4 -->
+                <div class="row px-2  fs-5" id="day4">
+                    <div id="weekday4" class="col">Today</div>
+                    <div id="icon4" class="col">ICON</div>
+                    <div id="low4" class="col lo">45</div>
+                    <div id="hi4" class="col hi">72</div>
+                    <div id="wind4" class="col d-none d-md-block">Wind</div>
+                    <div id="humid4" class="col d-none d-md-block">Humidity</div>
+                </div>
+                <!-- Day 5 -->
+                <div class="row px-2  fs-5 " id="day5">
+                    <div id="weekday5" class="col ">Today</div>
+                    <div id="icon5" class="col">ICON</div>
+                    <div id="low5" class="col lo">45</div>
+                    <div id="hi5" class="col hi">72</div>
+                    <div id="wind5" class="col d-none d-md-block">Wind</div>
+                    <div id="humid5" class="col d-none d-md-block ">Humidity</div>
+                </div>
+            </div>
+        </div>
         <!-- WEATHER ALERTS -->
-        <div class="card my-2 pb-2 text-center border-secondary border-2" id="weather-alert">
+        <div class="card my-2  text-center border-secondary border-2" id="weather-alert">
             <button class="card-header fw-bold fs-4 text-white btn dropdown-toggle" type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseAlert" aria-expanded="false" aria-controls="collapseAlert">
@@ -63,77 +141,11 @@
             <div class="collapse" id="collapseAlert">
                 <div class="row fs-6 fw-bold mb-3 mt-2 px-2 card-body  ">
                     <!-- WEATHER ALERT INSERTED HERE -->
-                    <div class="col" id=alert></div>
+                    <div class="col p-3" id=alert>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- FIVE DAY OUTLOOK -->
-        <div class="card my-2 pb-2 text-center border-secondary border-2" id="five-day-container">
-            <button class="card-header fw-bold fs-4 text-white btn dropdown-toggle" id="outlook" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseForecast" aria-expanded="false" aria-controls="collapseForecast">
-                Five Day Outlook
-            </button>
-            <div class="collapse" id="collapseForecast">
-                <!-- Headings -->
-                <div class="row fs-6 fw-bold mb-3 mt-2 px-2 card-body  ">
-                    <div class="col">Day</div>
-                    <div class="col">Conditions</div>
-                    <div class="col">Low</div>
-                    <div class="col">Hi</div>
-                    <div class="col d-none d-md-block">Wind</div>
-                    <div class="col d-none d-md-block">Humidity</div>
-                </div>
-                <!-- Day 1 -->
-                <div class="row px-2   " id="day1">
-                    <div id="weekday1" class="col">Today</div>
-                    <div id="icon1" class="col">ICON</div>
-                    <div id="low1" class="col">45</div>
-                    <div id="hi1" class="col">72</div>
-                    <div id="wind1" class="col d-none d-md-block">Wind</div>
-                    <div id="humid1" class="col d-none d-md-block">Humidity</div>
-                </div>
-                <!-- Day 2 -->
-                <div class="row px-2   " id="day2">
-                    <div id="weekday2" class="col">Today</div>
-                    <div id="icon2" class="col align-self-center">ICON</div>
-                    <div id="low2" class="col">45</div>
-                    <div id="hi2" class="col">72</div>
-                    <div id="wind2" class="col d-none d-md-block">Wind</div>
-                    <div id="humid2" class="col d-none d-md-block">Humidity</div>
-                </div>
-                <!-- Day 3 -->
-                <div class="row px-2   " id="day3">
-                    <div id="weekday3" class="col">Today</div>
-                    <div id="icon3" class="col">ICON</div>
-                    <div id="low3" class="col">45</div>
-                    <div id="hi3" class="col">72</div>
-                    <div id="wind3" class="col d-none d-md-block">Wind</div>
-                    <div id="humid3" class="col d-none d-md-block">Humidity</div>
-                </div>
-                <!-- Day 4 -->
-                <div class="row px-2   " id="day4">
-                    <div id="weekday4" class="col">Today</div>
-                    <div id="icon4" class="col">ICON</div>
-                    <div id="low4" class="col">45</div>
-                    <div id="hi4" class="col">72</div>
-                    <div id="wind4" class="col d-none d-md-block">Wind</div>
-                    <div id="humid4" class="col d-none d-md-block">Humidity</div>
-                </div>
-                <!-- Day 5 -->
-                <div class="row px-2   " id="day5">
-                    <div id="weekday5" class="col">Today</div>
-                    <div id="icon5" class="col">ICON</div>
-                    <div id="low5" class="col">45</div>
-                    <div id="hi5" class="col">72</div>
-                    <div id="wind5" class="col d-none d-md-block">Wind</div>
-                    <div id="humid5" class="col d-none d-md-block ">Humidity</div>
-                </div>
-            </div>
-        </div>
-
-        <!--Map is inserted below-->
-        <div id="map" class="card text-white border-secondary border-2"></div>
     </main>
     <footer class="mx-3 text-white">
         © 2022 clima software inc.
