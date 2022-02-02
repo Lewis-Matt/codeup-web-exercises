@@ -34,8 +34,13 @@
     <!-- NAVBAR ELEMENTS -->
     <nav class="navbar navbar-light flex-nowrap ">
         <a class="navbar-brand text-white fs-3" href="#">clima.io</a>
-        <!-- CLOCK -->
-        <div id="clock" class="text-white fs-3 d-none d-md-block"></div>
+        <div id='date-time-container' class="d-none d-md-flex flex-column align-items-center">
+            <!-- CLOCK -->
+            <div id="clock" class="text-white fs-4"></div>
+            <!-- DATE -->
+            <div id="date" class="text-secondary fs-6 "></div>
+        </div>
+
         <!--LOCATION TO ADD GEOCODER-->
         <div id="geocoder-search"></div>
     </nav>
@@ -44,13 +49,20 @@
         <!--CURRENT WEATHER AT LOCATION SEARCHED-->
         <div class="card mb-2 text-center border-secondary border-2 fs-6" id="current-weather">
             <div class="card-header text-white" id="current-city">San Antonio</div>
-            <div id="current-temp" class="fs-1 fw-bold">59 degrees</div>
-            <div class="row">
-                <div class="col"></div>
+            <span class="fw-bold fs-4 bg-secondary border-bottom border-2 border-dark text-white">Current Conditions</span>
+            <div class="row px-2">
+                <div class="col d-none d-md-block"></div>
                 <div id="currentHI" class="col fs-3 hi">H: 40</div>
-                <div id="current-conditions" class="col">Cloudy</div>
+                <div id="current-temp" class="fs-1 fw-bold col">59 degrees</div>
                 <div id="currentLO" class="col fs-3 lo">L: 30</div>
-                <div class="col"></div>
+                <div class="col d-none d-md-block"></div>
+            </div>
+            <div class="row px-2">
+                <div class="col d-none d-md-block"></div>
+                <div class="col fs-4" id="current-humidity"></div>
+                <div id="current-conditions" class="col">Cloudy</div>
+                <div class="col fs-4 px-2" id="current-wind"></div>
+                <div class="col d-none d-md-block"></div>
             </div>
         </div>
 
@@ -61,7 +73,8 @@
                     data-bs-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
                 ClimaClick™
             </button>
-            <div class="collapse" id="collapseMap">
+            <!-- If the map started off collapsed, the scale would be wrong until window was resized -->
+            <div class="collapse show" id="collapseMap">
                 <!--Map is inserted below-->
                 <div id="map"></div>
             </div>
@@ -147,8 +160,9 @@
             </div>
         </div>
     </main>
-    <footer class="mx-3 text-white">
-        © 2022 clima software inc.
+    <footer class="p-0 m-0 ">
+        <div><a href="https://github.com/Lewis-Matt" class="text-decoration-none link-secondary">© 2022 Matt Lewis @
+            Codeup</a></div>
     </footer>
 </div>
 

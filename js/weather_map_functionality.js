@@ -109,10 +109,11 @@
     function displayWeather(response) {
         // TODAY
         $('#current-temp').text(response.current.temp.toFixed(0) + `℉`)
-        $('#current-conditions').html(`<img src=http://openweathermap.org/img/w/${response.current.weather[0].icon}.png  /><p class="text-capitalize">${response.current.weather[0].description}</p>`)
-        $('#currentHI').text(`H: ${response.daily[0].temp.max.toFixed(0)}℉`)
-        $('#currentLO').text(`L: ${response.daily[0].temp.min.toFixed(0)}℉`)
-
+        $('#current-conditions').html(`<img src=http://openweathermap.org/img/w/${response.current.weather[0].icon}.png  height="75px"/><p class="text-capitalize">${response.current.weather[0].description}</p>`)
+        $('#currentHI').text(`High ${response.daily[0].temp.max.toFixed(0)}℉`)
+        $('#currentLO').text(`Low ${response.daily[0].temp.min.toFixed(0)}℉`)
+        $('#current-humidity').text(`${response.current.humidity}% humidity`)
+        $('#current-wind').text(`${response.current.wind_speed}mph winds`)
         // WEATHER ALERT
         if (response.alerts[0].description === '') {
             $('#alert').text('There are currently no alerts for this location.')
@@ -163,7 +164,9 @@
         $('#wind5').text(`${day5.wind_speed.toFixed(0)} mph`)
         $('#humid5').text(`${day5.humidity}%`)
     }
-
+    // INSERTS DATE
+    let date = new Date().toUTCString().slice(5, 16);
+    $('#date').text(date)
     // CLOCK FUNCTION
     function showTime() {
         let date = new Date();

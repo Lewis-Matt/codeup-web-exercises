@@ -80,10 +80,10 @@ p {
 }
 
 #clock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%) translateY(-50%);*/
     letter-spacing: 5px;
 }
 .hi {
@@ -91,4 +91,10 @@ p {
 }
 .lo {
     color: #4d8bab;
+}
+#date-time-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
