@@ -61,8 +61,8 @@ const person2 = {
 // OBJECT DESTRUCTURING - CREATING VARIABLES FROM OBJECT PROPERTIES
 // old way
 var person3 = {name: 'codeup', age: 4};
-var name3 = person.name;
-var age3 = person.age;
+var name3 = person3.name;
+var age3 = person3.age;
 console.log(name3); // 'codeup'
 console.log(age3); // 4
 // new way
@@ -134,7 +134,7 @@ const numbers9 = [1, 2, 3, 4, 5];
 const sum = numbers9.reduce((accumulation, currentNumber) => {
     return accumulation + currentNumber;
 }, 0);
-console.log(sum);
+console.log(`sum: ${sum}`);
 
 // ANOTHER EXAMPLE OF REDUCE ON OBJECT
 const salesPeople = [
