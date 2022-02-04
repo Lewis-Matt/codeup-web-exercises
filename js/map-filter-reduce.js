@@ -68,12 +68,16 @@ console.log(`Longest Email: ${longestEmail()}`)
 // TODO: Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 function instructors() {
     return users.reduce((previous, current, index, array) => {
+        // If we are not at the end of the array, add a comma after the name
         if (array.indexOf(current) < array.length - 1) {
             previous += `${current.name}, `;
+            // If we are at the end of the array, add a period after the name.
         } else {
             previous += `${current.name}.`;
         }
+        // Return the string of names, appended to the initial value
         return previous;
+        // Initial value is a string
     }, 'Your instructors are: ');
 }
 
