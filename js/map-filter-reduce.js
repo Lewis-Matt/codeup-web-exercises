@@ -60,6 +60,7 @@ function longestEmail() {
             return longest.email
         }
         return current
+        //  If no initial value for the accumulator is supplied, array element 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
     })
 }
 
