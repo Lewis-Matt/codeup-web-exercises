@@ -12,7 +12,8 @@
 // Fetch the JSON from events api: api.github.com/users/USER/events
 // The first event in the array is the most recent push, return the date
 
-
+// Stores input github name from html form
+let githubName = document.getElementById("user").value;
 function userLastCommit(username) {
     return fetch(`https://api.github.com/users/${username}/events`, {
         headers:
@@ -25,13 +26,20 @@ function userLastCommit(username) {
         //Converting the response to a JSON object
         .then(response => response.json())
         .then(data => {
+            // TEST LOGS
+            console.log(data)
             console.log(`Last Commit: ${data[0].created_at}`);
-            return data[0].created_at;
+            // Once the promise is complete, adds the last commit date to paragraph
+            document.getElementById("commit").innerHTML = (data[0].created_at);
+            
         })
         .catch(error => console.error(error));
 }
 
-userLastCommit('Lewis-Matt')
+// // Adds last commit to <p>
+function commitDate() {
+    document.getElementById("commit").innerHTML = userLastCommit(githubName);
+}
 
 
 // TODO: Write a function named wait that accepts a number as a parameter, and returns a promise that resolves after the passed number of milliseconds.
