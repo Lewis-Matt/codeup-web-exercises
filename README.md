@@ -58,3 +58,6 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 - looping through geoJSON to add markers and popups
 - .change(function(){})
 - hiding api tokens
+
+## promises.js / promises.html
+- using response to update html
