@@ -9,9 +9,41 @@
 // PSEUDO:
 // Let the user enter a Github username
 // Store the username in a variable
-// Fetch the JSON
-fetch(url, {headers: {'Authorization': 'token YOUR_TOKEN_HERE'}})
+// Fetch the JSON from events api: api.github.com/users/USER/events
+// The first event in the array is the most recent push, return the date
 
+
+function userLastCommit(username) {
+    return fetch(`https://api.github.com/users/${username}/events`, {
+        headers:
+            {
+                'Authorization': `${GITHUB_TOKEN}`,
+                // This was recommended in the documentation: Custom media types are used in the API to let consumers choose the format of the data they wish to receive. This is done by adding one or more of the following types to the Accept header when you make a request.
+                'Accept': 'application/vnd.github.v3+json'
+            }
+    })
+        //Converting the response to a JSON object
+        .then(response => response.json())
+        .then(data => {
+            console.log(`Last Commit: ${data[0].created_at}`);
+            return data[0].created_at;
+        })
+        .catch(error => console.error(error));
+}
+
+userLastCommit('Lewis-Matt')
 
 
 // TODO: Write a function named wait that accepts a number as a parameter, and returns a promise that resolves after the passed number of milliseconds.
+
+function wait(num) {
+    // Promise can only resolve after num seconds
+    return new Promise((resolve) => {
+        setTimeout(function () {
+            resolve(`You waited ${num} seconds to see this. Congrats.`)
+        }, num)
+    })
+}
+
+// When the promise resolves, execute a function that logs the resolution value
+wait(1000).then((message) => console.log(message));
