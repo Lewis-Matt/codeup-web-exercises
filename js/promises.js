@@ -14,6 +14,7 @@
 
 // Stores input github name from html form
 let githubName = document.getElementById("user").value;
+
 function userLastCommit(username) {
     return fetch(`https://api.github.com/users/${username}/events`, {
         headers:
@@ -31,13 +32,14 @@ function userLastCommit(username) {
             console.log(`Last Commit: ${data[0].created_at}`);
             // Once the promise is complete, adds the last commit date to paragraph
             document.getElementById("commit").innerHTML = (data[0].created_at);
-            
+
         })
         .catch(error => console.error(error));
 }
 
-// // Adds last commit to <p>
+// When submit is clicked, executes function (which adds last commit date to <p>)
 function commitDate() {
+    document.getElementById('commit-heading').innerHTML = `The last commit for ${githubName} was at:`
     document.getElementById("commit").innerHTML = userLastCommit(githubName);
 }
 

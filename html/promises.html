@@ -6,22 +6,55 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Promises</title>
+    <style>
+        main {
+            padding: 2em;
+            text-align: center;
+            font-family: "Andale Mono", monospace;
+            background-color: #FFF;
+        }
+
+        body {
+            background-color: #002642;
+
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            font-size: 1em;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        #user {
+            width: 200px;
+            height: 30px;
+            font-size: 1.1em;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #commit {
+            font-size: 1.5em;
+            color: #002642;
+        }
+    </style>
 </head>
 <body>
-<h1>Promises Exercise</h1>
-<p>Create a function that accepts a GitHub username, and returns a promise that resolves returning just the date of the
-    last commit that user made.</p>
-<div>
-    <input type="text" id="user" placeholder="Github username">
-    <button onclick="commitDate()">Submit</button>
-</div>
-
-<p id="commit"></p>
-
-
-
-<p><em>Script located in js/promises.js</em></p>
-
+<main>
+    <h1>Git Last Commit</h1>
+    <p>Accepts a GitHub username, and returns a promise that resolves returning just the date of the
+        last commit that user made.</p>
+    <div>
+        <input type="text" id="user" placeholder="GitHub Username"><br>
+        <button onclick="commitDate()">Submit</button>
+    </div>
+    <h2 id="commit-heading"></h2>
+    <p id="commit"></p>
+</main>
 <!-- API TOKEN -->
 <script src="../config/keys.js"></script>
 <!-- Main Script-->
