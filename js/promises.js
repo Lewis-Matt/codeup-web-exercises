@@ -25,7 +25,7 @@ function userLastCommit(username) {
                 'Accept': 'application/vnd.github.v3+json'
             }
     })
-        //Converting the response to a JSON object
+        // Converting the response to a JSON object
         .then(response => response.json())
         .then(data => {
             // TEST LOGS
@@ -33,7 +33,6 @@ function userLastCommit(username) {
             console.log(`Last Commit: ${data[0].created_at}`);
             // Once the promise is complete, adds the last commit date to paragraph
             document.getElementById("commit").innerHTML = (data[0].created_at);
-
         })
         .catch(error => console.error(error));
 }
@@ -50,7 +49,7 @@ function wait(num) {
     // Promise can only resolve after num seconds
     return new Promise((resolve) => {
         setTimeout(function () {
-            resolve(`You waited ${num/1000} seconds to see this. Congrats.`)
+            resolve(`You waited ${num / 1000} seconds to see this. Congrats.`)
         }, num)
     })
 }
