@@ -15,6 +15,7 @@
 // Stores input github name from html form
 let githubName = document.getElementById("user").value;
 
+// SHOULD HAVE USED ASYNC & AWAIT
 function userLastCommit(username) {
     return fetch(`https://api.github.com/users/${username}/events`, {
         headers:
@@ -38,7 +39,7 @@ function userLastCommit(username) {
 }
 
 // When submit is clicked, executes function (which adds last commit date to <p>)
-function commitDate() {
+async function commitDate() {
     document.getElementById('commit-heading').innerHTML = `The last commit for ${githubName} was at:`
     document.getElementById("commit").innerHTML = userLastCommit(githubName);
 }
