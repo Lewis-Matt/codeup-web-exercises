@@ -50,10 +50,10 @@ function wait(num) {
     // Promise can only resolve after num seconds
     return new Promise((resolve) => {
         setTimeout(function () {
-            resolve(`You waited ${num} seconds to see this. Congrats.`)
+            resolve(`You waited ${num/1000} seconds to see this. Congrats.`)
         }, num)
     })
 }
 
 // When the promise resolves, execute a function that logs the resolution value
-wait(1000).then((message) => console.log(message));
+wait(5000).then((message) => console.log(message));
