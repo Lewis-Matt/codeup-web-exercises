@@ -39,7 +39,7 @@ function userLastCommit(username) {
 }
 
 // When submit is clicked, executes function (which adds last commit date to <p>)
-async function commitDate() {
+function commitDate() {
     document.getElementById('commit-heading').innerHTML = `The last commit for ${githubName} was at:`
     document.getElementById("commit").innerHTML = userLastCommit(githubName);
 }
