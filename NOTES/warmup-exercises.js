@@ -95,3 +95,31 @@ let findDuplicates = function (str) {
     console.log(duplicatesObj);
 }
 findDuplicates(testString);
+
+console.log('----------08 FEBRUARY----------');
+// Write a function that removes any duplicates from an array.
+// Input: [2,3,5,8,3,1,2,6,3,2,7,8,2,4,7]
+// expected output: [2,3,5,8,1,6,7,4]
+const testArr = [2, 3, 5, 8, 3, 1, 2, 6, 3, 2, 7, 8, 2, 4, 7];
+
+function removeDuplicates(arr) {
+    // Loop through the array, output initial value is an array (as that is what I want to return)
+    return arr.reduce((output, current) => {
+        for (let i = 0; i < arr.length; i++) {
+            // If the current number is not in the output array, then add it
+            if (!output.includes(current)) {
+                output.push(current)
+            } // continue implied
+        }
+        // Otherwise, return the array
+        return output
+    }, [])
+}
+
+console.log(removeDuplicates(testArr))
+// Using Set
+// A Set is a special type collection – “set of values” (without keys), where each value may occur only once.
+function removeDupes (arr) {
+    return new Set(arr);
+}
+console.log(removeDupes(testArr))

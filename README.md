@@ -24,6 +24,8 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 - filter
 - using REGEX and test()
 - using .reduce()
+- remove duplicates with new Set()
+- remove duplicates with .reduce()
 
 ### konami.html
 - jQuery mouse & key events
@@ -61,3 +63,7 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 
 ## promises.js / promises.html
 - using response to update html
+
+## ES6-promises.js
+- async/await
+- try/catch
