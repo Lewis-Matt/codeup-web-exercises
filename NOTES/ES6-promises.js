@@ -49,8 +49,9 @@ Promise.resolve('one').then((one) => {
     console.log(three);
 });
 
-// Here we are using Promise.resolve to immediately return a resolved promise with the passed value, in this case the string, 'one'. We then return more string literals from the functions passed to the .then methods, allowing us to chain the promises together.
-//
+// CHAINING
+// Here we are using Promise.resolve to immediately return a resolved promise with the passed value, in this case the string, 'one'. We then return more string literals from the functions passed to the .then methods, allowing us to chain the promises together. Promises replace callbacks for async, and, with chaining using '.then', eliminate callback hell.
+// This can also be simplified with async await (covered below)
 // To illustrate promise chaining further, let's imagine that we want to work with a list of usernames returned from the GitHub API.
 //
 // The response object resolved from the fetch method's promise has a .json method that returns another promise that resolves with the response body parsed as JSON. We can use this to further manipulate the results of our AJAX call.
@@ -71,6 +72,7 @@ fetch('https://api.github.com/users').then(response => {
 
 // Clean up the above with chaining and arrow function
 fetch('https://api.github.com/users')
+    // Note that response.json returns another promise
     .then(response => response.json())
     .then(users => {
         users.forEach(userObj => {
@@ -164,3 +166,75 @@ request.catch(message => console.log('Promise rejected!', message));
 //     If a promise has succeeded or failed and you later add a success/failure callback, the correct callback will be called, even though the event took place earlier.
 //
 // This is extremely useful for async success/failure, because you're less interested in the exact time something became available, and more interested in reacting to the outcome.
+
+// ASYNC AWAIT
+// An async function is a function declared with the async keyword, and the await keyword is permitted within it. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
+// The purpose of async/await is to simplify the syntax necessary to consume promise-based APIs.
+// ASYNC FUNCTIONS ALWAYS RETURN A PROMISE. If the return value of an async function is not explicitly a promise, it will be implicitly wrapped in a promise.
+
+async function foo() {
+    return 1
+}
+// is similar to:
+function foo1() {
+    return Promise.resolve(1)
+}
+// The body of an async function can be thought of as being split by zero or more await expressions. Top-level code, up to and including the first await expression (if there is one), is run synchronously. In this way, an async function without an await expression will run synchronously. If there is an await expression inside the function body, however, the async function will always complete asynchronously.
+async function foo() {
+    await 1
+}
+// is equivalent to:
+function foo() {
+    return Promise.resolve(1).then(() => undefined)
+}
+// Code after each await expression can be thought of as existing in a .then callback.
+
+// TRY ... CATCH
+//  The try...catch statement marks a block of statements to try and specifies a response should an exception be thrown.
+// try_statements
+//     The statements to be executed.
+// catch_statements
+//     Statement that is executed if an exception is thrown in the try-block.
+// Ex
+function isValidJSON(text) {
+    try {
+        JSON.parse(text);
+        return true;
+    } catch {
+        return false;
+    }
+}
+// Ex
+try {
+    myroutine(); // may throw three types of exceptions
+} catch (e) {
+    if (e instanceof TypeError) {
+        // statements to handle TypeError exceptions
+    } else if (e instanceof RangeError) {
+        // statements to handle RangeError exceptions
+    } else if (e instanceof EvalError) {
+        // statements to handle EvalError exceptions
+    } else {
+        // statements to handle any unspecified exceptions
+        logMyErrors(e); // pass exception object to error handler
+    }
+}
+// The finally-block contains statements to execute after the try-block and catch-block(s) execute, but before the statements following the try...catch...finally-block. Note that the finally-block executes regardless of whether an exception is thrown.
+openMyFile();
+try {
+    // tie up a resource
+    writeMyFile(theData);
+} finally {
+    closeMyFile(); // always close the resource
+}
+// If the finally-block returns a value, this value becomes the return value of the entire try-catch-finally statement, regardless of any return statements in the try and catch-blocks. This includes exceptions thrown inside of the catch-block.
+
+// Ex with async
+async function main() {
+    try {
+        var quote = await getQuote();
+        console.log(quote);
+    } catch (error) {
+        console.error(error);
+    }
+}
