@@ -119,7 +119,26 @@ function removeDuplicates(arr) {
 console.log(removeDuplicates(testArr))
 // Using Set
 // A Set is a special type collection – “set of values” (without keys), where each value may occur only once.
-function removeDupes (arr) {
+function removeDupes(arr) {
     return new Set(arr);
 }
+
 console.log(removeDupes(testArr))
+
+console.log('----------09 FEBRUARY----------');
+// TODO: write a function that takes a string as argument and returns the number of vowels contained in that string.
+// The vowels are “a”, “e”, “i”, “o”, “u”.
+// input: "helicopter"
+// output: 4
+const vowels = ['a','e','i','o','u']
+function countVowels(str) {
+    let count = 0;
+    for(let char of str.toLowerCase()) {
+        if(vowels.includes(char)) {
+            count++
+        }
+    }
+    return `${str} contains ${count} vowel(s).`
+}
+
+console.log(countVowels('helicopter'))

@@ -26,6 +26,8 @@ Most of the exercises/notes are self-explanatory. Below is a list of topics (for
 - using .reduce()
 - remove duplicates with new Set()
 - remove duplicates with .reduce()
+- includes()
+- for ... of
 
 ### konami.html
 - jQuery mouse & key events
